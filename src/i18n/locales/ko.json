@@ -1,0 +1,498 @@
+{
+  "nav": {
+    "faq": "FAQ",
+    "apis": "APIs",
+    "reserve": "RESERVE TIER"
+  },
+  "hero": {
+    "headline1": "NEVER HAVE ANOTHER",
+    "headline2": "UNVERIFIED ENCOUNTER.",
+    "subhead": "5 minutes to set up. Seconds to verify. Free to try.",
+    "cta": "RESERVE YOUR TIER — $0",
+    "scroll": "See how it works",
+    "spots": "Founding Council spots closing soon"
+  },
+  "howItWorks": {
+    "title": "HOW IT WORKS",
+    "step1": {
+      "title": "GET YOUR V.A.I.",
+      "desc": "5 minutes. One-time setup via ChainPass."
+    },
+    "step2": {
+      "title": "VERIFY IN SECONDS",
+      "desc": "Scan. Match. Done. The face in front of you IS the reputation."
+    },
+    "step3": {
+      "title": "STAY PROTECTED",
+      "desc": "DateGuard. TrueRevu. VaiPulse. Always on. Always free."
+    },
+    "link": "How V.A.I. works →"
+  },
+  "pain": {
+    "p1": "We all know the drill. Every encounter, a different verification method. Scrolling through socials. Trading awkward phrases. Paying expensive services that take hours — sometimes days.",
+    "p2": "They all take time. Cost money. And we convince ourselves they work.",
+    "p3": "Until they don't.",
+    "p4": "What's at stake?",
+    "p5": "Your safety. Your money. Your reputation. Your freedom. Even your life.",
+    "p5b": "Gone with one bad encounter.",
+    "p6": "You've been screening on hope.",
+    "p7": "Hope isn't protection."
+  },
+  "shieldsEntry": {
+    "p1": "We listened.",
+    "p2": "To the horror stories. The close calls. The bullshit our community has put up with for 100 years.",
+    "p3": "And we got to work.",
+    "p4": "We built the most advanced safety platform this industry has ever seen.",
+    "p4b": "And it's not even close.",
+    "p5": "Real protection. Every encounter. Every time.",
+    "p5b": "In seconds.",
+    "p6": "No hoping. No guessing. No crossing your fingers.",
+    "p7": "And then we made it",
+    "p8": "free.",
+    "p9": "Because if even one person can't afford it —",
+    "p10": "it can't be a standard. Or real protection.",
+    "divider": "───────────────────",
+    "p11": "We call it the",
+    "p11b": "9 Shields of Protection.",
+    "p12": "You'll call it the new standard."
+  },
+  "shields": {
+    "chainpassLabel": "POWERED BY CHAINPASS",
+    "chainpassLink": "Learn why this matters →",
+    "vairifyLabel": "VAIRIFY PROTECTION LAYER",
+    "linkedNote": "↑ Linked — click any to highlight all 3",
+    "s1": {
+      "name": "Zero-Knowledge",
+      "desc": "Your identity verified, never stored."
+    },
+    "s2": {
+      "name": "Violent Offender Screening",
+      "desc": "Checked against national registries."
+    },
+    "s3": {
+      "name": "Law Enforcement Disclosure",
+      "desc": "Signed under penalty of perjury."
+    },
+    "s4": {
+      "name": "Jurisdictional Protection",
+      "desc": "No single court can compel disclosure."
+    },
+    "s5": {
+      "name": "Mutual Consent Contract",
+      "desc": "Adult consent. Legally binding."
+    },
+    "s6": {
+      "name": "VAI-CHECK",
+      "desc": "The face in front of you is the reputation."
+    },
+    "s7": {
+      "name": "TrueRevu",
+      "desc": "Your history. Your reputation. Protected."
+    },
+    "s8": {
+      "name": "DateGuard",
+      "desc": "Someone always knows."
+    },
+    "s9": {
+      "name": "VaiPulse",
+      "desc": "Real-time intel. Wherever you are."
+    }
+  },
+  "midCta": {
+    "text": "Seen enough?",
+    "cta": "RESERVE YOUR TIER — $0",
+    "continue": "or keep scrolling ↓"
+  },
+  "comparison": {
+    "title": "Hope vs. Protection",
+    "subtitle": "How does the way you verify stack up?",
+    "vairify": "Vairify",
+    "social": "Social Media",
+    "services": "Services",
+    "refs": "References",
+    "rows": {
+      "guarantee": "100% Identity Protection Guarantee",
+      "time": "Time",
+      "verifyOnce": "Verify Once, Use Forever",
+      "leoDisclosure": "Law Enforcement Disclosure",
+      "violentOffender": "Violent Offender Check",
+      "unfakeable": "Un-fakeable",
+      "communityHistory": "Community History",
+      "mutualConsent": "Mutual Consent Contract",
+      "identityExposure": "Identity Exposure",
+      "preventScams": "Prevent Scams",
+      "realtimeMonitor": "Real-time Safety Monitoring",
+      "realtimeIntel": "Real-time Local Intel",
+      "cost": "Cost"
+    },
+    "values": {
+      "seconds": "Seconds",
+      "hours": "Hours",
+      "days": "Days",
+      "once": "Once",
+      "everyTime": "Every time",
+      "some": "Some",
+      "free": "FREE",
+      "timeMoney": "Time = $",
+      "price": "$50-$190"
+    }
+  },
+  "premiumTransition": {
+    "p1": "Vairify is the standard of safety and convenience.",
+    "p2": "The core is all about safety.",
+    "p3": "And that's always",
+    "p3b": "free.",
+    "p4": "And if you're thinking \"How can they top what I just saw?\"",
+    "p5": "Sit back. Hold our beer.",
+    "p6": "You ain't seen nothing yet.",
+    "divider": "───────────────────",
+    "p7": "Safety is the foundation. Free forever.",
+    "p8": "Premium? That's our flex.",
+    "p8b": "$29.99/month.",
+    "p9": "You'll get it because it brings real value and convenience.",
+    "p10": "Not because you have to have it to be protected."
+  },
+  "premium": {
+    "title": "This is what showing off looks like.",
+    "features": {
+      "f1": { "name": "VAIRIDATE", "desc": "Your entire online business in one place." },
+      "f2": { "name": "VAIRIPAY", "desc": "Stop carrying cash. Non-traceable. No fees." },
+      "f3": { "name": "CALENDAR", "desc": "Your schedule, your rules. Buffer times." },
+      "f4": { "name": "VAIRIFY NOW", "desc": "Toggle on — verified clients see you instantly." },
+      "f5": { "name": "INVITATIONS", "desc": "Put in what you want. See who's interested." },
+      "f6": { "name": "DIRECTORY", "desc": "The most advanced search ever built." },
+      "f7": { "name": "SOCIAL FEED", "desc": "Your content. Your community. Verified." },
+      "f8": { "name": "SOCIAL HUB", "desc": "Create here. Push everywhere. Automatic." },
+      "f9": { "name": "PRIORITY PLACEMENT", "desc": "Top of search results in your area." },
+      "f10": { "name": "REVENUE SHARING", "desc": "Earn from referrals and activity." },
+      "f11": { "name": "QR CODES & BADGES", "desc": "Your unique code. Your custom look." },
+      "f12": { "name": "FOLLOW/FAVORITE", "desc": "Track profiles. Quick access." }
+    }
+  },
+  "premiumCloser": {
+    "p1": "Every feature. Every function. Every tool this community needs.",
+    "p2": "We built it.",
+    "p3": "They told us that's the founder's mistake. Don't overbuild.",
+    "p4": "But they haven't seen the broken promises.",
+    "p4b": "The vaporware. The 10-year-old technology still being sold as new.",
+    "p5": "We built it.",
+    "p5b": "All of it.",
+    "p6": "And like everything Vairify does, we did it for a reason.",
+    "p7": "You're the ones who will use it.",
+    "p8": "This soft launch is for you to tell us your final vision.",
+    "p9": "Tell us what you want to change. Or add. We'll tweak it.",
+    "p10": "Not in months, years, or decades.",
+    "p11": "Days.",
+    "p12": "Then we'll test it and release it. On schedule, on time, every time.",
+    "p13": "We're starting with the safety core. And then every five days, we'll release another premium feature — tweaked and approved by you."
+  },
+  "tiers": {
+    "title": "What you need to do now.",
+    "subtitle": "Fill out the form. Reserve your tier.",
+    "notWaitlist": "This is not a waiting list.",
+    "impact": "You are reserving your place in one of the tiers that will have a real impact moving forward.",
+    "cards": {
+      "fc": {
+        "icon": "🔥",
+        "name": "FOUNDING COUNCIL",
+        "spots": "First 500",
+        "benefits": ["Policies", "Features", "Everything"]
+      },
+      "fm": {
+        "icon": "⚡",
+        "name": "FIRST MOVERS",
+        "spots": "Next 2,500",
+        "benefits": ["Voting Rights", "Early Access"]
+      },
+      "ea": {
+        "icon": "🚀",
+        "name": "EARLY ACCESS",
+        "spots": "Next 7,000",
+        "benefits": ["Feature Decisions", "Early Access"]
+      }
+    }
+  },
+  "tierTable": {
+    "headers": {
+      "benefit": "Benefit",
+      "fc": "🔥 Founding Council",
+      "fm": "⚡ First Movers",
+      "ea": "🚀 Early Access",
+      "public": "📋 Public"
+    },
+    "rows": {
+      "spots": { "label": "Spots", "fc": "500", "fm": "2,500", "ea": "7,000", "public": "Unlimited" },
+      "vairify": { "label": "Vairify", "fc": "FREE", "fm": "FREE", "ea": "FREE", "public": "FREE" },
+      "premium": { "label": "Premium", "fc": "FREE LIFETIME", "fm": "FREE 1 YEAR", "ea": "FREE 6 MONTHS", "public": "$29.99/mo" },
+      "vaiCoupon": { "label": "V.A.I. Coupon", "fc": "$99 FREE", "fm": "$49 OFF", "ea": "$20 OFF", "public": "$99/year" },
+      "ceoCalls": { "label": "CEO Calls", "fc": "✓", "fm": "✓", "ea": "✓", "public": "✗" },
+      "premiumVote": { "label": "Premium Vote", "fc": "✓", "fm": "✓", "ea": "✓", "public": "✗" },
+      "policyVote": { "label": "Policy Vote", "fc": "✓", "fm": "✓", "ea": "✗", "public": "✗" },
+      "finalVote": { "label": "Final Vote", "fc": "✓", "fm": "✗", "ea": "✗", "public": "✗" },
+      "leadership": { "label": "Leadership", "fc": "✓", "fm": "✗", "ea": "✗", "public": "✗" },
+      "legalFund": { "label": "Legal Fund", "fc": "✓", "fm": "✓", "ea": "✓", "public": "✗" },
+      "badge": { "label": "Badge", "fc": "🔥 Permanent", "fm": "⚡ Permanent", "ea": "🚀 Permanent", "public": "Standard" }
+    }
+  },
+  "warning": {
+    "icon": "⚠️",
+    "title": "Important:",
+    "p1": "If you're not willing to regularly participate in governing Vairify's future — don't select the first two tiers.",
+    "p2": "Founding Council has immediate decisions to make. Policies to set. Features to prioritize.",
+    "p3": "This isn't a title. It's a responsibility."
+  },
+  "form": {
+    "title": "RESERVE YOUR TIER",
+    "fields": {
+      "email": {
+        "label": "Email",
+        "placeholder": "you@example.com",
+        "required": "Email is required",
+        "invalid": "Please enter a valid email address"
+      },
+      "phone": {
+        "label": "Phone (optional)",
+        "placeholder": "+1 (555) 000-0000"
+      },
+      "tier": {
+        "label": "Select Your Tier",
+        "options": {
+          "fc": "🔥 Founding Council",
+          "fm": "⚡ First Movers",
+          "ea": "🚀 Early Access"
+        },
+        "remaining": "remaining",
+        "required": "Please select a tier"
+      },
+      "votingCommitment": {
+        "label": "I understand that Founding Council and First Movers require active participation in voting. If I'm not willing to participate, I should select Early Access.",
+        "required": "You must acknowledge the voting commitment for this tier"
+      },
+      "terms": {
+        "label": "I agree to the Terms of Service and Privacy Policy",
+        "required": "You must agree to the terms"
+      },
+      "referral": {
+        "label": "Referral Code (optional)",
+        "placeholder": "ABC123"
+      }
+    },
+    "submit": "RESERVE MY TIER — $0",
+    "submitting": "Reserving...",
+    "note": "We'll email you when registration opens.",
+    "switchTier": {
+      "prompt": "Not ready to commit to voting?",
+      "link": "Switch to Early Access"
+    },
+    "errors": {
+      "duplicate": "You've already reserved! Your code is: {{code}}",
+      "failed": "Something went wrong. Please try again.",
+      "tierFull": "This tier is full. Please select another."
+    }
+  },
+  "confirmation": {
+    "emoji": "🎉",
+    "title": "YOU'RE IN!",
+    "tierLabels": {
+      "founding_council": "Founding Council",
+      "first_mover": "First Movers",
+      "early_access": "Early Access"
+    },
+    "spot": "Spot",
+    "coupon": {
+      "title": "YOUR COUPON CODE",
+      "copy": "COPY CODE",
+      "copied": "COPIED!",
+      "note": "Save this! You'll need it for V.A.I. and Premium."
+    },
+    "benefits": {
+      "title": "YOUR BENEFITS:",
+      "fc": [
+        "Premium FREE LIFETIME",
+        "V.A.I. ($99 value) FREE",
+        "Voting rights on all decisions",
+        "Leadership eligibility",
+        "Legal fund access",
+        "🔥 Permanent badge"
+      ],
+      "fm": [
+        "Premium FREE for 1 year",
+        "$49 OFF V.A.I.",
+        "Voting rights on features",
+        "Legal fund access",
+        "⚡ Permanent badge"
+      ],
+      "ea": [
+        "Premium FREE for 6 months",
+        "$20 OFF V.A.I.",
+        "Feature voting access",
+        "Legal fund access",
+        "🚀 Permanent badge"
+      ]
+    },
+    "referral": {
+      "title": "SHARE YOUR REFERRAL LINK",
+      "copy": "COPY",
+      "copied": "COPIED!"
+    },
+    "share": {
+      "twitter": "Twitter",
+      "facebook": "Facebook",
+      "whatsapp": "WhatsApp",
+      "copy": "Copy Link"
+    },
+    "note": "We'll email you when registration opens."
+  },
+  "footer": {
+    "poweredBy": "Powered by ChainPass Zero-Knowledge Architecture",
+    "sections": {
+      "legal": {
+        "title": "LEGAL",
+        "terms": "Terms of Service",
+        "privacy": "Privacy Policy"
+      },
+      "support": {
+        "title": "SUPPORT",
+        "faq": "FAQ",
+        "contact": "Contact Us"
+      },
+      "connect": {
+        "title": "CONNECT",
+        "apis": "APIs",
+        "chainpass": "ChainPass"
+      }
+    },
+    "copyright": "© 2024 Vairify. All rights reserved.",
+    "tagline": "\"Safety features are FREE forever.\""
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "categories": {
+      "gettingStarted": {
+        "title": "Getting Started",
+        "questions": [
+          {
+            "q": "What is Vairify?",
+            "a": "Vairify is the most advanced safety platform for adult service providers. We provide real identity verification, safety monitoring, and community reputation systems — all for free."
+          },
+          {
+            "q": "What is a V.A.I.?",
+            "a": "V.A.I. stands for Verified Anonymous Identity. It's a 7-character code that proves you've completed government ID verification without exposing your real identity. One person, one V.A.I. for life."
+          },
+          {
+            "q": "How long does setup take?",
+            "a": "About 5 minutes. You'll verify your identity once through ChainPass, and then you can use your V.A.I. to verify yourself in seconds forever."
+          },
+          {
+            "q": "Is it really free?",
+            "a": "Yes. All safety features are free forever. Premium features ($29.99/month) add convenience, not safety. You never have to pay to be protected."
+          }
+        ]
+      },
+      "safety": {
+        "title": "Safety",
+        "questions": [
+          {
+            "q": "How does verification work?",
+            "a": "When you meet someone, they show you their V.A.I. QR code. You scan it, both of you take a live selfie, and the system confirms you're both who your V.A.I.s say you are. Takes seconds."
+          },
+          {
+            "q": "What if someone fakes their V.A.I.?",
+            "a": "They can't. V.A.I. verification requires a live facial match. The face in front of you must match the face on the V.A.I. — and we check for liveness to prevent photos or videos."
+          },
+          {
+            "q": "What is DateGuard?",
+            "a": "DateGuard is our real-time safety monitoring system. You set a timer, and if you don't check in, your designated guardians are automatically notified with your location."
+          },
+          {
+            "q": "What is VaiPulse?",
+            "a": "VaiPulse provides real-time intelligence about your area — active alerts, community warnings, and safety information based on your location."
+          }
+        ]
+      },
+      "privacy": {
+        "title": "Privacy",
+        "questions": [
+          {
+            "q": "Who sees my real identity?",
+            "a": "Only the government-certified KYC provider (ComplyCube) who verifies your ID. ChainPass receives only your verified photo. Vairify receives only your V.A.I. number and photo. No one has your full identity."
+          },
+          {
+            "q": "What data does Vairify store?",
+            "a": "Vairify stores your V.A.I. number, verified photo, and platform activity. We never store your name, address, date of birth, or government ID numbers."
+          },
+          {
+            "q": "Can I delete my account?",
+            "a": "Yes. You can delete your Vairify account at any time. However, your V.A.I. number and verified photo are retained to prevent duplicate registrations (fraud prevention)."
+          }
+        ]
+      },
+      "foundingCouncil": {
+        "title": "Founding Council",
+        "questions": [
+          {
+            "q": "What are my responsibilities?",
+            "a": "Founding Council members vote on platform policies, feature priorities, and community governance. Expect to vote every 5 days during the launch phase."
+          },
+          {
+            "q": "How does voting work?",
+            "a": "We present decisions with clear options. You vote. Majority wins. Results are implemented within days, not months."
+          },
+          {
+            "q": "What decisions will I make?",
+            "a": "Everything from feature release order to community policies to premium pricing to safety protocols. You're building this with us."
+          }
+        ]
+      }
+    }
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "lastUpdated": "Last updated: December 2024",
+    "placeholder": "Full Terms of Service will be available at launch."
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "Last updated: December 2024",
+    "placeholder": "Full Privacy Policy will be available at launch."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We'd love to hear from you.",
+    "form": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name",
+        "required": "Name is required"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "you@example.com",
+        "required": "Email is required",
+        "invalid": "Please enter a valid email"
+      },
+      "subject": {
+        "label": "Subject",
+        "placeholder": "Select a subject",
+        "options": {
+          "general": "General Inquiry",
+          "support": "Technical Support",
+          "founding": "Founding Council",
+          "partnership": "Partnership",
+          "press": "Press & Media",
+          "other": "Other"
+        },
+        "required": "Please select a subject"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "How can we help?",
+        "required": "Message is required"
+      },
+      "submit": "SEND MESSAGE",
+      "submitting": "Sending...",
+      "success": "Message sent! We'll get back to you soon.",
+      "error": "Something went wrong. Please try again."
+    }
+  }
+}

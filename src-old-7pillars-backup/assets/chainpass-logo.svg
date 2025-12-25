@@ -1,0 +1,10 @@
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- ChainPass Full Logo Placeholder -->
+  <!-- Replace this file with your actual chainpass-logo.svg -->
+  <rect width="200" height="60" fill="transparent"/>
+  <text x="10" y="35" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#00d4aa">
+    ChainPass
+  </text>
+  <circle cx="190" cy="30" r="8" fill="#00d4aa"/>
+  <path d="M 185 30 L 195 30 M 190 25 L 190 35" stroke="white" stroke-width="2"/>
+</svg>
