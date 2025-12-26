@@ -3,15 +3,17 @@ import type { Tier, Reservation, GovernanceAnswers, GovernanceResults } from '..
 import GovernanceQuestions from './GovernanceQuestions';
 import GovernancePreview from './GovernancePreview';
 import ReservationForm from './ReservationForm';
-import Confirmation from './Confirmation';
 
-type FlowStep = 'tier_selection' | 'governance_questions' | 'governance_preview' | 'email_form' | 'success';
+type FlowStep = 'tier_selection' | 'governance_questions' | 'governance_preview' | 'email_form';
 
-export default function ReservationFlow() {
+interface ReservationFlowProps {
+  onSuccess: (reservation: Reservation, governanceResults?: GovernanceResults | null) => void;
+}
+
+export default function ReservationFlow({ onSuccess }: ReservationFlowProps) {
   const [step, setStep] = useState<FlowStep>('email_form'); // Start at email form
   const [, setSelectedTier] = useState<Tier | null>(null);
   const [governanceAnswers, setGovernanceAnswers] = useState<GovernanceAnswers | null>(null);
-  const [reservation, setReservation] = useState<Reservation | null>(null);
 
   // Mock governance results - in production, fetch from Supabase
   const mockGovernanceResults: GovernanceResults = {
@@ -36,8 +38,9 @@ export default function ReservationFlow() {
   };
 
   const handleReservationSuccess = (res: Reservation) => {
-    setReservation(res);
-    setStep('success');
+    // Pass governance results to parent if FC tier
+    const results = res.tier === 'founding_council' ? mockGovernanceResults : null;
+    onSuccess(res, results);
   };
 
   // Render based on current step
@@ -50,15 +53,6 @@ export default function ReservationFlow() {
       <GovernancePreview
         onContinue={handleGovernancePreviewContinue}
         onSwitchToFC={handleGovernancePreviewSwitch}
-      />
-    );
-  }
-
-  if (step === 'success' && reservation) {
-    return (
-      <Confirmation
-        reservation={reservation}
-        governanceResults={reservation.tier === 'founding_council' ? mockGovernanceResults : null}
       />
     );
   }

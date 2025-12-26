@@ -16,16 +16,18 @@ import {
   TierSelection,
   TierTable,
   Warning,
-  ReservationForm,
+  ReservationFlow,
   Confirmation,
 } from '../components/sections';
-import type { Reservation } from '../types';
+import type { Reservation, GovernanceResults } from '../types';
 
 export default function Home() {
   const [reservation, setReservation] = useState<Reservation | null>(null);
+  const [governanceResults, setGovernanceResults] = useState<GovernanceResults | null>(null);
 
-  const handleSuccess = (res: Reservation) => {
+  const handleSuccess = (res: Reservation, govResults?: GovernanceResults | null) => {
     setReservation(res);
+    setGovernanceResults(govResults || null);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -34,7 +36,7 @@ export default function Home() {
       <div className="min-h-screen bg-gray-50 dark:bg-[#0a0a0f]">
         <Nav />
         <main id="main-content" className="pt-16">
-          <Confirmation reservation={reservation} />
+          <Confirmation reservation={reservation} governanceResults={governanceResults} />
         </main>
         <Footer />
       </div>
@@ -58,7 +60,7 @@ export default function Home() {
         <TierSelection />
         <TierTable />
         <Warning />
-        <ReservationForm onSuccess={handleSuccess} />
+        <ReservationFlow onSuccess={handleSuccess} />
       </main>
       <Footer />
       <FloatingCounter />
