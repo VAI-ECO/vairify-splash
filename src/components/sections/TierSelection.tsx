@@ -3,15 +3,15 @@ import { useTierCounts } from '../../hooks/useTierCounts';
 import type { Tier } from '../../types';
 
 // Hardcoded tier status - can be made dynamic later when connected to real data
-const TIER_STATUS = {
+const TIER_STATUS: Record<Tier, { status: 'closing' | 'closed' | 'open' }> = {
   founding_council: {
-    status: 'closing' as const, // 'closing' | 'closed' | 'open'
+    status: 'closing', // 'closing' | 'closed' | 'open'
   },
   first_mover: {
-    status: 'open' as const,
+    status: 'open',
   },
   early_access: {
-    status: 'open' as const,
+    status: 'open',
   },
 };
 
