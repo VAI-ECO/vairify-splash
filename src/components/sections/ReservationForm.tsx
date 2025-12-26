@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { supabase, isMockMode } from '../../lib/supabase';
 import { generateCouponCode, generateReferralLink, extractReferralFromUrl } from '../../lib/coupon';
 import { useTierCounts } from '../../hooks/useTierCounts';
-import type { Tier, Reservation } from '../../types';
+import type { Tier, Reservation, GovernanceAnswers } from '../../types';
 import Button from '../ui/Button';
 import Input from '../ui/Input';
 import Checkbox from '../ui/Checkbox';
@@ -27,9 +27,12 @@ interface FormErrors {
 
 interface ReservationFormProps {
   onSuccess: (reservation: Reservation) => void;
+  governanceAnswers?: GovernanceAnswers | null;
+  onTierSelected?: (tier: Tier) => void;
+  preselectedTier?: Tier | null;
 }
 
-export default function ReservationForm({ onSuccess }: ReservationFormProps) {
+export default function ReservationForm({ onSuccess, governanceAnswers }: ReservationFormProps) {
   const { t } = useTranslation();
   const { getRemaining, decrementTier } = useTierCounts();
   
@@ -111,15 +114,20 @@ export default function ReservationForm({ onSuccess }: ReservationFormProps) {
       const couponCode = generateCouponCode(formData.tier as Tier);
       const referralLink = generateReferralLink(couponCode);
 
+      // Generate spot number based on tier (in production, get from database counter)
+      const spotNumber = Math.floor(Math.random() * 100) + 1; // Mock - should be actual count from DB
+
       const reservationData = {
         email: formData.email,
         phone: formData.phone || null,
         tier: formData.tier,
         coupon_code: couponCode,
+        spot_number: spotNumber,
         referral_code_used: formData.referral || null,
         referral_link: referralLink,
         voting_commitment: formData.votingCommitment,
         terms_accepted: formData.terms,
+        governance_answers: governanceAnswers || null,
         status: 'reserved',
       };
 

@@ -347,7 +347,51 @@
       "whatsapp": "WhatsApp",
       "copy": "Copy Link"
     },
-    "note": "We'll email you when registration opens."
+    "note": "We'll email you when registration opens.",
+    "referralMessage": {
+      "title": "We're counting on you to spread the word.",
+      "line1": "Vairify Core is free — but Premium pays commission. For lifetime.",
+      "line2": "Build your network now. Thank you for helping us spread the word."
+    },
+    "governanceResults": {
+      "title": "HOW FOUNDING COUNCIL VOTED:",
+      "subtitle": "Here's how other members answered the governance questions:"
+    }
+  },
+  "governance": {
+    "title": "FOUNDING COUNCIL GOVERNANCE QUESTIONS",
+    "subtitle": "Before reserving your spot, help shape Vairify's future by answering these 3 questions:",
+    "required": "Please answer all questions to continue",
+    "q1": {
+      "question": "Should providers be able to bring their existing reviews from other platforms when they join Vairify?",
+      "options": {
+        "yes": "Yes — Let them aggregate reviews (won't carry TrueRevu verified badge)",
+        "no": "No — Everyone starts fresh, TrueRevu only"
+      }
+    },
+    "q2": {
+      "question": "How should we handle users flagged during VAI verification (e.g., law enforcement)?",
+      "options": {
+        "a": "A) Founding Council votes on whether they can enter",
+        "b": "B) Flag them, allow explanation, let each member decide individually",
+        "c": "C) Block them entirely"
+      }
+    },
+    "q3": {
+      "question": "How should disputes between members be handled?",
+      "options": {
+        "a": "A) Panel of 6 random Founding Council + First Mover members",
+        "b": "B) General membership panel: 3 providers + 3 clients"
+      }
+    },
+    "submit": "SUBMIT ANSWERS & CONTINUE",
+    "preview": {
+      "title": "WHAT FOUNDING COUNCIL IS DECIDING",
+      "subtitle": "These are the questions Founding Council members are voting on right now:",
+      "fomo": "Want a vote?",
+      "switchLink": "Switch to Founding Council →",
+      "continue": "CONTINUE TO RESERVATION"
+    }
   },
   "footer": {
     "poweredBy": "Powered by ChainPass V.A.I. Zero-Knowledge Architecture",

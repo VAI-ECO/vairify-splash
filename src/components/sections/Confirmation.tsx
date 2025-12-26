@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import type { Reservation } from '../../types';
+import type { Reservation, GovernanceResults } from '../../types';
 import Button from '../ui/Button';
 
 interface ConfirmationProps {
   reservation: Reservation;
+  governanceResults?: GovernanceResults | null;
 }
 
-export default function Confirmation({ reservation }: ConfirmationProps) {
+export default function Confirmation({ reservation, governanceResults }: ConfirmationProps) {
   const { t } = useTranslation();
   const [couponCopied, setCouponCopied] = useState(false);
   const [linkCopied, setLinkCopied] = useState(false);
@@ -48,7 +49,7 @@ export default function Confirmation({ reservation }: ConfirmationProps) {
         </h2>
         
         <p className="text-xl text-[#00d4aa] font-semibold mb-8">
-          {tierLabel} — {t('confirmation.spot')} #{Math.floor(Math.random() * 500) + 1}
+          {tierLabel} — {t('confirmation.spot')} #{reservation.spot_number}
         </p>
 
         {/* Coupon Code Box */}
@@ -142,7 +143,107 @@ export default function Confirmation({ reservation }: ConfirmationProps) {
               {t('confirmation.share.whatsapp')}
             </a>
           </div>
+
+          {/* Referral Message */}
+          <div className="mt-8 p-6 bg-gradient-to-r from-[#00d4aa]/10 to-[#2dd4bf]/10 dark:from-[#00d4aa]/20 dark:to-[#2dd4bf]/20 rounded-xl border border-[#00d4aa]/30">
+            <h4 className="text-lg font-bold text-[var(--vai-text-primary)] mb-3">
+              {t('confirmation.referralMessage.title')}
+            </h4>
+            <p className="text-[var(--vai-text-secondary)] mb-2">
+              {t('confirmation.referralMessage.line1')}
+            </p>
+            <p className="text-[var(--vai-text-secondary)]">
+              {t('confirmation.referralMessage.line2')}
+            </p>
+          </div>
         </div>
+
+        {/* Governance Results (FC only) */}
+        {reservation.tier === 'founding_council' && governanceResults && (
+          <div className="border-t border-gray-200 dark:border-[#2a2a4e] pt-8 mt-8">
+            <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-4">
+              {t('confirmation.governanceResults.title')}
+            </h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">
+              {t('confirmation.governanceResults.subtitle')}
+            </p>
+
+            <div className="space-y-6 text-left">
+              {/* Q1 Results */}
+              <div className="p-4 bg-white dark:bg-[#1a1a2e] rounded-lg border border-gray-200 dark:border-[#2a2a4e]">
+                <p className="font-medium text-gray-900 dark:text-white mb-3 text-sm">
+                  {t('governance.q1.question')}
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-600 dark:text-gray-400">Yes</span>
+                    <span className="font-bold text-[#00d4aa]">
+                      {Math.round((governanceResults.q1.yes / governanceResults.totalVotes) * 100)}%
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-600 dark:text-gray-400">No</span>
+                    <span className="font-bold text-[#00d4aa]">
+                      {Math.round((governanceResults.q1.no / governanceResults.totalVotes) * 100)}%
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Q2 Results */}
+              <div className="p-4 bg-white dark:bg-[#1a1a2e] rounded-lg border border-gray-200 dark:border-[#2a2a4e]">
+                <p className="font-medium text-gray-900 dark:text-white mb-3 text-sm">
+                  {t('governance.q2.question')}
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-600 dark:text-gray-400">A</span>
+                    <span className="font-bold text-[#00d4aa]">
+                      {Math.round((governanceResults.q2.a / governanceResults.totalVotes) * 100)}%
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-600 dark:text-gray-400">B</span>
+                    <span className="font-bold text-[#00d4aa]">
+                      {Math.round((governanceResults.q2.b / governanceResults.totalVotes) * 100)}%
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-600 dark:text-gray-400">C</span>
+                    <span className="font-bold text-[#00d4aa]">
+                      {Math.round((governanceResults.q2.c / governanceResults.totalVotes) * 100)}%
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Q3 Results */}
+              <div className="p-4 bg-white dark:bg-[#1a1a2e] rounded-lg border border-gray-200 dark:border-[#2a2a4e]">
+                <p className="font-medium text-gray-900 dark:text-white mb-3 text-sm">
+                  {t('governance.q3.question')}
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-600 dark:text-gray-400">A</span>
+                    <span className="font-bold text-[#00d4aa]">
+                      {Math.round((governanceResults.q3.a / governanceResults.totalVotes) * 100)}%
+                    </span>
+                  </div>
+                  <div className="flex items-center justify-between text-sm">
+                    <span className="text-gray-600 dark:text-gray-400">B</span>
+                    <span className="font-bold text-[#00d4aa]">
+                      {Math.round((governanceResults.q3.b / governanceResults.totalVotes) * 100)}%
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
+                Based on {governanceResults.totalVotes} Founding Council votes
+              </p>
+            </div>
+          </div>
+        )}
 
         <p className="text-sm text-gray-500 dark:text-gray-400 mt-8">
           {t('confirmation.note')}

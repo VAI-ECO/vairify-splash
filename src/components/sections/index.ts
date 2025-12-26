@@ -12,4 +12,7 @@ export { default as TierSelection } from './TierSelection';
 export { default as TierTable } from './TierTable';
 export { default as Warning } from './Warning';
 export { default as ReservationForm } from './ReservationForm';
+export { default as ReservationFlow } from './ReservationFlow';
+export { default as GovernanceQuestions } from './GovernanceQuestions';
+export { default as GovernancePreview } from './GovernancePreview';
 export { default as Confirmation } from './Confirmation';

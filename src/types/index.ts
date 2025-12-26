@@ -2,16 +2,31 @@ export type Tier = 'founding_council' | 'first_mover' | 'early_access';
 
 export type ReservationStatus = 'reserved' | 'converted' | 'expired' | 'cancelled';
 
+export interface GovernanceAnswers {
+  q1: 'yes' | 'no' | null;
+  q2: 'a' | 'b' | 'c' | null;
+  q3: 'a' | 'b' | null;
+}
+
+export interface GovernanceResults {
+  q1: { yes: number; no: number };
+  q2: { a: number; b: number; c: number };
+  q3: { a: number; b: number };
+  totalVotes: number;
+}
+
 export interface Reservation {
   id: string;
   email: string;
   phone: string | null;
   tier: Tier;
   coupon_code: string;
+  spot_number: number;
   referral_code_used: string | null;
   referral_link: string;
   voting_commitment: boolean;
   terms_accepted: boolean;
+  governance_answers: GovernanceAnswers | null;
   reserved_at: string;
   converted_at: string | null;
   status: ReservationStatus;
