@@ -59,7 +59,7 @@
   "shields": {
     "subtitle": "We call it",
     "title": "Shields of Protection",
-    "tagline": "You'll call it the new standard.",
+    "tagline": "You'll call it the new **standard**.",
     "chainpassLabel": "POWERED BY CHAINPASS V.A.I.",
     "chainpassSubtitle": "Zero-Knowledge Architecture",
     "chainpassLink": "Learn why this matters →",
@@ -67,7 +67,7 @@
     "linkedNote": "↑ Linked — click any to highlight all 3",
     "s1": {
       "name": "Zero-Knowledge",
-      "desc": "Your identity verified, never stored."
+      "desc": "Verified. No personal information stored."
     },
     "s2": {
       "name": "Violent Offender Screening",
@@ -75,15 +75,15 @@
     },
     "s3": {
       "name": "Law Enforcement Disclosure",
-      "desc": "Signed under penalty of perjury."
+      "desc": "Legally signed under penalty of perjury."
     },
     "s4": {
       "name": "Jurisdictional Protection",
-      "desc": "No single court can compel disclosure."
+      "desc": "No court or government can compel disclosure."
     },
     "s5": {
       "name": "Mutual Consent Contract",
-      "desc": "Adult consent. Legally binding."
+      "desc": "Legally binding adult consent."
     },
     "s6": {
       "name": "VAI-CHECK",
@@ -91,11 +91,11 @@
     },
     "s7": {
       "name": "TrueRevu",
-      "desc": "Your history. Your reputation. Protected."
+      "desc": "Community history. Verified. Unspoofable."
     },
     "s8": {
       "name": "DateGuard",
-      "desc": "Someone always knows."
+      "desc": "Personalized real-time emergency response."
     },
     "s9": {
       "name": "VaiPulse",
@@ -126,6 +126,7 @@
       "identityExposure": "Identity Exposure",
       "preventScams": "Scam Prevention",
       "realtimeIntel": "Real-time Local Intel",
+      "personalizedEmergency": "Personalized Emergency Response",
       "cost": "Cost"
     },
     "values": {
@@ -150,14 +151,16 @@
     "p5": "Sit back. Hold our beer.",
     "p6": "You ain't seen nothing yet.",
     "divider": "───────────────────",
-    "p7": "Safety is the foundation. Free forever.",
+    "p7": "Safety is the foundation, and it's free.",
+    "p7b": "Not freemium. Not watered down. Free.",
+    "p7c": "Because Vairify will never put a price on safety.",
     "p8": "Premium? That's our flex.",
     "p8b": "$29.99/month.",
     "p9": "You'll get it because it brings real value and convenience.",
     "p10": "Not because you have to have it to be protected."
   },
   "premium": {
-    "title": "This is what showing off looks like.",
+    "title": "This is what real convenience looks like.",
     "features": {
       "f1": { "name": "VAIRIDATE", "desc": "Your entire online business in one place." },
       "f2": { "name": "VAIRIPAY", "desc": "Stop carrying cash. Non-traceable. No fees." },
@@ -185,13 +188,15 @@
     "p9": "Not in months, years, or decades.",
     "p10": "Days.",
     "p11": "Then we'll test it and release it. On schedule, on time, every time.",
-    "p12": "We're launching with the safety core. And then every five days, we'll release another premium feature — tweaked and approved by you."
+    "p12": "We're launching with the Vairify Safety Core. And then every five days, we'll release another premium feature — tweaked and approved by you."
   },
   "tiers": {
     "title": "What you need to do now.",
     "subtitle": "Fill out the form. Reserve your tier.",
     "notWaitlist": "This is not a waiting list.",
     "impact": "You are reserving your place in one of the tiers that will have a real impact moving forward.",
+    "reserveCallout": "Reserve your tier today — $0.",
+    "reserveDetails": "On opening day, you'll have 24 hours to complete registration and lock your spot.",
     "cards": {
       "fc": {
         "icon": "🔥",

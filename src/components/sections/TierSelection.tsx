@@ -152,10 +152,20 @@ export default function TierSelection() {
         </div>
 
         {/* Tier Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {tiers.map((tier) => (
             <TierCard key={tier.tier} {...tier} />
           ))}
+        </div>
+
+        {/* $0 Reserve Callout */}
+        <div className="max-w-2xl mx-auto text-center p-8 bg-gradient-to-r from-[#00d4aa]/10 to-[#2dd4bf]/10 dark:from-[#00d4aa]/20 dark:to-[#2dd4bf]/20 rounded-xl border-2 border-[#00d4aa]/30">
+          <p className="text-2xl font-bold text-[#00d4aa] mb-3">
+            {t('tiers.reserveCallout')}
+          </p>
+          <p className="text-lg text-[var(--vai-text-secondary)]">
+            {t('tiers.reserveDetails')}
+          </p>
         </div>
       </div>
     </section>

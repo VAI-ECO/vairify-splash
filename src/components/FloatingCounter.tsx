@@ -17,11 +17,18 @@ const generateViewerCount = (): number => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-// Fluctuate count slightly
+// Fluctuate count slightly with bias toward +1
 const fluctuateCount = (current: number): number => {
-  const change = Math.floor(Math.random() * 7) - 3; // -3 to +3
+  // Random value 0-1, with bias toward positive (60% chance of +1, 20% chance of +2, 10% chance of -1, 10% chance of -2)
+  const rand = Math.random();
+  let change: number;
+  if (rand < 0.6) change = 1;      // 60% chance of +1
+  else if (rand < 0.8) change = 2;  // 20% chance of +2
+  else if (rand < 0.9) change = -1; // 10% chance of -1
+  else change = -2;                 // 10% chance of -2
+
   const newCount = current + change;
-  return Math.max(12, Math.min(65, newCount)); // Clamp between 12-65
+  return Math.max(15, Math.min(65, newCount)); // Floor at 15, ceiling at 65
 };
 
 export default function FloatingCounter() {
@@ -29,12 +36,19 @@ export default function FloatingCounter() {
   const [viewerCount, setViewerCount] = useState(generateViewerCount());
 
   useEffect(() => {
-    // Fluctuate viewer count every 45-90 seconds
-    const interval = setInterval(() => {
+    // Fluctuate viewer count every 45-120 seconds
+    const fluctuate = () => {
       setViewerCount(prev => fluctuateCount(prev));
-    }, (45 + Math.random() * 45) * 1000); // 45-90 seconds
+      // Schedule next fluctuation with random interval
+      const nextInterval = (45 + Math.random() * 75) * 1000; // 45-120 seconds
+      setTimeout(fluctuate, nextInterval);
+    };
 
-    return () => clearInterval(interval);
+    // Initial fluctuation
+    const initialDelay = (45 + Math.random() * 75) * 1000;
+    const timeout = setTimeout(fluctuate, initialDelay);
+
+    return () => clearTimeout(timeout);
   }, []);
 
   return (

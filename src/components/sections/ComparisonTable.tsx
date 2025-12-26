@@ -18,6 +18,7 @@ const ROWS: RowConfig[] = [
   { key: 'identityExposure' },
   { key: 'preventScams' },
   { key: 'realtimeIntel' },
+  { key: 'personalizedEmergency' },
   { key: 'cost', highlight: true },
 ];
 
@@ -33,6 +34,7 @@ const VALUES: Record<string, [string, string, string, string]> = {
   identityExposure: ['never', 'everyTime', 'everyTime', 'everyTime'],
   preventScams: ['check', 'x', 'x', 'x'],
   realtimeIntel: ['check', 'x', 'x', 'x'],
+  personalizedEmergency: ['check', 'x', 'x', 'x'],
   cost: ['free', 'timeMoney', 'price', 'free'],
 };
 

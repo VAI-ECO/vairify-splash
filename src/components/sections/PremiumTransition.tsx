@@ -17,8 +17,10 @@ export default function PremiumTransition() {
 
         {/* Value proposition block */}
         <div className="space-y-3 text-lg text-[var(--vai-text-secondary)]">
-          <p>Safety is the foundation. Free forever.</p>
-          <p>
+          <p>Safety is the foundation, and it's free.</p>
+          <p>Not freemium. Not watered down. Free.</p>
+          <p>Because Vairify will never put a price on safety.</p>
+          <p className="mt-6">
             Premium? That's our flex.
             <span className="text-[#00d4aa] font-bold"> $29.99/month.</span>
           </p>
