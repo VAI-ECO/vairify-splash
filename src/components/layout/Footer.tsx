@@ -21,7 +21,7 @@ export default function Footer() {
             "
           >
             <img
-              src="/assets/vairify-logo-dark.svg"
+              src="/assets/vairify-logo-purple.svg"
               alt="Vairify"
               className="h-10 mx-auto"
             />

@@ -1,6 +1,6 @@
 export const ASSETS = {
   logo: {
-    dark: '/assets/Full logo dark Vairify.svg',
+    dark: '/assets/vairify-logo-purple.svg',
     favicon: '/assets/favicon:Icon Dark Vairify.svg',
   },
   favicons: {

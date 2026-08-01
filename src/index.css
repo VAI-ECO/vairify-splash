@@ -20,6 +20,18 @@
     --vai-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
     --vai-shadow-glow-gold: 0 0 20px rgba(255, 215, 0, 0.3);
     --vai-shadow-glow-teal: 0 0 20px rgba(0, 212, 170, 0.2);
+
+    /* New color system tokens */
+    --free-bg: #0B1120;
+    --free-bg-2: #0F172A;
+    --free-text: #FFFFFF;
+    --free-sub: #94A3B8;
+    --cp: #3B82F6;
+    --cp-card: #16294B;
+    --cp-glow: rgba(59,130,246,0.22);
+    --vf: #8B5CF6;
+    --vf-card: #221A46;
+    --vf-glow: rgba(139,92,246,0.22);
   }
 
   /* Dark mode overrides */
@@ -94,6 +106,182 @@
 
   .vai-section-secondary {
     background-color: var(--vai-bg-secondary);
+  }
+
+  /* Free capstone */
+  .capstone {
+    margin: 56px auto 0;
+    max-width: 760px;
+    text-align: center;
+    background: #080D1A;
+    border: 1px solid rgba(139,92,246,.28);
+    border-radius: 20px;
+    padding: 48px 32px 40px;
+    box-shadow: 0 30px 80px -50px var(--vf-glow);
+  }
+
+  .capstone .free {
+    font-size: clamp(56px,9vw,110px);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -.03em;
+  }
+
+  .capstone .free .pd {
+    color: var(--vf);
+  }
+
+  /* Paid section */
+  .tease {
+    background: #EFE9FF;
+    color: #0F172A;
+    text-align: center;
+    padding: 22px 24px;
+  }
+
+  .tease .arw {
+    color: #7C3AED;
+    font-weight: 800;
+    letter-spacing: .04em;
+  }
+
+  .tease .amt {
+    color: #7C3AED;
+    font-weight: 800;
+  }
+
+  .paid-band {
+    background: linear-gradient(180deg,#F6F1FF 0%,#ECE3FF 100%);
+    padding: 80px 24px 72px;
+  }
+
+  .paid-standard {
+    text-align: center;
+    font-weight: 900;
+    color: #1A1230;
+    font-size: clamp(26px,4vw,44px);
+    letter-spacing: -.02em;
+    line-height: 1.1;
+    margin-bottom: 14px;
+  }
+
+  .paid-standline {
+    text-align: center;
+    color: #5B4C7A;
+    font-size: clamp(15px,2vw,20px);
+    line-height: 1.4;
+    margin: 4px auto;
+    max-width: 680px;
+  }
+
+  .hl-new {
+    color: #fff;
+    background: #7C3AED;
+    font-weight: 900;
+    padding: 1px 10px;
+    border-radius: 6px;
+    letter-spacing: .02em;
+  }
+
+  .paid-want {
+    text-align: center;
+    color: #1A1230;
+    font-weight: 700;
+    font-size: clamp(15px,2vw,20px);
+    line-height: 1.45;
+    margin: 18px auto 0;
+    max-width: 600px;
+  }
+
+  .paid-price {
+    text-align: center;
+    font-weight: 900;
+    color: #1A1230;
+    font-size: clamp(52px,9vw,96px);
+    line-height: 1;
+    letter-spacing: -.03em;
+    margin-top: 34px;
+  }
+
+  .paid-price span {
+    font-size: .30em;
+    font-weight: 700;
+    color: #6B5B8A;
+    letter-spacing: 0;
+  }
+
+  .paid-leadin {
+    text-align: center;
+    color: #1A1230;
+    font-weight: 800;
+    font-size: clamp(18px,2.6vw,26px);
+    margin: 18px auto 0;
+    letter-spacing: -.01em;
+  }
+
+  .paid-grid {
+    max-width: 1120px;
+    margin: 44px auto 0;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 16px;
+  }
+
+  .pcard {
+    position: relative;
+    background: #C6A9EA;
+    border: 2px solid #2E1065;
+    border-radius: 16px;
+    padding: 22px 22px 24px;
+    box-shadow: 0 14px 34px -26px rgba(46,16,101,.5);
+  }
+
+  .pico {
+    width: 34px;
+    height: 34px;
+    color: #2E1065;
+    margin-bottom: 16px;
+  }
+
+  .pmark {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 26px;
+    height: 26px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('/brand/vairify-favicon-dark-clear.svg');
+  }
+
+  .pcard h3 {
+    font-size: 18px;
+    color: #1A1230;
+    font-weight: 700;
+    margin-bottom: 7px;
+  }
+
+  .pcard p {
+    font-size: 14px;
+    color: #3B2A5E;
+    line-height: 1.5;
+  }
+
+  @media(max-width:820px) {
+    .paid-grid {
+      grid-template-columns: repeat(2,1fr);
+    }
+  }
+
+  @media(max-width:560px) {
+    .paid-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .wrap {
+    max-width: 1120px;
+    margin: 0 auto;
   }
 }
 

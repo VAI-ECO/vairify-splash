@@ -24,7 +24,7 @@
     },
     "step3": {
       "title": "STAY PROTECTED",
-      "desc": "DateGuard. TrueRevu. VaiPulse. Always on. Always free."
+      "desc": "DateGuard. TrueRevu. VAIPulse. Always on. Always free."
     },
     "link": "How ChainPass V.A.I. works →"
   },
@@ -98,7 +98,7 @@
       "desc": "Personalized real-time emergency response."
     },
     "s9": {
-      "name": "VaiPulse",
+      "name": "VAIPulse",
       "desc": "Real-time intel. Wherever you are."
     }
   },
@@ -201,13 +201,13 @@
       "fc": {
         "icon": "🔥",
         "name": "FOUNDING COUNCIL",
-        "spots": "First 500",
+        "spots": "First 100",
         "benefits": ["Policies", "Features", "Everything"]
       },
       "fm": {
         "icon": "⚡",
         "name": "FIRST MOVERS",
-        "spots": "Next 2,500",
+        "spots": "Next 2,900",
         "benefits": ["Voting Rights", "Early Access"]
       },
       "ea": {
@@ -227,7 +227,7 @@
       "public": "📋 Public"
     },
     "rows": {
-      "spots": { "label": "Spots", "fc": "500", "fm": "2,500", "ea": "7,000", "public": "Unlimited" },
+      "spots": { "label": "Spots", "fc": "100", "fm": "2,900", "ea": "7,000", "public": "Unlimited" },
       "vairify": { "label": "Vairify", "fc": "FREE", "fm": "FREE", "ea": "FREE", "public": "FREE" },
       "premium": { "label": "Premium", "fc": "FREE LIFETIME", "fm": "FREE 1 YEAR", "ea": "FREE 6 MONTHS", "public": "$29.99/mo" },
       "vaiCoupon": { "label": "ChainPass V.A.I. — On Us", "fc": "$99 VALUE — FREE", "fm": "We pay $49", "ea": "We pay $20", "public": "$99/year" },
@@ -306,7 +306,7 @@
     },
     "spot": "Spot",
     "coupon": {
-      "title": "YOUR COUPON CODE",
+      "title": "YOUR CHAINPASS COUPON CODE",
       "copy": "COPY CODE",
       "copied": "COPIED!",
       "note": "Save this! You'll need it for ChainPass V.A.I. and Premium."

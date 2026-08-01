@@ -4,8 +4,8 @@ import type { Tier, TierCount } from '../types';
 import { TIER_CONFIG } from '../types';
 
 const DEFAULT_COUNTS: TierCount[] = [
-  { tier: 'founding_council', reserved: 153, total: 500, remaining: 347 },
-  { tier: 'first_mover', reserved: 0, total: 2500, remaining: 2500 },
+  { tier: 'founding_council', reserved: 153, total: 250, remaining: 97 },
+  { tier: 'first_mover', reserved: 0, total: 2750, remaining: 2750 },
   { tier: 'early_access', reserved: 0, total: 7000, remaining: 7000 },
 ];
 

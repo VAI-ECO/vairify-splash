@@ -59,18 +59,38 @@ export default function ReservationFlow({ onSuccess }: ReservationFlowProps) {
 
   // Default: show email form
   return (
-    <ReservationForm
-      onSuccess={handleReservationSuccess}
-      governanceAnswers={governanceAnswers}
-      onTierSelected={(tier: Tier) => {
-        setSelectedTier(tier);
-        // When tier is selected, determine if we need to show governance flow
-        if (tier === 'founding_council') {
-          setStep('governance_questions');
-        } else if (tier === 'first_mover' || tier === 'early_access') {
-          setStep('governance_preview');
-        }
-      }}
-    />
+    <>
+      {/* Trust Reminder */}
+      <div style={{
+        textAlign: 'center',
+        padding: '32px 24px',
+        maxWidth: '600px',
+        margin: '0 auto',
+      }}>
+        <p style={{
+          fontSize: '16px',
+          fontWeight: 600,
+          color: '#64748b',
+          lineHeight: 1.6,
+        }}>
+          Safety is free. Premium is optional.<br />
+          Your tier reserves your convenience package.
+        </p>
+      </div>
+
+      <ReservationForm
+        onSuccess={handleReservationSuccess}
+        governanceAnswers={governanceAnswers}
+        onTierSelected={(tier: Tier) => {
+          setSelectedTier(tier);
+          // When tier is selected, determine if we need to show governance flow
+          if (tier === 'founding_council') {
+            setStep('governance_questions');
+          } else if (tier === 'first_mover' || tier === 'early_access') {
+            setStep('governance_preview');
+          }
+        }}
+      />
+    </>
   );
 }

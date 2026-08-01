@@ -52,7 +52,7 @@ export const TIER_CONFIG: Record<Tier, TierConfig> = {
   founding_council: {
     id: 'founding_council',
     name: 'Founding Council',
-    spots: 500,
+    spots: 250,
     icon: '🔥',
     color: 'text-vai-gold',
     borderColor: 'border-vai-gold',
@@ -60,7 +60,7 @@ export const TIER_CONFIG: Record<Tier, TierConfig> = {
   first_mover: {
     id: 'first_mover',
     name: 'First Movers',
-    spots: 2500,
+    spots: 2750,
     icon: '⚡',
     color: 'text-vai-blue',
     borderColor: 'border-vai-blue',
@@ -74,3 +74,24 @@ export const TIER_CONFIG: Record<Tier, TierConfig> = {
     borderColor: 'border-vai-blue',
   },
 };
+
+// Governance & Voting Types
+export interface Question {
+  id: string;
+  section: string;
+  prompt: string;
+  options: string[];
+}
+
+export interface VoteSubmission {
+  questionId: string;
+  answer: string;
+  email?: string;
+  createdAt: string;
+}
+
+export interface VoteResults {
+  option: string;
+  count: number;
+  percentage: number;
+}

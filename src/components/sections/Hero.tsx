@@ -44,14 +44,9 @@ export default function Hero() {
         {/* Logo - appears first */}
         <div className={`flex justify-center mb-6 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
           <img
-            src="/assets/vairify-logo-light.svg"
+            src="/assets/vairify-logo-purple.svg"
             alt="Vairify"
-            className="h-[10.14rem] md:h-[13.52rem] dark:hidden"
-          />
-          <img
-            src="/assets/vairify-logo-dark.svg"
-            alt="Vairify"
-            className="h-[10.14rem] md:h-[13.52rem] hidden dark:block"
+            className="h-[10.14rem] md:h-[13.52rem]"
           />
         </div>
 

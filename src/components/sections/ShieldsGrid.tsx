@@ -10,15 +10,20 @@ interface Shield {
   provider: 'chainpass' | 'vairify';
   videoUrl?: string;
   showPlayButton?: boolean;
+  documentUrl?: string;
+  documentButtonText?: string;
 }
 
 const CHAINPASS_VIDEO_URL = 'https://example.com/chainpass-demo.mp4'; // Replace with actual URL
+const LAW_ENFORCEMENT_DISCLOSURE_URL = 'https://example.com/law-enforcement-disclosure.pdf'; // Replace with actual URL
+const MUTUAL_CONSENT_CONTRACT_URL = 'https://example.com/mutual-consent-contract.pdf'; // Replace with actual URL
+
 const SHIELDS: Shield[] = [
   { number: 1, nameKey: 'shields.s1.name', descKey: 'shields.s1.desc', provider: 'chainpass', videoUrl: CHAINPASS_VIDEO_URL, showPlayButton: true },
   { number: 2, nameKey: 'shields.s2.name', descKey: 'shields.s2.desc', provider: 'chainpass', videoUrl: CHAINPASS_VIDEO_URL },
-  { number: 3, nameKey: 'shields.s3.name', descKey: 'shields.s3.desc', provider: 'chainpass', videoUrl: CHAINPASS_VIDEO_URL },
+  { number: 3, nameKey: 'shields.s3.name', descKey: 'shields.s3.desc', provider: 'chainpass', videoUrl: CHAINPASS_VIDEO_URL, documentUrl: LAW_ENFORCEMENT_DISCLOSURE_URL, documentButtonText: 'Read Disclosure' },
   { number: 4, nameKey: 'shields.s4.name', descKey: 'shields.s4.desc', provider: 'vairify', videoUrl: 'https://example.com/shield-4.mp4', showPlayButton: true },
-  { number: 5, nameKey: 'shields.s5.name', descKey: 'shields.s5.desc', provider: 'vairify', videoUrl: 'https://example.com/shield-5.mp4', showPlayButton: true },
+  { number: 5, nameKey: 'shields.s5.name', descKey: 'shields.s5.desc', provider: 'vairify', videoUrl: 'https://example.com/shield-5.mp4', showPlayButton: true, documentUrl: MUTUAL_CONSENT_CONTRACT_URL, documentButtonText: 'Read Contract' },
   { number: 6, nameKey: 'shields.s6.name', descKey: 'shields.s6.desc', provider: 'vairify', videoUrl: 'https://example.com/shield-6.mp4', showPlayButton: true },
   { number: 7, nameKey: 'shields.s7.name', descKey: 'shields.s7.desc', provider: 'vairify', videoUrl: 'https://example.com/shield-7.mp4', showPlayButton: true },
   { number: 8, nameKey: 'shields.s8.name', descKey: 'shields.s8.desc', provider: 'vairify', videoUrl: 'https://example.com/shield-8.mp4', showPlayButton: true },
@@ -88,6 +93,8 @@ export default function ShieldsGrid() {
                 description={t(shield.descKey)}
                 videoUrl={shield.videoUrl}
                 showVideoButton={shield.showPlayButton}
+                documentUrl={shield.documentUrl}
+                documentButtonText={shield.documentButtonText}
                 onClick={handleChainpassClick}
                 highlighted={cpHighlighted}
               />
@@ -123,6 +130,8 @@ export default function ShieldsGrid() {
                 description={t(shield.descKey)}
                 videoUrl={shield.videoUrl}
                 showVideoButton={shield.showPlayButton}
+                documentUrl={shield.documentUrl}
+                documentButtonText={shield.documentButtonText}
               />
             ))}
           </div>

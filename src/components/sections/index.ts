@@ -16,3 +16,5 @@ export { default as ReservationFlow } from './ReservationFlow';
 export { default as GovernanceQuestions } from './GovernanceQuestions';
 export { default as GovernancePreview } from './GovernancePreview';
 export { default as Confirmation } from './Confirmation';
+export { default as FreeCapstone } from './FreeCapstone';
+export { default as PaidSection } from './PaidSection';

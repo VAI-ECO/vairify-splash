@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
 import { useScrollPosition } from '../../hooks/useScrollPosition';
-import ThemeToggle from './ThemeToggle';
 
 export default function Nav() {
   const { t } = useTranslation();
@@ -47,18 +46,11 @@ export default function Nav() {
               dark:focus:ring-offset-[#0a0a0f] rounded
             "
           >
-            <div className="bg-white rounded-lg p-2">
-              <img
-                src="/assets/vairify-logo-legacy.svg"
-                alt="Vairify"
-                className="h-[3.25rem] dark:hidden"
-              />
-              <img
-                src="/assets/vairify-logo-legacy.svg"
-                alt="Vairify"
-                className="h-[3.25rem] hidden dark:block"
-              />
-            </div>
+            <img
+              src="/assets/vairify-logo-purple.svg"
+              alt="Vairify"
+              className="h-[3.25rem]"
+            />
           </a>
 
           <div className="hidden md:flex items-center gap-8">
@@ -103,8 +95,6 @@ export default function Nav() {
           </button>
         </div>
       </nav>
-
-      <ThemeToggle />
     </>
   );
 }

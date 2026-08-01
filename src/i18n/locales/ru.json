@@ -195,13 +195,13 @@
       "fc": {
         "icon": "🔥",
         "name": "FOUNDING COUNCIL",
-        "spots": "First 500",
+        "spots": "First 250",
         "benefits": ["Policies", "Features", "Everything"]
       },
       "fm": {
         "icon": "⚡",
         "name": "FIRST MOVERS",
-        "spots": "Next 2,500",
+        "spots": "Next 2,750",
         "benefits": ["Voting Rights", "Early Access"]
       },
       "ea": {
@@ -221,7 +221,7 @@
       "public": "📋 Public"
     },
     "rows": {
-      "spots": { "label": "Spots", "fc": "500", "fm": "2,500", "ea": "7,000", "public": "Unlimited" },
+      "spots": { "label": "Spots", "fc": "250", "fm": "2,750", "ea": "7,000", "public": "Unlimited" },
       "vairify": { "label": "Vairify", "fc": "FREE", "fm": "FREE", "ea": "FREE", "public": "FREE" },
       "premium": { "label": "Premium", "fc": "FREE LIFETIME", "fm": "FREE 1 YEAR", "ea": "FREE 6 MONTHS", "public": "$29.99/mo" },
       "vaiCoupon": { "label": "V.A.I. Coupon", "fc": "$99 FREE", "fm": "$49 OFF", "ea": "$20 OFF", "public": "$99/year" },
