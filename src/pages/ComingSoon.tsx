@@ -25,7 +25,7 @@ export default function ComingSoon() {
         alignItems: 'center',
         justifyContent: 'center',
         background: 'radial-gradient(ellipse at top center, #14203D 0%, #0B1120 45%, #020617 100%)',
-        padding: '80px 24px 60px',
+        padding: '40px 24px 40px',
         position: 'relative'
       }}>
         {/* Purple glow */}
@@ -54,7 +54,7 @@ export default function ComingSoon() {
             fontSize: 'clamp(28px,4.5vw,42px)',
             fontWeight: 900,
             color: '#8B5CF6',
-            marginBottom: '16px',
+            marginBottom: '12px',
             letterSpacing: '-0.02em'
           }}>
             Vairify<span style={{ color: '#3B82F6' }}>.</span>
@@ -67,7 +67,7 @@ export default function ComingSoon() {
             color: '#94A3B8',
             textTransform: 'uppercase',
             letterSpacing: '0.15em',
-            marginBottom: '24px'
+            marginBottom: '16px'
           }}>
             Launching soon
           </div>
@@ -78,7 +78,7 @@ export default function ComingSoon() {
             fontWeight: 900,
             color: '#FFFFFF',
             lineHeight: 1.1,
-            marginBottom: '32px',
+            marginBottom: '20px',
             letterSpacing: '-0.02em'
           }}>
             The standard is<br />
@@ -90,7 +90,7 @@ export default function ComingSoon() {
             fontSize: 'clamp(20px,3vw,28px)',
             fontWeight: 900,
             color: '#FFFFFF',
-            marginBottom: '24px',
+            marginBottom: '16px',
             lineHeight: 1.3
           }}>
             Anonymity. Accountability.
@@ -103,7 +103,7 @@ export default function ComingSoon() {
             color: '#FFFFFF',
             lineHeight: 1.5,
             maxWidth: '640px',
-            margin: '0 auto 24px'
+            margin: '0 auto 16px'
           }}>
             The most advanced protection available today.<br />
             Onboard in minutes. Applied in seconds.<br />
@@ -116,11 +116,50 @@ export default function ComingSoon() {
             fontSize: 'clamp(24px,3.5vw,32px)',
             fontWeight: 900,
             color: '#FFFFFF',
-            marginBottom: '28px',
+            marginBottom: '40px',
             lineHeight: 1.2
           }}>
             That's why we made it <span style={{ color: '#00a884' }}>free</span>.
           </p>
+
+          {/* Three-column strip */}
+          <div style={{
+            maxWidth: '960px',
+            margin: '0 auto 40px',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+            gap: '32px',
+            textAlign: 'center',
+            padding: '120px 24px',
+            background: '#0F172A',
+            borderRadius: '16px',
+            border: '1px solid #131C31'
+          }}>
+            <div>
+              <div style={{ fontSize: '54px', fontWeight: 700, color: '#B79BF6', marginBottom: '24px' }}>
+                9 Shields of Protection
+              </div>
+              <div style={{ fontSize: '36px', color: '#94A3B8' }}>
+                Free, for everyone
+              </div>
+            </div>
+            <div>
+              <div style={{ fontSize: '54px', fontWeight: 700, color: '#8FB8F5', marginBottom: '24px' }}>
+                One V.A.I. Every platform.
+              </div>
+              <div style={{ fontSize: '36px', color: '#94A3B8' }}>
+                Powered by ChainPass
+              </div>
+            </div>
+            <div>
+              <div style={{ fontSize: '54px', fontWeight: 700, color: '#B79BF6', marginBottom: '24px' }}>
+                Premium convenience
+              </div>
+              <div style={{ fontSize: '36px', color: '#94A3B8' }}>
+                When you want it — $29.99/mo
+              </div>
+            </div>
+          </div>
 
           {/* Pill */}
           <div style={{
@@ -133,7 +172,7 @@ export default function ComingSoon() {
             fontSize: '14px',
             fontWeight: 700,
             color: '#CDBBFA',
-            marginBottom: '32px'
+            marginBottom: '24px'
           }}>
             <span style={{ color: '#FFFFFF', fontWeight: 700 }}>Sign up to get notified</span>
             <span style={{ margin: '0 6px' }}>—</span>
@@ -221,50 +260,9 @@ export default function ComingSoon() {
         </div>
       </main>
 
-      {/* Strip */}
-      <section style={{
-        background: '#0F172A',
-        borderTop: '1px solid #131C31',
-        padding: '40px 24px'
-      }}>
-        <div style={{
-          maxWidth: '960px',
-          margin: '0 auto',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-          gap: '32px',
-          textAlign: 'center'
-        }}>
-          <div>
-            <div style={{ fontSize: '18px', fontWeight: 700, color: '#B79BF6', marginBottom: '8px' }}>
-              9 Shields of Protection
-            </div>
-            <div style={{ fontSize: '12px', color: '#94A3B8' }}>
-              Free, for everyone
-            </div>
-          </div>
-          <div>
-            <div style={{ fontSize: '18px', fontWeight: 700, color: '#8FB8F5', marginBottom: '8px' }}>
-              One V.A.I. Every platform.
-            </div>
-            <div style={{ fontSize: '12px', color: '#94A3B8' }}>
-              Powered by ChainPass
-            </div>
-          </div>
-          <div>
-            <div style={{ fontSize: '18px', fontWeight: 700, color: '#B79BF6', marginBottom: '8px' }}>
-              Premium convenience
-            </div>
-            <div style={{ fontSize: '12px', color: '#94A3B8' }}>
-              When you want it — $29.99/mo
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer style={{
-        padding: '32px 24px',
+        padding: '24px 24px',
         textAlign: 'center',
         fontSize: '12px',
         color: '#4B5872',
