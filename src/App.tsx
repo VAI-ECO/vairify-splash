@@ -10,8 +10,8 @@ import ComingSoon from './pages/ComingSoon';
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/coming-soon" element={<ComingSoon />} />
+      <Route path="/" element={<ComingSoon />} />
+      <Route path="/splash" element={<Home />} />
       <Route path="/faq" element={<FAQ />} />
       <Route path="/terms" element={<Terms />} />
       <Route path="/privacy" element={<Privacy />} />

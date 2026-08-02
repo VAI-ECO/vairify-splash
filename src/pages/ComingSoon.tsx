@@ -98,28 +98,28 @@ export default function ComingSoon() {
 
           {/* Body */}
           <div style={{
-            fontSize: '16px',
-            fontWeight: 600,
-            color: '#94A3B8',
-            lineHeight: 1.75,
-            maxWidth: '540px',
+            fontSize: 'clamp(18px,2.5vw,22px)',
+            fontWeight: 800,
+            color: '#FFFFFF',
+            lineHeight: 1.5,
+            maxWidth: '640px',
             margin: '0 auto 24px'
           }}>
             The most advanced protection available today.<br />
             Onboard in minutes. Applied in seconds.<br />
-            Giving everyone peace of mind before, during, and after.<br />
+            Giving everyone certainty — before, during, and after.<br />
             The only reason to risk your freedom, reputation, or your life is cost.
           </div>
 
           {/* Free line */}
           <p style={{
-            fontSize: 'clamp(20px,3vw,26px)',
+            fontSize: 'clamp(24px,3.5vw,32px)',
             fontWeight: 900,
-            color: '#E2E8F0',
+            color: '#FFFFFF',
             marginBottom: '28px',
             lineHeight: 1.2
           }}>
-            That's why we made it <span style={{ color: '#8B5CF6' }}>free.</span>
+            That's why we made it <span style={{ color: '#00a884' }}>free</span>.
           </p>
 
           {/* Pill */}
