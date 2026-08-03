@@ -90,7 +90,7 @@ export default function PremiumCloser() {
           So we built a <span style={{ color: '#8B5CF6' }}>Founding Council</span> — and gave the rules to the people who live under them.
         </p>
 
-        {/* Like everything Vairify does... */}
+        {/* Because Vairify does everything for a reason... */}
         <p style={{
           fontSize: 'clamp(20px, 3.2vw, 30px)',
           fontWeight: 800,
@@ -99,7 +99,18 @@ export default function PremiumCloser() {
           color: '#FFFFFF',
           marginTop: '26px'
         }}>
-          Like everything Vairify does, we did it for a reason.
+          Because Vairify does everything for a reason.
+        </p>
+
+        <p style={{
+          fontSize: 'clamp(20px, 3.2vw, 30px)',
+          fontWeight: 800,
+          letterSpacing: '-0.02em',
+          lineHeight: 1.14,
+          color: '#FFFFFF',
+          marginTop: '10px'
+        }}>
+          We spent more than three years listening and building.
         </p>
         <p style={{
           fontSize: 'clamp(20px, 3.2vw, 30px)',
@@ -109,7 +120,40 @@ export default function PremiumCloser() {
           color: '#FFFFFF',
           marginTop: '10px'
         }}>
-          You're the ones who will use it.
+          And we learned a lot.
+        </p>
+
+        <p style={{
+          fontSize: 'clamp(20px, 3.2vw, 30px)',
+          fontWeight: 800,
+          letterSpacing: '-0.02em',
+          lineHeight: 1.14,
+          color: '#FFFFFF',
+          marginTop: '26px'
+        }}>
+          But the most important thing we learned is this:
+        </p>
+
+        <p style={{
+          fontSize: 'clamp(22px, 3.5vw, 34px)',
+          fontWeight: 900,
+          letterSpacing: '-0.02em',
+          lineHeight: 1.14,
+          color: '#FFFFFF',
+          marginTop: '10px'
+        }}>
+          We don't know everything.
+        </p>
+
+        <p style={{
+          fontSize: 'clamp(20px, 3.2vw, 30px)',
+          fontWeight: 800,
+          letterSpacing: '-0.02em',
+          lineHeight: 1.14,
+          color: '#FFFFFF',
+          marginTop: '26px'
+        }}>
+          We built Vairify for this community.
         </p>
         <p style={{
           fontSize: 'clamp(20px, 3.2vw, 30px)',
@@ -119,7 +163,40 @@ export default function PremiumCloser() {
           color: '#FFFFFF',
           marginTop: '10px'
         }}>
-          This soft launch is for you to tell us your final vision.
+          So this community should help shape it.
+        </p>
+
+        <p style={{
+          fontSize: 'clamp(20px, 3.2vw, 30px)',
+          fontWeight: 800,
+          letterSpacing: '-0.02em',
+          lineHeight: 1.14,
+          color: '#FFFFFF',
+          marginTop: '26px'
+        }}>
+          We built it first because we know nothing is perfect.
+        </p>
+
+        <p style={{
+          fontSize: 'clamp(20px, 3.2vw, 30px)',
+          fontWeight: 800,
+          letterSpacing: '-0.02em',
+          lineHeight: 1.14,
+          color: '#FFFFFF',
+          marginTop: '26px'
+        }}>
+          Now, when you tell us what you want changed, what you want added, and what your vision should look like, we can bring it to life.
+        </p>
+
+        <p style={{
+          fontSize: 'clamp(20px, 3.2vw, 30px)',
+          fontWeight: 800,
+          letterSpacing: '-0.02em',
+          lineHeight: 1.14,
+          color: '#FFFFFF',
+          marginTop: '10px'
+        }}>
+          Not in months.
         </p>
         <p style={{
           fontSize: 'clamp(20px, 3.2vw, 30px)',
@@ -129,7 +206,7 @@ export default function PremiumCloser() {
           color: '#FFFFFF',
           marginTop: '10px'
         }}>
-          Tell us what you want to change. Or add. We'll tweak it.
+          Not in years.
         </p>
         <p style={{
           fontSize: 'clamp(20px, 3.2vw, 30px)',
@@ -139,7 +216,7 @@ export default function PremiumCloser() {
           color: '#FFFFFF',
           marginTop: '10px'
         }}>
-          Not in months, years, or decades.
+          Not in decades.
         </p>
 
         {/* Days. - the punch */}
@@ -151,29 +228,7 @@ export default function PremiumCloser() {
           color: '#00a884',
           marginTop: '14px'
         }}>
-          Days.
-        </p>
-
-        {/* Final section */}
-        <p style={{
-          fontSize: 'clamp(20px, 3.2vw, 30px)',
-          fontWeight: 800,
-          letterSpacing: '-0.02em',
-          lineHeight: 1.14,
-          color: '#FFFFFF',
-          marginTop: '26px'
-        }}>
-          Then we'll test it and release it. On schedule, every time.
-        </p>
-        <p style={{
-          fontSize: 'clamp(20px, 3.2vw, 30px)',
-          fontWeight: 800,
-          letterSpacing: '-0.02em',
-          lineHeight: 1.14,
-          color: '#FFFFFF',
-          marginTop: '10px'
-        }}>
-          We're launching with the Vairify Safety Core. Then the premium features — one after another, in days, not quarters — tweaked and approved by you.
+          In days.
         </p>
       </div>
     </section>
