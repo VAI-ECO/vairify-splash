@@ -17,13 +17,15 @@ export default function ShieldCard({
   title,
   description,
   videoUrl = null,
-  showVideoButton = true,
+  showVideoButton: _showVideoButton = true, // Prefixed with _ since video buttons are temporarily disabled
   documentUrl = null,
   documentButtonText = 'Read Document',
   onClick,
   highlighted = false,
 }: ShieldCardProps) {
-  const handleVideoPlay = (e: React.MouseEvent) => {
+  // Video play handler - temporarily unused while video buttons are disabled
+  // @ts-expect-error - Intentionally unused pending video content
+  const _handleVideoPlay = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (videoUrl) {
       // TODO: Implement video modal or player
