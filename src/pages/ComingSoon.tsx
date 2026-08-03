@@ -127,35 +127,73 @@ export default function ComingSoon() {
             That's why we made it <span style={{ color: '#00a884' }}>free</span>.
           </p>
 
-          {/* Three-part strip: Shields → ChainPass → Premium */}
+          {/* Choice section: Shields left, Premium right */}
           <div style={{
-            maxWidth: '600px',
-            margin: '0 auto 28px',
-            textAlign: 'center'
+            maxWidth: '700px',
+            margin: '0 auto 28px'
           }}>
-            {/* 9 Shields of Protection */}
-            <div style={{ marginBottom: '20px' }}>
-              <div style={{
-                fontSize: 'clamp(24px,3.5vw,32px)',
-                fontWeight: 900,
-                color: '#8B5CF6',
-                marginBottom: '6px',
-                lineHeight: 1.2
-              }}>
-                9 Shields<br />
-                of Protection
+            {/* Shields and Premium side by side */}
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+                gap: '24px',
+                textAlign: 'center',
+                marginBottom: '20px'
+              }}
+              className="shields-premium-row"
+            >
+              <div>
+                <div style={{
+                  fontSize: 'clamp(24px,3.5vw,32px)',
+                  fontWeight: 900,
+                  color: '#8B5CF6',
+                  marginBottom: '6px',
+                  lineHeight: 1.2
+                }}>
+                  9 Shields<br />
+                  of Protection
+                </div>
+                <div style={{
+                  fontSize: 'clamp(14px,2vw,18px)',
+                  color: '#94A3B8',
+                  lineHeight: 1.3
+                }}>
+                  Free, for everyone
+                </div>
               </div>
-              <div style={{
-                fontSize: 'clamp(14px,2vw,18px)',
-                color: '#94A3B8',
-                lineHeight: 1.3
-              }}>
-                Free, for everyone
+              <div>
+                <div style={{
+                  fontSize: 'clamp(24px,3.5vw,32px)',
+                  fontWeight: 900,
+                  color: '#8B5CF6',
+                  marginBottom: '6px',
+                  lineHeight: 1.2
+                }}>
+                  Premium<br />
+                  convenience
+                </div>
+                <div style={{
+                  fontSize: 'clamp(14px,2vw,18px)',
+                  color: '#94A3B8',
+                  lineHeight: 1.3
+                }}>
+                  When you want it — $29.99/mo
+                </div>
               </div>
             </div>
 
-            {/* ChainPass lockup */}
-            <div style={{ marginBottom: '20px' }}>
+            <style>{`
+              @media (max-width: 640px) {
+                .shields-premium-row {
+                  grid-template-columns: 1fr !important;
+                  gap: 20px !important;
+                }
+              }
+            `}</style>
+
+            {/* ChainPass lockup centered below */}
+            <div style={{ textAlign: 'center' }}>
               <img
                 src="/chainpass-lockup.png"
                 alt="ChainPass - Zero Knowledge Architecture"
@@ -166,27 +204,6 @@ export default function ComingSoon() {
                   margin: '0 auto'
                 }}
               />
-            </div>
-
-            {/* Premium convenience */}
-            <div style={{ marginBottom: '0' }}>
-              <div style={{
-                fontSize: 'clamp(24px,3.5vw,32px)',
-                fontWeight: 900,
-                color: '#8B5CF6',
-                marginBottom: '6px',
-                lineHeight: 1.2
-              }}>
-                Premium<br />
-                convenience
-              </div>
-              <div style={{
-                fontSize: 'clamp(14px,2vw,18px)',
-                color: '#94A3B8',
-                lineHeight: 1.3
-              }}>
-                When you want it — $29.99/mo
-              </div>
             </div>
           </div>
 
