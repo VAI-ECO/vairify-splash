@@ -194,6 +194,16 @@ export default function ComingSoon() {
 
             {/* ChainPass lockup centered below */}
             <div style={{ textAlign: 'center' }}>
+              <div style={{
+                fontSize: 'clamp(12px,1.5vw,14px)',
+                fontWeight: 700,
+                color: '#94A3B8',
+                textTransform: 'uppercase',
+                letterSpacing: '0.1em',
+                marginBottom: '8px'
+              }}>
+                Powered by
+              </div>
               <img
                 src="/chainpass-lockup.png"
                 alt="ChainPass - Zero Knowledge Architecture"
