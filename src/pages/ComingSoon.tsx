@@ -127,26 +127,35 @@ export default function ComingSoon() {
             That's why we made it <span style={{ color: '#00a884' }}>free</span>.
           </p>
 
-          {/* Three-part strip */}
+          {/* Three-part strip: Shields → ChainPass → Premium */}
           <div style={{
-            maxWidth: '800px',
-            margin: '0 auto 28px'
+            maxWidth: '600px',
+            margin: '0 auto 28px',
+            textAlign: 'center'
           }}>
-            {/* Line 1: One V.A.I. with ChainPass lockup */}
-            <div style={{
-              textAlign: 'center',
-              marginBottom: '24px'
-            }}>
+            {/* 9 Shields of Protection */}
+            <div style={{ marginBottom: '20px' }}>
               <div style={{
                 fontSize: 'clamp(24px,3.5vw,32px)',
                 fontWeight: 900,
-                color: '#5170FF',
-                marginBottom: '8px',
+                color: '#8B5CF6',
+                marginBottom: '6px',
                 lineHeight: 1.2
               }}>
-                One V.A.I.<br />
-                Every platform.
+                9 Shields<br />
+                of Protection
               </div>
+              <div style={{
+                fontSize: 'clamp(14px,2vw,18px)',
+                color: '#94A3B8',
+                lineHeight: 1.3
+              }}>
+                Free, for everyone
+              </div>
+            </div>
+
+            {/* ChainPass lockup */}
+            <div style={{ marginBottom: '20px' }}>
               <img
                 src="/chainpass-lockup.png"
                 alt="ChainPass - Zero Knowledge Architecture"
@@ -159,64 +168,26 @@ export default function ComingSoon() {
               />
             </div>
 
-            {/* Line 2: Shields and Premium side by side */}
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-                gap: '24px',
-                textAlign: 'center'
-              }}
-              className="shields-premium-row"
-            >
-              <div>
-                <div style={{
-                  fontSize: 'clamp(24px,3.5vw,32px)',
-                  fontWeight: 900,
-                  color: '#8B5CF6',
-                  marginBottom: '6px',
-                  lineHeight: 1.2
-                }}>
-                  9 Shields<br />
-                  of Protection
-                </div>
-                <div style={{
-                  fontSize: 'clamp(14px,2vw,18px)',
-                  color: '#94A3B8',
-                  lineHeight: 1.3
-                }}>
-                  Free, for everyone
-                </div>
+            {/* Premium convenience */}
+            <div style={{ marginBottom: '0' }}>
+              <div style={{
+                fontSize: 'clamp(24px,3.5vw,32px)',
+                fontWeight: 900,
+                color: '#8B5CF6',
+                marginBottom: '6px',
+                lineHeight: 1.2
+              }}>
+                Premium<br />
+                convenience
               </div>
-              <div>
-                <div style={{
-                  fontSize: 'clamp(24px,3.5vw,32px)',
-                  fontWeight: 900,
-                  color: '#8B5CF6',
-                  marginBottom: '6px',
-                  lineHeight: 1.2
-                }}>
-                  Premium<br />
-                  convenience
-                </div>
-                <div style={{
-                  fontSize: 'clamp(14px,2vw,18px)',
-                  color: '#94A3B8',
-                  lineHeight: 1.3
-                }}>
-                  When you want it — $29.99/mo
-                </div>
+              <div style={{
+                fontSize: 'clamp(14px,2vw,18px)',
+                color: '#94A3B8',
+                lineHeight: 1.3
+              }}>
+                When you want it — $29.99/mo
               </div>
             </div>
-
-            <style>{`
-              @media (max-width: 640px) {
-                .shields-premium-row {
-                  grid-template-columns: 1fr !important;
-                  gap: 20px !important;
-                }
-              }
-            `}</style>
           </div>
 
           {/* Pill */}
