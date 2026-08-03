@@ -124,7 +124,7 @@ export default function ComingSoon() {
             marginBottom: '28px',
             lineHeight: 1.2
           }}>
-            That's why we made it <span style={{ color: '#00a884' }}>free</span>.
+            That's why we made every safety feature <span style={{ color: '#00a884' }}>free</span>.
           </p>
 
           {/* Choice section: Shields left, Premium right */}
