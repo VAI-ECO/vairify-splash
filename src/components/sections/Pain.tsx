@@ -5,55 +5,100 @@ export default function Pain() {
 
   return (
     <section className="py-24 px-6 vai-section-secondary border-y border-[var(--vai-border)]">
-      <div className="max-w-3xl mx-auto text-center">
+      <div style={{ maxWidth: '820px', margin: '0 auto', textAlign: 'center' }}>
         {/* Opening */}
-        <h2 className="
-          text-3xl md:text-4xl font-bold
-          text-[var(--vai-text-primary)]
-          mb-8
-        ">
+        <p style={{
+          fontSize: 'clamp(28px, 4.6vw, 46px)',
+          fontWeight: 900,
+          letterSpacing: '-0.02em',
+          lineHeight: 1.12,
+          color: '#FFFFFF',
+          marginBottom: '22px'
+        }}>
           {t('pain.p1')}
-        </h2>
+        </p>
 
-        {/* Pain copy */}
-        <div className="space-y-4 text-lg text-[var(--vai-text-secondary)]">
-          <p>
-            {t('pain.p2')}
-          </p>
-          <p className="font-medium text-[var(--vai-text-primary)]">
-            {t('pain.p3')}
-          </p>
-          <p>
-            {t('pain.p4')}
-          </p>
-          <p className="text-xl font-bold text-[var(--vai-text-primary)]">
-            {t('pain.p5')}
-          </p>
-          <p>
-            {t('pain.p5b')}
-          </p>
-        </div>
+        {/* Body line 1 */}
+        <p style={{
+          fontSize: 'clamp(22px, 3.5vw, 34px)',
+          fontWeight: 800,
+          letterSpacing: '-0.02em',
+          lineHeight: 1.12,
+          color: '#FFFFFF',
+          marginTop: '12px'
+        }}>
+          They all take <span style={{ color: '#ef4444' }}>TIME</span>. Cost <span style={{ color: '#ef4444' }}>MONEY</span>. And we convince ourselves they work.
+        </p>
 
-        {/* "free." with emphasis - if this section contains it */}
-        {t('pain.p6').toLowerCase().includes('free') && (
-          <div className="mt-8 mb-8">
-            <span className="
-              text-6xl md:text-7xl font-black
-              text-[#00d4aa]
-              drop-shadow-lg
-            ">
-              {t('pain.p6')}
-            </span>
-          </div>
-        )}
+        {/* Emphasis line 1 */}
+        <p style={{
+          fontSize: 'clamp(24px, 3.9vw, 38px)',
+          fontWeight: 900,
+          letterSpacing: '-0.02em',
+          lineHeight: 1.12,
+          color: '#ef4444',
+          marginTop: '12px'
+        }}>
+          {t('pain.p3')}
+        </p>
 
-        {!t('pain.p6').toLowerCase().includes('free') && (
-          <p className="text-2xl text-[var(--vai-text-secondary)] mt-8 mb-4">
-            {t('pain.p6')}
-          </p>
-        )}
+        {/* Body line 2 */}
+        <p style={{
+          fontSize: 'clamp(22px, 3.5vw, 34px)',
+          fontWeight: 800,
+          letterSpacing: '-0.02em',
+          lineHeight: 1.12,
+          color: '#FFFFFF',
+          marginTop: '12px'
+        }}>
+          {t('pain.p4')}
+        </p>
 
-        <p className="text-[var(--vai-text-primary)] font-medium text-lg mt-4">
+        {/* Emphasis line 2 */}
+        <p style={{
+          fontSize: 'clamp(24px, 3.9vw, 38px)',
+          fontWeight: 900,
+          letterSpacing: '-0.02em',
+          lineHeight: 1.12,
+          color: '#ef4444',
+          marginTop: '12px'
+        }}>
+          {t('pain.p5')}
+        </p>
+
+        {/* Body line 3 */}
+        <p style={{
+          fontSize: 'clamp(22px, 3.5vw, 34px)',
+          fontWeight: 800,
+          letterSpacing: '-0.02em',
+          lineHeight: 1.12,
+          color: '#FFFFFF',
+          marginTop: '12px'
+        }}>
+          {t('pain.p5b')}
+        </p>
+
+        {/* Punch line 1 */}
+        <p style={{
+          fontSize: 'clamp(28px, 4.6vw, 44px)',
+          fontWeight: 900,
+          letterSpacing: '-0.02em',
+          lineHeight: 1.12,
+          color: '#ef4444',
+          marginTop: '20px'
+        }}>
+          {t('pain.p6')}
+        </p>
+
+        {/* Punch line 2 */}
+        <p style={{
+          fontSize: 'clamp(28px, 4.6vw, 44px)',
+          fontWeight: 900,
+          letterSpacing: '-0.02em',
+          lineHeight: 1.12,
+          color: '#FFFFFF',
+          marginTop: '20px'
+        }}>
           {t('pain.p7')}
         </p>
       </div>

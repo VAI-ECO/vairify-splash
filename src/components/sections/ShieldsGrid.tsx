@@ -46,15 +46,15 @@ export default function ShieldsGrid() {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <p className="text-[var(--vai-text-secondary)] text-lg mb-2">
-            {t('shields.subtitle') || 'We call it the'}
+          <p className="text-lg mb-2" style={{ fontWeight: 800, color: '#FFFFFF' }}>
+            {t('shields.subtitle') || 'We call it'}
           </p>
           <h2 className="text-4xl md:text-5xl font-black">
-            <span className="text-[var(--vai-text-primary)]">9 </span>
-            <span className="text-[#00d4aa]">{t('shields.title') || 'Shields of Protection.'}</span>
+            <span style={{ color: '#FFFFFF' }}>9 </span>
+            <span style={{ color: '#00a884' }}>{t('shields.title') || 'Shields of Protection'}</span>
           </h2>
-          <p className="text-[var(--vai-text-secondary)] text-lg mt-2">
-            {t('shields.tagline') || "You'll call it the new standard."}
+          <p className="text-lg mt-2" style={{ color: '#94A3B8' }}>
+            You'll call it <span style={{ fontWeight: 800, color: '#00a884' }}>peace of mind</span>.
           </p>
         </div>
 

@@ -78,12 +78,54 @@ export default function ComparisonTable() {
       <div className="max-w-5xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-black">
-            <span className="text-[var(--vai-text-primary)]">Hope </span>
-            <span className="text-[var(--vai-text-muted)]">vs. </span>
-            <span className="text-[#00d4aa]">Protection</span>
+          {/* Lead line */}
+          <h1 style={{
+            fontSize: 'clamp(23px, 4vw, 40px)',
+            fontWeight: 900,
+            letterSpacing: '-0.025em',
+            lineHeight: 1.1,
+            color: '#FFFFFF',
+            textAlign: 'center',
+            maxWidth: '900px',
+            margin: '0 auto',
+            marginBottom: '24px'
+          }}>
+            Every meeting without VAIrify is a chance.
+          </h1>
+
+          {/* Title row */}
+          <h2 style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '16px',
+            flexWrap: 'wrap',
+            marginTop: '24px'
+          }}>
+            <span style={{
+              fontSize: 'clamp(32px, 6vw, 62px)',
+              fontWeight: 900,
+              letterSpacing: '-0.03em',
+              color: '#ef4444'
+            }}>
+              Chance
+            </span>
+            <span style={{
+              fontSize: 'clamp(24px, 4.4vw, 44px)',
+              fontWeight: 900,
+              color: '#64748B'
+            }}>
+              vs.
+            </span>
+            <img
+              src="/assets/vairify-logo-purple.svg"
+              alt="Vairify"
+              style={{ height: 'clamp(32px, 6vw, 62px)' }}
+            />
           </h2>
-          <p className="text-[var(--vai-text-secondary)] mt-2">
+
+          {/* Subtitle */}
+          <p className="text-[var(--vai-text-secondary)] mt-5">
             {t('comparison.subtitle')}
           </p>
         </div>

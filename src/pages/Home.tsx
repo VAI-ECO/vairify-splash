@@ -9,6 +9,7 @@ import {
   Pain,
   ShieldsEntry,
   FreeCapstone,
+  DeclarationBridge,
   PaidSection,
   ComparisonTable,
   ShieldsGrid,
@@ -53,10 +54,11 @@ export default function Home() {
         <HowItWorks />
         <Pain />
         <ShieldsEntry />
+        <ShieldsGrid />
         <FreeCapstone />
+        <DeclarationBridge />
         <PaidSection />
         <ComparisonTable />
-        <ShieldsGrid />
         <MidCta />
         <PremiumCloser />
         <Warning />

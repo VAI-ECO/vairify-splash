@@ -17,4 +17,5 @@ export { default as GovernanceQuestions } from './GovernanceQuestions';
 export { default as GovernancePreview } from './GovernancePreview';
 export { default as Confirmation } from './Confirmation';
 export { default as FreeCapstone } from './FreeCapstone';
+export { default as DeclarationBridge } from './DeclarationBridge';
 export { default as PaidSection } from './PaidSection';

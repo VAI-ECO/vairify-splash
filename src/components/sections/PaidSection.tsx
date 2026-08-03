@@ -6,37 +6,77 @@ export default function PaidSection() {
     { icon: 'p-bolt', title: 'Vairify Now', desc: 'Toggle available and appear to nearby verified clients.' },
     { icon: 'p-mail', title: 'Invitations', desc: 'Broadcast what you want. Get matched in minutes.' },
     { icon: 'p-search', title: 'Directory', desc: 'Search and discover across the community.' },
-    { icon: 'p-qr', title: 'QR & VAI Number', desc: 'One code links straight to your profile.' },
+    { icon: 'p-qr', title: 'Custom QR Codes', desc: 'Your own QR code and VAI number, styled in your colors. Share it anywhere.' },
     { icon: 'p-feed', title: 'Social Feed', desc: 'Verified posts and updates from the community.' },
     { icon: 'p-chat', title: 'Encrypted Chat', desc: 'Private, secure messaging between verified members. No burner apps.' },
     { icon: 'p-vault', title: 'VAI Vault', desc: 'Secure storage for your V.A.I. and documents. Synced across every platform.' },
     { icon: 'p-hub', title: 'Social Hub', desc: 'Post once, share across every platform.' },
     { icon: 'p-rose', title: 'Golden Roses', desc: '200 Golden Roses every month, included.' },
+    { icon: 'p-qr', title: 'Custom Badges', desc: 'A Vairify badge in your colors, with your VAI number. Put it on your site, your ads, anywhere.' },
+    { icon: 'p-qr', title: 'Customizable Profile Pages', desc: 'Your colors, your layout, your page. Built for you.' },
+    { icon: 'p-rose', title: 'Revenue Sharing', desc: 'Earn on every member you bring to Vairify.' },
   ];
 
   return (
     <>
-      {/* Transition tease */}
-      <div className="tease">
-        <span className="arw">↓ Then, separately</span> — what convenience costs. <span className="amt">$29.99/mo.</span>
-      </div>
-
       {/* Paid band */}
       <div className="paid-band">
         <div className="wrap">
-          {/* Header stack */}
-          <p className="paid-standard">
-            <img src="/brand/vairify-icon-light-clear.svg" alt="Vairify" style={{ height: '56px', width: 'auto', verticalAlign: '-12px', marginRight: '10px' }} />
-            is the standard.
+          {/* Downward chevron - purple, bobs down */}
+          <svg
+            className="chevron-down"
+            width="30"
+            height="30"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            style={{
+              display: 'block',
+              margin: '0 auto 14px',
+              stroke: '#8B5CF6',
+              strokeWidth: 4.5,
+              strokeLinecap: 'round',
+              strokeLinejoin: 'round',
+              animation: 'bob-dn 1.6s ease-in-out infinite'
+            }}
+          >
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+
+          {/* Declaration C: Optional divider */}
+          <p style={{
+            fontSize: 'clamp(11px,1.6vw,13px)',
+            fontWeight: 800,
+            letterSpacing: '0.16em',
+            textTransform: 'uppercase',
+            color: '#7C3AED',
+            textAlign: 'center',
+            marginBottom: '16px'
+          }}>
+            ↓ Everything below this line is optional.
           </p>
-          <p className="paid-standline">
-            The first standard in safety and protection. Free, always.
+
+          {/* Declaration C: NEW standard */}
+          <p style={{
+            fontSize: 'clamp(16px,2.5vw,23px)',
+            fontWeight: 800,
+            letterSpacing: '-0.015em',
+            color: '#1A1230',
+            textAlign: 'center',
+            marginBottom: '24px'
+          }}>
+            The <span style={{
+              background: '#8B5CF6',
+              color: '#FFFFFF',
+              fontWeight: 900,
+              borderRadius: '7px',
+              padding: '1px 9px',
+              display: 'inline-block'
+            }}>NEW</span> standard — convenience.
           </p>
-          <p className="paid-standline">
-            And the <span className="hl-new">NEW</span> standard in convenience.
-          </p>
+
+          {/* Keep only second sentence */}
           <p className="paid-want">
-            Our Premium Package is built for convenience — all the features that make life easier.<br />
             You don't need Premium to be safe. You choose Premium because it brings real value.
           </p>
           <div className="paid-price">
