@@ -49,44 +49,21 @@ export default function ComingSoon() {
           position: 'relative',
           zIndex: 1
         }}>
-          {/* Logo + Wordmark */}
+          {/* Logo */}
           <div style={{
-            display: 'flex',
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '20px',
             marginBottom: '12px'
-          }}
-          className="logo-wordmark-container"
-          >
+          }}>
             <img
               src="/vairify-logo.svg"
               alt="Vairify"
               style={{
                 width: 'clamp(88px, 12vw, 120px)',
-                height: 'auto'
+                height: 'auto',
+                display: 'block',
+                margin: '0 auto'
               }}
             />
-            <div style={{
-              fontSize: 'clamp(28px,4.5vw,42px)',
-              fontWeight: 900,
-              color: '#8B5CF6',
-              letterSpacing: '-0.02em',
-              lineHeight: 1
-            }}>
-              Vairify<span style={{ color: '#3B82F6' }}>.</span>
-            </div>
           </div>
-
-          <style>{`
-            @media (max-width: 640px) {
-              .logo-wordmark-container {
-                flex-direction: column !important;
-                gap: 12px !important;
-              }
-            }
-          `}</style>
 
           {/* Eyebrow */}
           <div style={{
