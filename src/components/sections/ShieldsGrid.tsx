@@ -54,7 +54,7 @@ export default function ShieldsGrid() {
             <span style={{ color: '#00a884' }}>{t('shields.title') || 'Shields of Protection'}</span>
           </h2>
           <p className="text-lg mt-2" style={{ color: '#94A3B8' }}>
-            You'll call it <span style={{ fontWeight: 800, color: '#00a884' }}>peace of mind</span>.
+            You'll call it <span style={{ fontWeight: 800, color: '#FFFFFF' }}>peace of mind</span>.
           </p>
         </div>
 
@@ -63,24 +63,13 @@ export default function ShieldsGrid() {
           <div className="text-center mb-6">
             <span className="
               inline-block px-4 py-2
-              bg-[#1a1a5e] dark:bg-[#4F7DF3]/20
-              text-white dark:text-[#4F7DF3]
+              bg-[#3B82F6]/20
+              text-white
               text-sm font-bold uppercase tracking-wider
               rounded-full
             ">
               {t('shields.chainpassLabel')}
             </span>
-            <p className="mt-2 text-[var(--vai-text-secondary)]">
-              {t('shields.chainpassSubtitle')}
-            </p>
-            <a
-              href="https://chainpass.id"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block mt-2 text-[#4F7DF3] text-sm hover:underline"
-            >
-              {t('shields.chainpassLink')}
-            </a>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -110,13 +99,18 @@ export default function ShieldsGrid() {
         <div>
           <div className="text-center mb-6">
             <span className="
-              inline-block px-4 py-2
-              bg-[#00d4aa]/10 dark:bg-[#00d4aa]/20
-              text-[#00a884] dark:text-[#00d4aa]
+              inline-flex items-center gap-2 px-4 py-2
+              bg-[#8B5CF6]/20
+              text-white
               text-sm font-bold uppercase tracking-wider
               rounded-full
             ">
-              {t('shields.vairifyLabel')}
+              <img
+                src="/logo/va-fl-01.png"
+                alt="Vairify"
+                style={{ height: '16px', width: 'auto' }}
+              />
+              PROTECTION LAYER
             </span>
           </div>
 

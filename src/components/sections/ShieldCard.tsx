@@ -95,9 +95,9 @@ export default function ShieldCard({
       </p>
 
       {/* Action Buttons */}
-      <div className="absolute bottom-4 right-4 flex gap-2">
-        {/* Document Button */}
-        {documentUrl && (
+      {documentUrl && (
+        <div className="absolute bottom-4 right-4">
+          {/* Document Button */}
           <button
             onClick={handleDocumentOpen}
             className="
@@ -113,34 +113,24 @@ export default function ShieldCard({
           >
             {documentButtonText}
           </button>
-        )}
+        </div>
+      )}
 
-        {/* Play Button */}
-        {showVideoButton && videoUrl && (
+      {/* VIDEO PLAY BUTTON - COMMENTED OUT PENDING VIDEO CONTENT
+      {showVideoButton && videoUrl && (
+        <div className="absolute bottom-4 right-4">
           <button
             onClick={handleVideoPlay}
-            className="
-              w-11 h-11
-              border-2 border-white/30
-              rounded-full
-              bg-transparent
-              flex items-center justify-center
-              transition-all duration-200
-              hover:border-white/50 hover:bg-white/5
-            "
+            className="w-11 h-11 border-2 border-white/30 rounded-full bg-transparent flex items-center justify-center transition-all duration-200 hover:border-white/50 hover:bg-white/5"
             aria-label="Play video"
           >
-            {/* Play icon triangle */}
-            <svg
-              className="w-4 h-4 text-white/70 ml-0.5"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
+            <svg className="w-4 h-4 text-white/70 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
               <path d="M8 5v14l11-7z" />
             </svg>
           </button>
-        )}
-      </div>
+        </div>
+      )}
+      */}
     </div>
   );
 }

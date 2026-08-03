@@ -7,7 +7,7 @@
   "hero": {
     "headline1": "NEVER HAVE ANOTHER UNVERIFIED ENCOUNTER.",
     "headline2": "V.A.I. — Verified Anonymous Identity",
-    "subhead": "5 minutes to onboard. Seconds to Vairify. Always free.",
+    "subhead": "5 minutes to onboard. Seconds to Vairify. Safety features always free.",
     "cta": "RESERVE YOUR TIER — $0",
     "scroll": "See how it works",
     "spots": "Founding Council spots closing soon"
@@ -15,8 +15,8 @@
   "howItWorks": {
     "title": "HOW IT WORKS",
     "step1": {
-      "title": "GET YOUR ChainPass V.A.I.",
-      "desc": "5 minutes. One-time setup via ChainPass V.A.I."
+      "title": "GET YOUR V.A.I.",
+      "desc": "5 minutes. Issued by ChainPass. Yours to keep."
     },
     "step2": {
       "title": "VERIFY IN SECONDS",
@@ -24,7 +24,7 @@
     },
     "step3": {
       "title": "STAY PROTECTED",
-      "desc": "DateGuard. TrueRevu. VAIPulse. Always on. Always free."
+      "desc": "VAI-CHECK. DateGuard. TrueRevu. VAIPulse. The tools that keep you safe — always on, always free."
     },
     "link": "How ChainPass V.A.I. works →"
   },
@@ -46,7 +46,7 @@
     "p4b": "And it's not even close.",
     "p5": "Real protection. Every encounter. In seconds.",
     "p6": "No hoping. No guessing. No taking chances.",
-    "p7": "And then we made it",
+    "p7": "And then we made every safety feature",
     "p8": "FREE.",
     "p9": "Because if even one person can't afford it —",
     "p10": "it can't be a standard. Or real protection.",

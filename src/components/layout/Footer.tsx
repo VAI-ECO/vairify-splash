@@ -24,8 +24,7 @@ export default function Footer() {
               src="/logo/va-fl-01.png"
               alt="Vairify"
               className="h-10 mx-auto"
-              width="162"
-              height="39"
+              style={{ width: 'auto' }}
             />
           </a>
           <div className="mt-4 flex justify-center">

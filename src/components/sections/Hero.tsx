@@ -47,8 +47,7 @@ export default function Hero() {
             src="/logo/va-il-08.png"
             alt="Vairify"
             className="h-[10.14rem] md:h-[13.52rem]"
-            width="auto"
-            height="216"
+            style={{ width: 'auto' }}
           />
         </div>
 

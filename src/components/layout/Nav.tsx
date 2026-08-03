@@ -50,37 +50,9 @@ export default function Nav() {
               src="/logo/va-fl-01.png"
               alt="Vairify"
               className="h-[3.25rem]"
-              width="162"
-              height="39"
+              style={{ width: 'auto' }}
             />
           </a>
-
-          <div className="hidden md:flex items-center gap-8">
-            <a
-              href="/faq"
-              className="
-                text-gray-600 dark:text-gray-400 
-                hover:text-gray-900 dark:hover:text-white 
-                transition-colors
-                focus:outline-none focus:ring-2 focus:ring-[#4F7DF3] rounded px-2 py-1
-              "
-            >
-              {t('nav.faq')}
-            </a>
-            <a
-              href="https://docs.chainpass.id"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-                text-gray-600 dark:text-gray-400 
-                hover:text-gray-900 dark:hover:text-white 
-                transition-colors
-                focus:outline-none focus:ring-2 focus:ring-[#4F7DF3] rounded px-2 py-1
-              "
-            >
-              {t('nav.apis')}
-            </a>
-          </div>
 
           <button
             onClick={scrollToForm}
