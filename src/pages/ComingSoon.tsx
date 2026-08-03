@@ -301,7 +301,7 @@ export default function ComingSoon() {
             margin: '0 auto',
             lineHeight: 1.6
           }}>
-            No spam. One email when we open. <span style={{ fontWeight: 700, color: '#B79BF6' }}>Safety features are free forever</span> — that will never change.
+            No spam. One email when we open. <span style={{ fontWeight: 700, color: '#B79BF6' }}>Verification and safety features are free forever</span> — that will never change.
           </p>
         </div>
       </main>
