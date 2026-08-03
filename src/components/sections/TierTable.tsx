@@ -87,7 +87,7 @@ export default function TierTable() {
         </div>
         <div className="mt-8 space-y-2 text-sm text-gray-400">
           <p>* Vairify covers part or all of your ChainPass V.A.I. fee as a signup bonus. Your coupon code will be emailed to you for use at ChainPass V.A.I. upon completing your official registration.</p>
-          <p>** "Free" does not begin until the last scheduled premium feature has shipped.</p>
+          <p><sup>†</sup> "Free" does not begin until the last scheduled premium feature has shipped.</p>
         </div>
       </div>
     </section>
