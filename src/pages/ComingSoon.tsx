@@ -25,7 +25,7 @@ export default function ComingSoon() {
         alignItems: 'center',
         justifyContent: 'center',
         background: 'radial-gradient(ellipse at top center, #14203D 0%, #0B1120 45%, #020617 100%)',
-        padding: '40px 24px 40px',
+        padding: '32px 24px 32px',
         position: 'relative'
       }}>
         {/* Purple glow */}
@@ -49,16 +49,44 @@ export default function ComingSoon() {
           position: 'relative',
           zIndex: 1
         }}>
-          {/* Logo */}
+          {/* Logo + Wordmark */}
           <div style={{
-            fontSize: 'clamp(28px,4.5vw,42px)',
-            fontWeight: 900,
-            color: '#8B5CF6',
-            marginBottom: '12px',
-            letterSpacing: '-0.02em'
-          }}>
-            Vairify<span style={{ color: '#3B82F6' }}>.</span>
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '20px',
+            marginBottom: '12px'
+          }}
+          className="logo-wordmark-container"
+          >
+            <img
+              src="/vairify-logo.svg"
+              alt="Vairify"
+              style={{
+                width: 'clamp(88px, 12vw, 120px)',
+                height: 'auto'
+              }}
+            />
+            <div style={{
+              fontSize: 'clamp(28px,4.5vw,42px)',
+              fontWeight: 900,
+              color: '#8B5CF6',
+              letterSpacing: '-0.02em',
+              lineHeight: 1
+            }}>
+              Vairify<span style={{ color: '#3B82F6' }}>.</span>
+            </div>
           </div>
+
+          <style>{`
+            @media (max-width: 640px) {
+              .logo-wordmark-container {
+                flex-direction: column !important;
+                gap: 12px !important;
+              }
+            }
+          `}</style>
 
           {/* Eyebrow */}
           <div style={{
@@ -67,7 +95,7 @@ export default function ComingSoon() {
             color: '#94A3B8',
             textTransform: 'uppercase',
             letterSpacing: '0.15em',
-            marginBottom: '16px'
+            marginBottom: '14px'
           }}>
             Launching soon
           </div>
@@ -78,7 +106,7 @@ export default function ComingSoon() {
             fontWeight: 900,
             color: '#FFFFFF',
             lineHeight: 1.1,
-            marginBottom: '20px',
+            marginBottom: '18px',
             letterSpacing: '-0.02em'
           }}>
             The standard is<br />
@@ -90,7 +118,7 @@ export default function ComingSoon() {
             fontSize: 'clamp(20px,3vw,28px)',
             fontWeight: 900,
             color: '#FFFFFF',
-            marginBottom: '16px',
+            marginBottom: '14px',
             lineHeight: 1.3
           }}>
             Anonymity. Accountability.
@@ -103,7 +131,7 @@ export default function ComingSoon() {
             color: '#FFFFFF',
             lineHeight: 1.5,
             maxWidth: '640px',
-            margin: '0 auto 16px'
+            margin: '0 auto 12px'
           }}>
             The most advanced protection available today.<br />
             Onboard in minutes. Applied in seconds.<br />
@@ -116,49 +144,102 @@ export default function ComingSoon() {
             fontSize: 'clamp(24px,3.5vw,32px)',
             fontWeight: 900,
             color: '#FFFFFF',
-            marginBottom: '40px',
+            marginBottom: '28px',
             lineHeight: 1.2
           }}>
             That's why we made it <span style={{ color: '#00a884' }}>free</span>.
           </p>
 
-          {/* Three-column strip */}
+          {/* Three-part strip */}
           <div style={{
-            maxWidth: '960px',
-            margin: '0 auto 40px',
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-            gap: '32px',
-            textAlign: 'center',
-            padding: '120px 24px',
-            background: '#0F172A',
-            borderRadius: '16px',
-            border: '1px solid #131C31'
+            maxWidth: '800px',
+            margin: '0 auto 28px'
           }}>
-            <div>
-              <div style={{ fontSize: '54px', fontWeight: 700, color: '#B79BF6', marginBottom: '24px' }}>
-                9 Shields of Protection
+            {/* Line 1: One V.A.I. with ChainPass lockup */}
+            <div style={{
+              textAlign: 'center',
+              marginBottom: '24px'
+            }}>
+              <div style={{
+                fontSize: 'clamp(24px,3.5vw,32px)',
+                fontWeight: 900,
+                color: '#5170FF',
+                marginBottom: '8px',
+                lineHeight: 1.2
+              }}>
+                One V.A.I.<br />
+                Every platform.
               </div>
-              <div style={{ fontSize: '36px', color: '#94A3B8' }}>
-                Free, for everyone
+              <img
+                src="/chainpass-lockup.png"
+                alt="ChainPass - Zero Knowledge Architecture"
+                style={{
+                  width: 'clamp(260px, 45vw, 360px)',
+                  height: 'auto',
+                  display: 'block',
+                  margin: '0 auto'
+                }}
+              />
+            </div>
+
+            {/* Line 2: Shields and Premium side by side */}
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+                gap: '24px',
+                textAlign: 'center'
+              }}
+              className="shields-premium-row"
+            >
+              <div>
+                <div style={{
+                  fontSize: 'clamp(24px,3.5vw,32px)',
+                  fontWeight: 900,
+                  color: '#8B5CF6',
+                  marginBottom: '6px',
+                  lineHeight: 1.2
+                }}>
+                  9 Shields<br />
+                  of Protection
+                </div>
+                <div style={{
+                  fontSize: 'clamp(14px,2vw,18px)',
+                  color: '#94A3B8',
+                  lineHeight: 1.3
+                }}>
+                  Free, for everyone
+                </div>
+              </div>
+              <div>
+                <div style={{
+                  fontSize: 'clamp(24px,3.5vw,32px)',
+                  fontWeight: 900,
+                  color: '#8B5CF6',
+                  marginBottom: '6px',
+                  lineHeight: 1.2
+                }}>
+                  Premium<br />
+                  convenience
+                </div>
+                <div style={{
+                  fontSize: 'clamp(14px,2vw,18px)',
+                  color: '#94A3B8',
+                  lineHeight: 1.3
+                }}>
+                  When you want it — $29.99/mo
+                </div>
               </div>
             </div>
-            <div>
-              <div style={{ fontSize: '54px', fontWeight: 700, color: '#8FB8F5', marginBottom: '24px' }}>
-                One V.A.I. Every platform.
-              </div>
-              <div style={{ fontSize: '36px', color: '#94A3B8' }}>
-                Powered by ChainPass
-              </div>
-            </div>
-            <div>
-              <div style={{ fontSize: '54px', fontWeight: 700, color: '#B79BF6', marginBottom: '24px' }}>
-                Premium convenience
-              </div>
-              <div style={{ fontSize: '36px', color: '#94A3B8' }}>
-                When you want it — $29.99/mo
-              </div>
-            </div>
+
+            <style>{`
+              @media (max-width: 640px) {
+                .shields-premium-row {
+                  grid-template-columns: 1fr !important;
+                  gap: 20px !important;
+                }
+              }
+            `}</style>
           </div>
 
           {/* Pill */}
@@ -172,7 +253,7 @@ export default function ComingSoon() {
             fontSize: '14px',
             fontWeight: 700,
             color: '#CDBBFA',
-            marginBottom: '24px'
+            marginBottom: '20px'
           }}>
             <span style={{ color: '#FFFFFF', fontWeight: 700 }}>Sign up to get notified</span>
             <span style={{ margin: '0 6px' }}>—</span>
@@ -185,7 +266,7 @@ export default function ComingSoon() {
               display: 'flex',
               gap: '12px',
               maxWidth: '440px',
-              margin: '0 auto 20px',
+              margin: '0 auto 16px',
               flexWrap: 'wrap',
               justifyContent: 'center'
             }}>
@@ -238,7 +319,7 @@ export default function ComingSoon() {
               border: '1px solid #8B5CF6',
               borderRadius: '12px',
               maxWidth: '440px',
-              margin: '0 auto 20px',
+              margin: '0 auto 16px',
               color: '#B79BF6',
               fontSize: '15px',
               fontWeight: 600
@@ -262,7 +343,7 @@ export default function ComingSoon() {
 
       {/* Footer */}
       <footer style={{
-        padding: '24px 24px',
+        padding: '20px 24px',
         textAlign: 'center',
         fontSize: '12px',
         color: '#4B5872',
