@@ -21,14 +21,25 @@ export default function Footer() {
             "
           >
             <img
-              src="/assets/vairify-logo-purple.svg"
+              src="/logo/va-fl-01.png"
               alt="Vairify"
               className="h-10 mx-auto"
+              width="162"
+              height="39"
             />
           </a>
-          <p className="text-gray-300 mt-4">
-            {t('footer.poweredBy')}
-          </p>
+          <div className="mt-4 flex justify-center">
+            <img
+              src="/logo/cp-ls-13.png"
+              alt="Powered by ChainPass"
+              className="h-auto"
+              style={{
+                width: 'clamp(200px, 30vw, 240px)'
+              }}
+              width="240"
+              height="120"
+            />
+          </div>
         </div>
 
         {/* Link columns */}

@@ -1,12 +1,12 @@
 export const ASSETS = {
   logo: {
-    dark: '/assets/vairify-logo-purple.svg',
-    favicon: '/assets/favicon:Icon Dark Vairify.svg',
+    dark: '/logo/va-fl-01.png',
+    favicon: '/icons/va-fa-01/icon-64.png',
   },
   favicons: {
-    chainpass: '/assets/Chainpass-Favicon-Icon-dark.svg',
-    vairify: '/assets/favicon:iconv2 Dark Vairify.svg',
-    vairifyLight: '/assets/favicon:iconv2 light Vairify.svg',
+    chainpass: '/logo/cp-ic-03.png',
+    vairify: '/logo/va-ic-01.png',
+    vairifyLight: '/logo/va-ic-02.png',
   },
   badges: {
     chainpass: '/assets/badge-chainpass.svg',

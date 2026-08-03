@@ -47,9 +47,11 @@ export default function Nav() {
             "
           >
             <img
-              src="/assets/vairify-logo-purple.svg"
+              src="/logo/va-fl-01.png"
               alt="Vairify"
               className="h-[3.25rem]"
+              width="162"
+              height="39"
             />
           </a>
 

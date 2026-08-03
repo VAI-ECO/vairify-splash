@@ -59,8 +59,8 @@ export default function ShieldCard({
         border: '1px solid rgba(255,255,255,0.55)'
       }}
     >
-      {/* ROW 1: Number and Favicon */}
-      <div className="flex items-center gap-2">
+      {/* ROW 1: Number (top left) */}
+      <div className="flex items-start justify-between">
         {/* Number */}
         <div
           className="text-[48px] font-bold text-white leading-none"
@@ -69,12 +69,12 @@ export default function ShieldCard({
           {number}
         </div>
 
-        {/* Favicon */}
+        {/* Favicon (top right) */}
         <img
           src={faviconSrc}
-          alt="Shield icon"
-          className="w-7 h-7 ml-2"
-          style={{ verticalAlign: 'middle' }}
+          alt=""
+          aria-hidden="true"
+          className="w-7 h-7"
         />
       </div>
 

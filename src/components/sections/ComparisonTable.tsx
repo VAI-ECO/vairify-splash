@@ -98,7 +98,7 @@ export default function ComparisonTable() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: '16px',
+            gap: '20px',
             flexWrap: 'wrap',
             marginTop: '24px'
           }}>
@@ -118,9 +118,12 @@ export default function ComparisonTable() {
               vs.
             </span>
             <img
-              src="/assets/vairify-logo-purple.svg"
+              src="/logo/va-fl-01.png"
               alt="Vairify"
-              style={{ height: 'clamp(32px, 6vw, 62px)' }}
+              style={{
+                height: 'clamp(44px, 8vw, 82px)',
+                width: 'auto'
+              }}
             />
           </h2>
 

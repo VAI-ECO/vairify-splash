@@ -87,7 +87,20 @@ export default function PaidSection() {
           {/* 12 cards grid */}
           <div className="paid-grid">
             {cards.map((card, index) => (
-              <div className="pcard" key={index}>
+              <div className="pcard" key={index} style={{ position: 'relative' }}>
+                {/* Corner badge - top right */}
+                <img
+                  src="/logo/va-ic-02.png"
+                  alt=""
+                  aria-hidden="true"
+                  style={{
+                    position: 'absolute',
+                    top: '12px',
+                    right: '12px',
+                    width: '24px',
+                    height: '24px'
+                  }}
+                />
                 <span className="pmark" aria-hidden="true"></span>
                 <svg className="pico">
                   <use href={`#${card.icon}`} />
