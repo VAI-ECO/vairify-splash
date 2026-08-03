@@ -49,31 +49,20 @@ export default function ComingSoon() {
           position: 'relative',
           zIndex: 1
         }}>
-          {/* Logo and wordmark */}
+          {/* Logo */}
           <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '20px',
-            flexWrap: 'wrap',
             marginBottom: '12px'
           }}>
             <img
               src="/vairify-logo.svg"
               alt="Vairify"
               style={{
-                height: 'clamp(88px, 12vw, 120px)',
-                width: 'auto'
+                width: 'clamp(88px, 12vw, 120px)',
+                height: 'auto',
+                display: 'block',
+                margin: '0 auto'
               }}
             />
-            <div style={{
-              fontSize: 'clamp(32px, 5vw, 48px)',
-              fontWeight: 900,
-              color: '#FFFFFF',
-              letterSpacing: '-0.02em'
-            }}>
-              Vairify.
-            </div>
           </div>
 
           {/* Eyebrow */}
@@ -122,8 +111,8 @@ export default function ComingSoon() {
             margin: '0 auto 12px'
           }}>
             The most advanced protection available today.<br />
-            Onboard in <span style={{ color: '#8B5CF6' }}>minutes</span>. Applied in <span style={{ color: '#8B5CF6' }}>seconds</span>.<br />
-            Giving everyone <span style={{ color: '#8B5CF6' }}>certainty</span> — before, during, and after.<br />
+            Onboard in <span style={{ color: '#00a884' }}>minutes</span>. Applied in <span style={{ color: '#00a884' }}>seconds</span>.<br />
+            Giving everyone <span style={{ color: '#00a884' }}>certainty</span> — before, during, and after.<br />
             The only reason to risk your freedom, reputation, or your life is cost.
           </div>
 
