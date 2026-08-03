@@ -138,62 +138,19 @@ export default function ComingSoon() {
             That's why we made every safety feature <span style={{ color: '#00a884', fontSize: 'clamp(32px,5vw,44px)', fontWeight: 900 }}>FREE</span>.
           </p>
 
-          {/* Three-part strip */}
+          {/* Choice section: Shields left, Premium right */}
           <div style={{
             maxWidth: '700px',
             margin: '0 auto 28px'
           }}>
-            {/* Line 1: One V.A.I. / Every platform */}
-            <div style={{ textAlign: 'center', marginBottom: '20px' }}>
-              <div style={{
-                fontSize: 'clamp(24px,3.5vw,32px)',
-                fontWeight: 900,
-                color: '#5170FF',
-                marginBottom: '4px',
-                lineHeight: 1.2
-              }}>
-                One V.A.I.
-              </div>
-              <div style={{
-                fontSize: 'clamp(14px,2vw,18px)',
-                fontWeight: 700,
-                color: '#5170FF',
-                marginBottom: '36px',
-                lineHeight: 1.3
-              }}>
-                Every platform.
-              </div>
-              {/* Powered by label */}
-              <div style={{
-                fontSize: 'clamp(10px,1.3vw,12px)',
-                fontWeight: 700,
-                color: '#94A3B8',
-                textTransform: 'uppercase',
-                letterSpacing: '0.1em',
-                marginBottom: '2px'
-              }}>
-                Powered by
-              </div>
-              {/* ChainPass lockup */}
-              <img
-                src="/chainpass-lockup.png"
-                alt="ChainPass - Zero Knowledge Architecture"
-                style={{
-                  width: 'clamp(260px, 45vw, 360px)',
-                  height: 'auto',
-                  display: 'block',
-                  margin: '0 auto'
-                }}
-              />
-            </div>
-
-            {/* Line 2: Shields and Premium side by side */}
+            {/* Shields and Premium side by side */}
             <div
               style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
                 gap: '24px',
-                textAlign: 'center'
+                textAlign: 'center',
+                marginBottom: '20px'
               }}
               className="shields-premium-row"
             >
@@ -205,7 +162,8 @@ export default function ComingSoon() {
                   marginBottom: '6px',
                   lineHeight: 1.2
                 }}>
-                  9 Shields of Protection
+                  9 Shields<br />
+                  of Protection
                 </div>
                 <div style={{
                   fontSize: 'clamp(14px,2vw,18px)',
@@ -223,7 +181,8 @@ export default function ComingSoon() {
                   marginBottom: '6px',
                   lineHeight: 1.2
                 }}>
-                  Premium convenience
+                  Premium<br />
+                  convenience
                 </div>
                 <div style={{
                   fontSize: 'clamp(14px,2vw,18px)',
@@ -243,6 +202,30 @@ export default function ComingSoon() {
                 }
               }
             `}</style>
+
+            {/* ChainPass lockup centered below */}
+            <div style={{ textAlign: 'center' }}>
+              <div style={{
+                fontSize: 'clamp(10px,1.3vw,12px)',
+                fontWeight: 700,
+                color: '#94A3B8',
+                textTransform: 'uppercase',
+                letterSpacing: '0.1em',
+                marginBottom: '4px'
+              }}>
+                Powered by
+              </div>
+              <img
+                src="/chainpass-lockup.png"
+                alt="ChainPass - Zero Knowledge Architecture"
+                style={{
+                  width: 'clamp(260px, 45vw, 360px)',
+                  height: 'auto',
+                  display: 'block',
+                  margin: '0 auto'
+                }}
+              />
+            </div>
           </div>
 
           {/* Pill */}
