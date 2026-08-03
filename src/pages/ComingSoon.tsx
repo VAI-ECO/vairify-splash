@@ -191,20 +191,6 @@ export default function ComingSoon() {
                 }
               }
             `}</style>
-
-            {/* ChainPass lockup centered below */}
-            <div style={{ textAlign: 'center' }}>
-              <img
-                src="/cp-ls-ca.png"
-                alt="ChainPass - Zero Knowledge Architecture"
-                style={{
-                  width: 'clamp(260px, 45vw, 360px)',
-                  height: 'auto',
-                  display: 'block',
-                  margin: '0 auto'
-                }}
-              />
-            </div>
           </div>
 
           {/* Pill */}
@@ -298,11 +284,25 @@ export default function ComingSoon() {
             fontSize: '13px',
             color: '#7C879E',
             maxWidth: '480px',
-            margin: '0 auto',
+            margin: '0 auto 28px',
             lineHeight: 1.6
           }}>
-            No spam. One email when we open. <span style={{ fontWeight: 700, color: '#B79BF6' }}>Verification and safety features are free forever</span> — that will never change.
+            No spam. One email when we open. <span style={{ fontWeight: 700, color: '#B79BF6' }}>Safety features are free forever</span> — that will never change.
           </p>
+
+          {/* ChainPass lockup - moved below signup form */}
+          <div style={{ textAlign: 'center' }}>
+            <img
+              src="/cp-ls-ca.png"
+              alt="ChainPass - Zero Knowledge Architecture"
+              style={{
+                width: 'clamp(260px, 45vw, 360px)',
+                height: 'auto',
+                display: 'block',
+                margin: '0 auto'
+              }}
+            />
+          </div>
         </div>
       </main>
 
