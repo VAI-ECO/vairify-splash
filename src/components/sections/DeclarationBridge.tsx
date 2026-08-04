@@ -1,97 +1,96 @@
 export default function DeclarationBridge() {
   return (
-    <section className="declaration-bridge">
-      {/* DARK SECTION with bordered FREE plate */}
+    <section className="declaration-bridge" style={{
+      background: '#C4B5FD' // Lavender page background
+    }}>
+      {/* DARK BLOCK 1 - contains FREE plate, bottom edge clipped to point */}
       <div style={{
+        position: 'relative',
         background: '#020617',
-        padding: '40px 20px 20px',
-        textAlign: 'center'
+        padding: '40px 20px 60px',
+        clipPath: 'polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%)'
       }}>
+        {/* FREE plate */}
         <div style={{
-          display: 'inline-block',
-          border: '1px solid rgba(255,255,255,0.2)',
-          borderRadius: '8px',
-          padding: '12px 24px',
-          background: 'rgba(255,255,255,0.05)'
+          textAlign: 'center',
+          marginBottom: '40px'
+        }}>
+          <div style={{
+            display: 'inline-block',
+            border: '1px solid rgba(255,255,255,0.2)',
+            borderRadius: '8px',
+            padding: '12px 24px',
+            background: 'rgba(255,255,255,0.05)'
+          }}>
+            <p style={{
+              fontSize: '16px',
+              fontWeight: 600,
+              color: '#FFFFFF',
+              letterSpacing: '0.02em',
+              margin: 0
+            }}>
+              Everything above this line is <span style={{
+                color: '#00a884',
+                fontWeight: 700,
+                textTransform: 'uppercase'
+              }}>FREE</span>
+            </p>
+          </div>
+        </div>
+
+        {/* FIRST caption in taper area */}
+        <div style={{
+          textAlign: 'center'
         }}>
           <p style={{
-            fontSize: '16px',
-            fontWeight: 600,
+            fontSize: '18px',
+            fontWeight: 500,
             color: '#FFFFFF',
-            letterSpacing: '0.02em',
-            margin: 0
+            margin: 0,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '8px',
+            flexWrap: 'wrap'
           }}>
-            Everything above this line is <span style={{
-              color: '#00a884',
+            <span>The</span>
+            <span style={{
+              display: 'inline-block',
+              background: '#8B5CF6',
+              color: '#FFFFFF',
+              padding: '4px 12px',
+              borderRadius: '6px',
               fontWeight: 700,
-              textTransform: 'uppercase'
-            }}>FREE</span>
+              fontSize: '18px'
+            }}>FIRST</span>
+            <span>Standard in Safety</span>
           </p>
         </div>
       </div>
 
-      {/* UPPER WEDGE - points DOWN (dark section's bottom edge) */}
-      <div style={{
-        position: 'relative',
-        background: '#020617',
-        height: '32px',
-        clipPath: 'polygon(0% 0%, 100% 0%, 60% 100%, 40% 100%)'
-      }} />
-
-      {/* UPPER CAPTION on lavender */}
-      <div style={{
-        background: '#C4B5FD',
-        padding: '16px 20px',
-        textAlign: 'center'
-      }}>
-        <p style={{
-          fontSize: '18px',
-          fontWeight: 500,
-          color: '#0F172A',
-          margin: 0,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '8px',
-          flexWrap: 'wrap'
-        }}>
-          <span>The</span>
-          <span style={{
-            display: 'inline-block',
-            background: '#8B5CF6',
-            color: '#FFFFFF',
-            padding: '4px 12px',
-            borderRadius: '6px',
-            fontWeight: 700,
-            fontSize: '18px'
-          }}>FIRST</span>
-          <span>Standard in Safety</span>
-        </p>
-      </div>
-
-      {/* THE BAND - purple, with large logo */}
+      {/* PURPLE BAND - flat, no clip */}
       <div style={{
         background: '#8B5CF6',
-        padding: '24px 20px',
+        padding: '32px 20px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         gap: '20px',
         flexWrap: 'wrap'
       }}>
-        {/* VAIRIFY all-white lockup - large */}
+        {/* VAIRIFY all-white lockup - NO pill, direct on purple */}
         <img
           src="/logo/va-fl-14.png"
           alt="Vairify"
           style={{
-            height: '52px',
+            height: '60px',
             width: 'auto'
           }}
         />
 
-        {/* Band text - matched cap height */}
+        {/* Band text */}
         <span style={{
-          fontSize: '52px',
+          fontSize: '60px',
           fontWeight: 900,
           letterSpacing: '-0.03em',
           color: '#FFFFFF',
@@ -101,46 +100,44 @@ export default function DeclarationBridge() {
         </span>
       </div>
 
-      {/* LOWER CAPTION on dark */}
-      <div style={{
-        background: '#0F172A',
-        padding: '16px 20px',
-        textAlign: 'center'
-      }}>
-        <p style={{
-          fontSize: '18px',
-          fontWeight: 500,
-          color: '#FFFFFF',
-          margin: 0,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '8px',
-          flexWrap: 'wrap'
-        }}>
-          <span>The</span>
-          <span style={{
-            display: 'inline-block',
-            background: '#8B5CF6',
-            color: '#FFFFFF',
-            padding: '4px 12px',
-            borderRadius: '6px',
-            fontWeight: 700,
-            fontSize: '18px'
-          }}>NEW</span>
-          <span>Standard in Convenience</span>
-        </p>
-      </div>
-
-      {/* LOWER WEDGE - points DOWN */}
+      {/* DARK BLOCK 2 - top edge clipped to point */}
       <div style={{
         position: 'relative',
         background: '#0F172A',
-        height: '32px',
-        clipPath: 'polygon(0% 0%, 100% 0%, 60% 100%, 40% 100%)'
-      }} />
+        padding: '60px 20px 40px',
+        clipPath: 'polygon(0 0, 50% 30%, 100% 0, 100% 100%, 0 100%)'
+      }}>
+        {/* NEW caption in taper area */}
+        <div style={{
+          textAlign: 'center'
+        }}>
+          <p style={{
+            fontSize: '18px',
+            fontWeight: 500,
+            color: '#FFFFFF',
+            margin: 0,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '8px',
+            flexWrap: 'wrap'
+          }}>
+            <span>The</span>
+            <span style={{
+              display: 'inline-block',
+              background: '#8B5CF6',
+              color: '#FFFFFF',
+              padding: '4px 12px',
+              borderRadius: '6px',
+              fontWeight: 700,
+              fontSize: '18px'
+            }}>NEW</span>
+            <span>Standard in Convenience</span>
+          </p>
+        </div>
+      </div>
 
-      {/* OPTIONAL LINE on lavender - small purple caps with arrow */}
+      {/* LIGHT SECTION - optional line */}
       <div style={{
         background: '#C4B5FD',
         padding: '32px 20px',
