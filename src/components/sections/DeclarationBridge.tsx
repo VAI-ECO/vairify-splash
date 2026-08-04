@@ -3,12 +3,12 @@ export default function DeclarationBridge() {
     <section className="declaration-bridge" style={{
       background: '#C4B5FD' // Lavender page background
     }}>
-      {/* DARK BLOCK 1 - contains FREE plate, bottom edge clipped to point */}
+      {/* DARK BLOCK 1 - contains FREE plate, bottom edge dips to point at center */}
       <div style={{
         position: 'relative',
         background: '#020617',
         padding: '40px 20px 60px',
-        clipPath: 'polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%)'
+        clipPath: 'polygon(0 0, 100% 0, 100% 100%, 50% 55%, 0 100%)'
       }}>
         {/* FREE plate */}
         <div style={{
@@ -78,9 +78,9 @@ export default function DeclarationBridge() {
         gap: '20px',
         flexWrap: 'wrap'
       }}>
-        {/* VAIRIFY all-white lockup - NO pill, direct on purple */}
+        {/* VAIRIFY all-white lockup - transparent SVG, direct on purple */}
         <img
-          src="/logo/va-fl-14.png"
+          src="/assets/vairify-logo-light.svg"
           alt="Vairify"
           style={{
             height: '60px',
@@ -100,12 +100,12 @@ export default function DeclarationBridge() {
         </span>
       </div>
 
-      {/* DARK BLOCK 2 - top edge clipped to point */}
+      {/* DARK BLOCK 2 - top edge rises to point at center */}
       <div style={{
         position: 'relative',
         background: '#0F172A',
         padding: '60px 20px 40px',
-        clipPath: 'polygon(0 0, 50% 30%, 100% 0, 100% 100%, 0 100%)'
+        clipPath: 'polygon(0 0, 50% 45%, 100% 0, 100% 100%, 0 100%)'
       }}>
         {/* NEW caption in taper area */}
         <div style={{
