@@ -1,12 +1,12 @@
 import { useTranslation } from 'react-i18next';
-import { Lock, Smartphone, Shield, ArrowRight } from 'lucide-react';
+import { Theater, Smartphone, Shield, ArrowRight } from 'lucide-react';
 
 export default function HowItWorks() {
   const { t } = useTranslation();
 
   const steps = [
     {
-      icon: Lock,
+      icon: Theater,
       number: 1,
       title: t('howItWorks.step1.title'),
       desc: t('howItWorks.step1.desc'),

@@ -60,10 +60,10 @@ export default function Pain() {
           fontWeight: 900,
           letterSpacing: '-0.02em',
           lineHeight: 1.12,
-          color: '#ef4444',
+          color: '#FFFFFF',
           marginTop: '12px'
         }}>
-          {t('pain.p5')}
+          Your <span style={{ color: '#ef4444' }}>safety</span>. Your <span style={{ color: '#ef4444' }}>money</span>. Your <span style={{ color: '#ef4444' }}>reputation</span>. Your <span style={{ color: '#ef4444' }}>freedom</span>. Even your <span style={{ color: '#ef4444' }}>life</span>.
         </p>
 
         {/* Body line 3 */}

@@ -5,8 +5,10 @@ export const ASSETS = {
   },
   favicons: {
     chainpass: '/logo/cp-ic-03.png',
-    vairify: '/logo/va-ic-01.png',
+    vairify: '/logo/va-ic-04.png',
     vairifyLight: '/logo/va-ic-02.png',
+    premiumBadge: '/logo/va-ic-05.png',
+    goldenRoses: '/logo/va-ic-06.png',
   },
   badges: {
     chainpass: '/assets/badge-chainpass.svg',

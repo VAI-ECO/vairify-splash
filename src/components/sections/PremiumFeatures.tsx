@@ -63,25 +63,14 @@ export default function PremiumFeatures() {
                 group
               "
             >
-              {/* Favicon and PREMIUM label row */}
-              <div className="flex items-center gap-2">
-                {/* Vairify Favicon */}
+              {/* Badge - top right corner */}
+              <div className="absolute top-6 right-6">
                 <img
-                  src={ASSETS.favicons.vairifyLight}
-                  alt="Vairify"
-                  className="w-7 h-7"
+                  src={ASSETS.favicons.premiumBadge}
+                  alt=""
+                  aria-hidden="true"
+                  className="w-6 h-6"
                 />
-
-                {/* PREMIUM label */}
-                <span className="
-                  text-[12px]
-                  font-bold
-                  text-[#f59e0b]
-                  uppercase
-                  tracking-wider
-                ">
-                  PREMIUM
-                </span>
               </div>
 
               {/* Feature name */}

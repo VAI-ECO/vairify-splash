@@ -2,18 +2,6 @@ export default function PremiumCloser() {
   return (
     <section className="py-24 px-6 vai-section-secondary border-y border-[var(--vai-border)]">
       <div style={{ maxWidth: '820px', margin: '0 auto', textAlign: 'center' }}>
-        {/* Heading */}
-        <h2 style={{
-          fontSize: 'clamp(28px, 4.6vw, 46px)',
-          fontWeight: 900,
-          letterSpacing: '-0.02em',
-          lineHeight: 1.12,
-          color: '#FFFFFF',
-          marginBottom: '32px'
-        }}>
-          We built it.
-        </h2>
-
         {/* Refusal 1 */}
         <p style={{
           fontSize: 'clamp(20px, 3.2vw, 30px)',
@@ -23,24 +11,14 @@ export default function PremiumCloser() {
           color: '#FFFFFF',
           marginTop: '10px'
         }}>
-          They told us that's the classic founder's mistake. Don't overbuild.
-        </p>
-        <p style={{
-          fontSize: 'clamp(20px, 3.2vw, 30px)',
-          fontWeight: 800,
-          letterSpacing: '-0.02em',
-          lineHeight: 1.14,
-          color: '#FFFFFF',
-          marginTop: '10px'
-        }}>
-          But they haven't seen the broken promises. The vaporware. The 10-year-old technology still being sold as new.
+          They told us we were making the classic founder's mistake. Don't overbuild. But they hadn't seen the broken promises. The vaporware. The overcharging for obsolete technology being sold as real protection.
         </p>
         <p style={{
           fontSize: 'clamp(22px, 3.5vw, 34px)',
           fontWeight: 900,
           letterSpacing: '-0.02em',
           lineHeight: 1.14,
-          color: '#FFFFFF',
+          color: '#00a884',
           marginTop: '10px'
         }}>
           So we built it anyway.
@@ -55,17 +33,17 @@ export default function PremiumCloser() {
           color: '#FFFFFF',
           marginTop: '26px'
         }}>
-          They told us we were sitting on a gold mine. Charge premium prices.
+          They told us this was the only app with real protection. Charge as much as you can. They don't have a choice.
         </p>
         <p style={{
           fontSize: 'clamp(22px, 3.5vw, 34px)',
           fontWeight: 900,
           letterSpacing: '-0.02em',
           lineHeight: 1.14,
-          color: '#FFFFFF',
+          color: '#00a884',
           marginTop: '10px'
         }}>
-          So we made it <span style={{ color: '#00a884' }}>free</span>.
+          So we made every safety feature free.
         </p>
 
         {/* Refusal 3 */}
@@ -77,17 +55,17 @@ export default function PremiumCloser() {
           color: '#FFFFFF',
           marginTop: '26px'
         }}>
-          They told us to hire businessmen to make the rules and run it at maximum efficiency.
+          They told us to hire businesspeople to make the rules. Protect the company. Protect the model. Protect the money.
         </p>
         <p style={{
           fontSize: 'clamp(22px, 3.5vw, 34px)',
           fontWeight: 900,
           letterSpacing: '-0.02em',
           lineHeight: 1.14,
-          color: '#FFFFFF',
+          color: '#00a884',
           marginTop: '10px'
         }}>
-          So we built a <span style={{ color: '#8B5CF6' }}>Founding Council</span> — and gave the rules to the people who live under them.
+          So we are building a council to help make the rules this community will live by.
         </p>
 
         {/* Because Vairify does everything for a reason... */}
@@ -99,28 +77,7 @@ export default function PremiumCloser() {
           color: '#FFFFFF',
           marginTop: '26px'
         }}>
-          Because Vairify does everything for a reason.
-        </p>
-
-        <p style={{
-          fontSize: 'clamp(20px, 3.2vw, 30px)',
-          fontWeight: 800,
-          letterSpacing: '-0.02em',
-          lineHeight: 1.14,
-          color: '#FFFFFF',
-          marginTop: '10px'
-        }}>
-          We spent more than three years listening and building.
-        </p>
-        <p style={{
-          fontSize: 'clamp(20px, 3.2vw, 30px)',
-          fontWeight: 800,
-          letterSpacing: '-0.02em',
-          lineHeight: 1.14,
-          color: '#FFFFFF',
-          marginTop: '10px'
-        }}>
-          And we learned a lot.
+          Because Vairify does everything for a reason. We spent more than three years listening and building. And we learned a lot. But the most important thing we learned is this: We don't know everything.
         </p>
 
         <p style={{
@@ -131,50 +88,7 @@ export default function PremiumCloser() {
           color: '#FFFFFF',
           marginTop: '26px'
         }}>
-          But the most important thing we learned is this:
-        </p>
-
-        <p style={{
-          fontSize: 'clamp(22px, 3.5vw, 34px)',
-          fontWeight: 900,
-          letterSpacing: '-0.02em',
-          lineHeight: 1.14,
-          color: '#FFFFFF',
-          marginTop: '10px'
-        }}>
-          We don't know everything.
-        </p>
-
-        <p style={{
-          fontSize: 'clamp(20px, 3.2vw, 30px)',
-          fontWeight: 800,
-          letterSpacing: '-0.02em',
-          lineHeight: 1.14,
-          color: '#FFFFFF',
-          marginTop: '26px'
-        }}>
-          We built Vairify for this community.
-        </p>
-        <p style={{
-          fontSize: 'clamp(20px, 3.2vw, 30px)',
-          fontWeight: 800,
-          letterSpacing: '-0.02em',
-          lineHeight: 1.14,
-          color: '#FFFFFF',
-          marginTop: '10px'
-        }}>
-          So this community should help shape it.
-        </p>
-
-        <p style={{
-          fontSize: 'clamp(20px, 3.2vw, 30px)',
-          fontWeight: 800,
-          letterSpacing: '-0.02em',
-          lineHeight: 1.14,
-          color: '#FFFFFF',
-          marginTop: '26px'
-        }}>
-          We built it first because we know nothing is perfect.
+          We built Vairify for this community. So this community should help shape it. We built it first because we know nothing is perfect.
         </p>
 
         <p style={{
@@ -196,30 +110,10 @@ export default function PremiumCloser() {
           color: '#FFFFFF',
           marginTop: '10px'
         }}>
-          Not in months.
-        </p>
-        <p style={{
-          fontSize: 'clamp(20px, 3.2vw, 30px)',
-          fontWeight: 800,
-          letterSpacing: '-0.02em',
-          lineHeight: 1.14,
-          color: '#FFFFFF',
-          marginTop: '10px'
-        }}>
-          Not in years.
-        </p>
-        <p style={{
-          fontSize: 'clamp(20px, 3.2vw, 30px)',
-          fontWeight: 800,
-          letterSpacing: '-0.02em',
-          lineHeight: 1.14,
-          color: '#FFFFFF',
-          marginTop: '10px'
-        }}>
-          Not in decades.
+          Not in months. Not in years. Not in decades.
         </p>
 
-        {/* Days. - the punch */}
+        {/* In days. - the punch */}
         <p style={{
           fontSize: 'clamp(40px, 7vw, 72px)',
           fontWeight: 900,

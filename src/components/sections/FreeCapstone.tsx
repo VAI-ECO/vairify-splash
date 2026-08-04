@@ -14,7 +14,7 @@ export default function FreeCapstone() {
         Onboard in minutes. Applied in seconds.
       </p>
       <p style={{ fontSize: 'clamp(20px,2.7vw,26px)', fontWeight: 800, color: '#FFFFFF', marginTop: '14px', lineHeight: 1.3 }}>
-        Giving everyone certainty — <span style={{ color: 'var(--vf)' }}>before</span>, <span style={{ color: 'var(--vf)' }}>during</span>, and <span style={{ color: 'var(--vf)' }}>after</span>.
+        Giving everyone <span style={{ color: '#00a884' }}>certainty</span> — <span style={{ color: '#00a884' }}>before</span>, <span style={{ color: '#00a884' }}>during</span>, and <span style={{ color: '#00a884' }}>after</span>.
       </p>
       <div style={{ height: '1px', background: 'rgba(139,92,246,.22)', maxWidth: '190px', margin: '30px auto' }}></div>
       <p style={{ fontSize: 'clamp(20px,2.7vw,26px)', fontWeight: 800, color: '#FFFFFF', lineHeight: 1.3 }}>
