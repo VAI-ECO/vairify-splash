@@ -43,6 +43,16 @@ export default function PremiumCloser() {
           color: '#00a884',
           marginTop: '10px'
         }}>
+          Vairify will NEVER put a price on safety.
+        </p>
+        <p style={{
+          fontSize: 'clamp(22px, 3.5vw, 34px)',
+          fontWeight: 900,
+          letterSpacing: '-0.02em',
+          lineHeight: 1.14,
+          color: '#00a884',
+          marginTop: '10px'
+        }}>
           So we made every safety feature free.
         </p>
 

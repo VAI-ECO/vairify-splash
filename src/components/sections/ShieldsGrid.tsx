@@ -68,7 +68,7 @@ export default function ShieldsGrid() {
               text-sm font-bold uppercase tracking-wider
               rounded-full
             ">
-              {t('shields.chainpassLabel')}
+              POWERED BY CHAINPASS V.A.I.
             </span>
           </div>
 
@@ -104,11 +104,14 @@ export default function ShieldsGrid() {
               text-white
               text-sm font-bold uppercase tracking-wider
               rounded-full
-            ">
+            " style={{ gap: '12px' }}>
               <img
                 src="/logo/va-fl-01.png"
                 alt="Vairify"
-                style={{ height: '16px', width: 'auto' }}
+                style={{
+                  height: 'clamp(18px, 2.4vw, 26px)',
+                  width: 'auto'
+                }}
               />
               PROTECTION LAYER
             </span>
