@@ -90,7 +90,7 @@ export default function ComparisonTable() {
             margin: '0 auto',
             marginBottom: '24px'
           }}>
-            Every meeting without VAIrify is a chance.
+            Every meeting without Vairify is a chance.
           </h1>
 
           {/* Title row */}
