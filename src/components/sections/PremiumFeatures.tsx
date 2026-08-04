@@ -66,10 +66,10 @@ export default function PremiumFeatures() {
               {/* Badge - top right corner */}
               <div className="absolute top-6 right-6">
                 <img
-                  src={ASSETS.favicons.premiumBadge}
+                  src={ASSETS.favicons.vairify}
                   alt=""
                   aria-hidden="true"
-                  className="w-6 h-6"
+                  className="w-7 h-7"
                 />
               </div>
 
