@@ -1,90 +1,97 @@
 export default function DeclarationBridge() {
   return (
     <section className="declaration-bridge">
-      {/* DARK SECTION ABOVE - boundary caption */}
+      {/* DARK SECTION with bordered FREE plate */}
       <div style={{
         background: '#020617',
-        padding: '24px 20px 40px',
+        padding: '40px 20px 20px',
         textAlign: 'center'
       }}>
-        <p style={{
-          fontSize: 'clamp(14px, 1.8vw, 20px)',
-          fontWeight: 700,
-          color: '#FFFFFF',
-          letterSpacing: '-0.01em'
-        }}>
-          Everything above this line is <span style={{
-            color: '#00a884',
-            textTransform: 'uppercase'
-          }}>free</span>
-        </p>
-      </div>
-
-      {/* UPPER CHEVRON - lavender, widens toward band, apex points up */}
-      <div style={{
-        position: 'relative',
-        background: '#C4B5FD',
-        height: 'clamp(120px, 18vw, 240px)',
-        clipPath: 'polygon(40% 0%, 60% 0%, 100% 100%, 0% 100%)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '20px'
-      }}>
-        {/* Text in upper chevron */}
         <div style={{
-          display: 'flex',
-          alignItems: 'baseline',
-          justifyContent: 'center',
-          gap: '10px',
-          flexWrap: 'wrap',
-          textAlign: 'center',
-          color: '#0F172A'
+          display: 'inline-block',
+          border: '1px solid rgba(255,255,255,0.2)',
+          borderRadius: '8px',
+          padding: '12px 24px',
+          background: 'rgba(255,255,255,0.05)'
         }}>
-          <span style={{
-            fontSize: 'clamp(14px, 1.6vw, 20px)',
+          <p style={{
+            fontSize: '16px',
             fontWeight: 600,
-            letterSpacing: '-0.01em'
-          }}>The</span>
-          <span style={{
-            fontSize: 'clamp(32px, 5vw, 58px)',
-            fontWeight: 900,
-            letterSpacing: '-0.02em',
-            textTransform: 'uppercase',
-            lineHeight: 0.9
-          }}>FIRST</span>
-          <span style={{
-            fontSize: 'clamp(16px, 2.2vw, 28px)',
-            fontWeight: 700,
-            letterSpacing: '-0.01em'
-          }}>Standard in Safety</span>
+            color: '#FFFFFF',
+            letterSpacing: '0.02em',
+            margin: 0
+          }}>
+            Everything above this line is <span style={{
+              color: '#00a884',
+              fontWeight: 700,
+              textTransform: 'uppercase'
+            }}>FREE</span>
+          </p>
         </div>
       </div>
 
-      {/* THE BAND - purple, flat */}
+      {/* UPPER WEDGE - points DOWN (dark section's bottom edge) */}
+      <div style={{
+        position: 'relative',
+        background: '#020617',
+        height: '32px',
+        clipPath: 'polygon(0% 0%, 100% 0%, 60% 100%, 40% 100%)'
+      }} />
+
+      {/* UPPER CAPTION on lavender */}
+      <div style={{
+        background: '#C4B5FD',
+        padding: '16px 20px',
+        textAlign: 'center'
+      }}>
+        <p style={{
+          fontSize: '18px',
+          fontWeight: 500,
+          color: '#0F172A',
+          margin: 0,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '8px',
+          flexWrap: 'wrap'
+        }}>
+          <span>The</span>
+          <span style={{
+            display: 'inline-block',
+            background: '#8B5CF6',
+            color: '#FFFFFF',
+            padding: '4px 12px',
+            borderRadius: '6px',
+            fontWeight: 700,
+            fontSize: '18px'
+          }}>FIRST</span>
+          <span>Standard in Safety</span>
+        </p>
+      </div>
+
+      {/* THE BAND - purple, with large logo */}
       <div style={{
         background: '#8B5CF6',
-        height: 'clamp(90px, 12vw, 150px)',
+        padding: '24px 20px',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         gap: '20px',
-        padding: '20px',
         flexWrap: 'wrap'
       }}>
-        {/* VAIRIFY all-white lockup */}
+        {/* VAIRIFY all-white lockup - large */}
         <img
-          src="/assets/vairify-logo-light.svg"
+          src="/logo/va-fl-14.png"
           alt="Vairify"
           style={{
-            height: 'clamp(36px, 5vw, 64px)',
+            height: '52px',
             width: 'auto'
           }}
         />
 
-        {/* Band text */}
+        {/* Band text - matched cap height */}
         <span style={{
-          fontSize: 'clamp(28px, 4.5vw, 52px)',
+          fontSize: '52px',
           fontWeight: 900,
           letterSpacing: '-0.03em',
           color: '#FFFFFF',
@@ -94,80 +101,67 @@ export default function DeclarationBridge() {
         </span>
       </div>
 
-      {/* LOWER CHEVRON - dark, widens toward band, apex points down */}
+      {/* LOWER CAPTION on dark */}
       <div style={{
-        position: 'relative',
         background: '#0F172A',
-        height: 'clamp(120px, 18vw, 240px)',
-        clipPath: 'polygon(0% 0%, 100% 0%, 60% 100%, 40% 100%)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '20px'
-      }}>
-        {/* Text in lower chevron */}
-        <div style={{
-          display: 'flex',
-          alignItems: 'baseline',
-          justifyContent: 'center',
-          gap: '10px',
-          flexWrap: 'wrap',
-          textAlign: 'center',
-          color: '#FFFFFF'
-        }}>
-          <span style={{
-            fontSize: 'clamp(14px, 1.6vw, 20px)',
-            fontWeight: 600,
-            letterSpacing: '-0.01em'
-          }}>The</span>
-          <span style={{
-            fontSize: 'clamp(32px, 5vw, 58px)',
-            fontWeight: 900,
-            letterSpacing: '-0.02em',
-            textTransform: 'uppercase',
-            lineHeight: 0.9
-          }}>NEW</span>
-          <span style={{
-            fontSize: 'clamp(16px, 2.2vw, 28px)',
-            fontWeight: 700,
-            letterSpacing: '-0.01em'
-          }}>Standard in Convenience</span>
-        </div>
-      </div>
-
-      {/* LAVENDER SECTION BELOW - boundary caption */}
-      <div style={{
-        background: '#C4B5FD',
-        padding: '40px 20px 24px',
+        padding: '16px 20px',
         textAlign: 'center'
       }}>
         <p style={{
-          fontSize: 'clamp(14px, 1.8vw, 20px)',
-          fontWeight: 700,
-          color: '#0F172A',
-          letterSpacing: '-0.01em'
+          fontSize: '18px',
+          fontWeight: 500,
+          color: '#FFFFFF',
+          margin: 0,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '8px',
+          flexWrap: 'wrap'
         }}>
-          Everything below this line is optional
+          <span>The</span>
+          <span style={{
+            display: 'inline-block',
+            background: '#8B5CF6',
+            color: '#FFFFFF',
+            padding: '4px 12px',
+            borderRadius: '6px',
+            fontWeight: 700,
+            fontSize: '18px'
+          }}>NEW</span>
+          <span>Standard in Convenience</span>
         </p>
       </div>
 
-      {/* Mobile responsive adjustments */}
-      <style>{`
-        @media (max-width: 640px) {
-          .declaration-bridge div[style*="clipPath"] {
-            height: 100px !important;
-          }
+      {/* LOWER WEDGE - points DOWN */}
+      <div style={{
+        position: 'relative',
+        background: '#0F172A',
+        height: '32px',
+        clipPath: 'polygon(0% 0%, 100% 0%, 60% 100%, 40% 100%)'
+      }} />
 
-          .declaration-bridge div[style*="clipPath"] > div {
-            flex-direction: column;
-            gap: 4px !important;
-          }
-
-          .declaration-bridge div[style*="clipPath"] > div > span:nth-child(2) {
-            font-size: 28px !important;
-          }
-        }
-      `}</style>
+      {/* OPTIONAL LINE on lavender - small purple caps with arrow */}
+      <div style={{
+        background: '#C4B5FD',
+        padding: '32px 20px',
+        textAlign: 'center'
+      }}>
+        <p style={{
+          fontSize: '11px',
+          fontWeight: 700,
+          color: '#8B5CF6',
+          letterSpacing: '0.15em',
+          textTransform: 'uppercase',
+          margin: 0,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '8px'
+        }}>
+          <span>↓</span>
+          <span>Everything below this line is optional</span>
+        </p>
+      </div>
     </section>
   );
 }
