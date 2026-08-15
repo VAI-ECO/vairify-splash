@@ -9,6 +9,14 @@ const DEFAULT_COUNTS: TierCount[] = [
   { tier: 'early_access', reserved: 0, total: 7000, remaining: 7000 },
 ];
 
+interface CohortAvailability {
+  key: string;
+  label: string;
+  max_count: number;
+  remaining: number;
+  is_available: boolean;
+}
+
 export function useTierCounts() {
   const [counts, setCounts] = useState<TierCount[]>(DEFAULT_COUNTS);
   const [loading, setLoading] = useState(true);
@@ -23,12 +31,19 @@ export function useTierCounts() {
     async function fetchCounts() {
       try {
         const { data, error: fetchError } = await supabase!
-          .from('tier_counts')
+          .from('cohort_availability')
           .select('*');
 
         if (fetchError) throw fetchError;
         if (data && data.length > 0) {
-          setCounts(data);
+          // Transform cohort_availability view data to TierCount format
+          const tierCounts = data.map((cohort: CohortAvailability) => ({
+            tier: cohort.key as Tier,
+            reserved: cohort.max_count - cohort.remaining,
+            total: cohort.max_count,
+            remaining: cohort.remaining,
+          }));
+          setCounts(tierCounts);
         }
       } catch (err) {
         console.error('Error fetching tier counts:', err);
@@ -41,8 +56,8 @@ export function useTierCounts() {
     fetchCounts();
 
     const channel = supabase!
-      .channel('tier_updates')
-      .on('postgres_changes', 
+      .channel('cohort_updates')
+      .on('postgres_changes',
         { event: '*', schema: 'public', table: 'reservations' },
         () => { fetchCounts(); }
       )
@@ -64,8 +79,8 @@ export function useTierCounts() {
   };
 
   const decrementTier = (tier: Tier) => {
-    setCounts(prev => prev.map(c => 
-      c.tier === tier 
+    setCounts(prev => prev.map(c =>
+      c.tier === tier
         ? { ...c, reserved: c.reserved + 1, remaining: c.remaining - 1 }
         : c
     ));
