@@ -18,18 +18,11 @@ export interface GovernanceResults {
 export interface Reservation {
   id: string;
   email: string;
-  phone: string | null;
-  tier: Tier;
-  coupon_code: string;
+  cohort_key: string;
+  cohort_label: string;
   spot_number: number;
-  referral_code_used: string | null;
-  referral_link: string;
-  voting_commitment: boolean;
-  terms_accepted: boolean;
-  governance_answers: GovernanceAnswers | null;
   reserved_at: string;
-  converted_at: string | null;
-  status: ReservationStatus;
+  already_held?: boolean;
 }
 
 export interface TierCount {
