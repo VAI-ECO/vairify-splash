@@ -1,14 +1,43 @@
 import { useState } from 'react';
+import { supabase, isMockMode } from '../lib/supabase';
 
 export default function ComingSoon() {
   const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Wire to signups table with RLS check
-    console.log('Email submitted:', email);
-    setSubmitted(true);
+    setError(null);
+    setIsSubmitting(true);
+
+    try {
+      if (isMockMode) {
+        // Mock mode for development without database
+        await new Promise(resolve => setTimeout(resolve, 500));
+        setSubmitted(true);
+        return;
+      }
+
+      const { error: rpcError } = await supabase!.rpc('capture_email', {
+        p_email: email
+      });
+
+      if (rpcError) throw rpcError;
+
+      setSubmitted(true);
+    } catch (err) {
+      console.error('Email capture error:', err);
+      setError('Unable to save your email. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleRetry = () => {
+    setError(null);
+    setSubmitted(false);
   };
 
   return (
@@ -212,7 +241,45 @@ export default function ComingSoon() {
           </div>
 
           {/* Form */}
-          {!submitted ? (
+          {error ? (
+            <div style={{
+              maxWidth: '440px',
+              margin: '0 auto 16px'
+            }}>
+              <div style={{
+                padding: '20px',
+                background: 'rgba(239,68,68,0.1)',
+                border: '1px solid rgba(239,68,68,0.3)',
+                borderRadius: '12px',
+                marginBottom: '12px',
+                color: '#FCA5A5',
+                fontSize: '15px',
+                fontWeight: 600
+              }}>
+                {error}
+              </div>
+              <button
+                onClick={handleRetry}
+                style={{
+                  width: '100%',
+                  padding: '14px 32px',
+                  background: '#8B5CF6',
+                  color: '#FFFFFF',
+                  fontSize: '15px',
+                  fontWeight: 800,
+                  border: 'none',
+                  borderRadius: '12px',
+                  cursor: 'pointer',
+                  transition: 'transform 0.2s',
+                  outline: 'none'
+                }}
+                onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-2px)'}
+                onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+              >
+                Try again
+              </button>
+            </div>
+          ) : !submitted ? (
             <form onSubmit={handleSubmit} style={{
               display: 'flex',
               gap: '12px',
@@ -228,6 +295,7 @@ export default function ComingSoon() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                disabled={isSubmitting}
                 style={{
                   flex: '1 1 240px',
                   minWidth: '200px',
@@ -238,13 +306,15 @@ export default function ComingSoon() {
                   color: '#FFFFFF',
                   fontSize: '15px',
                   outline: 'none',
-                  transition: 'border-color 0.2s'
+                  transition: 'border-color 0.2s',
+                  opacity: isSubmitting ? 0.6 : 1
                 }}
                 onFocus={(e) => e.target.style.borderColor = '#8B5CF6'}
                 onBlur={(e) => e.target.style.borderColor = '#24304C'}
               />
               <button
                 type="submit"
+                disabled={isSubmitting}
                 style={{
                   padding: '14px 32px',
                   background: '#8B5CF6',
@@ -253,14 +323,15 @@ export default function ComingSoon() {
                   fontWeight: 800,
                   border: 'none',
                   borderRadius: '12px',
-                  cursor: 'pointer',
+                  cursor: isSubmitting ? 'not-allowed' : 'pointer',
                   transition: 'transform 0.2s',
-                  outline: 'none'
+                  outline: 'none',
+                  opacity: isSubmitting ? 0.6 : 1
                 }}
-                onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-2px)'}
+                onMouseEnter={(e) => !isSubmitting && (e.currentTarget.style.transform = 'translateY(-2px)')}
                 onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
               >
-                Notify me
+                {isSubmitting ? 'Saving...' : 'Notify me'}
               </button>
             </form>
           ) : (
