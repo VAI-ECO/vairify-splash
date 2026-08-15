@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { supabase, isMockMode } from '../../lib/supabase';
-import { extractReferralFromUrl } from '../../lib/coupon';
 import type { Reservation } from '../../types';
 import Button from '../ui/Button';
 import Input from '../ui/Input';
@@ -36,9 +35,12 @@ export default function ReservationForm({ onSuccess }: ReservationFormProps) {
   const [submitError, setSubmitError] = useState<string | null>(null);
 
   useEffect(() => {
-    const ref = extractReferralFromUrl();
-    if (ref) {
-      setFormData(prev => ({ ...prev, referral: ref }));
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const ref = params.get('ref');
+      if (ref) {
+        setFormData(prev => ({ ...prev, referral: ref }));
+      }
     }
   }, []);
 
