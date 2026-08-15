@@ -30,16 +30,63 @@ const { error } = await supabase!
 
 ---
 
-## 2. voting_commitment — collected but not in spec
+## 2. voting_commitment field removed without specification
 
-**File:** `src/types/index.ts:27`
+**File:** `src/components/sections/ReservationForm.tsx` (original line 128, also lines 16, 24, 43, 78, 93-94, 229-250)
 
-**Issue:** The `Reservation` interface includes `voting_commitment: boolean` field, but this appears in no specification.
+**Original behavior:**
+- Boolean checkbox field shown conditionally for Founding Council and First Movers tiers only
+- Required field validation: user must check the box to proceed with those tiers
+- Sent to database as `voting_commitment: formData.votingCommitment` (boolean value)
+- Field was removed from UI and database submission when tier selection was replaced with RPC call (commit 62f8b77)
+
+**Code removed:**
+```typescript
+// Line 78:
+const needsVotingCommitment = formData.tier === 'founding_council' || formData.tier === 'first_mover';
+
+// Lines 93-94 (validation):
+if (needsVotingCommitment && !formData.votingCommitment) {
+  newErrors.votingCommitment = t('form.fields.votingCommitment.required');
+}
+
+// Line 128 (sent to database):
+voting_commitment: formData.votingCommitment,
+
+// Lines 229-250 (UI):
+{needsVotingCommitment && (
+  <div className="...">
+    <Checkbox
+      label={t('form.fields.votingCommitment.label')}
+      checked={formData.votingCommitment}
+      onChange={(e) => setFormData(prev => ({ ...prev, votingCommitment: e.target.checked }))}
+      error={errors.votingCommitment}
+    />
+    <div className="mt-3 text-sm">
+      <span className="text-gray-500 dark:text-gray-400">
+        {t('form.switchTier.prompt')}{' '}
+      </span>
+      <button type="button" onClick={switchToEarlyAccess} className="...">
+        {t('form.switchTier.link')}
+      </button>
+    </div>
+  </div>
+)}
+```
+
+**Issue:** This field appears in no specification. It was tied to tier selection, which has been removed.
 
 **Questions:**
-- What is this field for?
-- Should it be collected?
-- Should it be removed from the type?
-- Is there documentation for this feature?
+1. Was voting_commitment intended to track Founding Council governance participation commitment?
+2. Should this be tracked differently (e.g., separate step after cohort assignment)?
+3. Does the reserve_spot RPC need to receive or track this commitment?
+4. Is this commitment required before reservation, or before receiving benefits?
+
+**Current state:** Field removed from form, validation, and database submission. No voting commitment is collected or stored during reservation.
+
+**Recommendation:** If governance commitment tracking is required, specify:
+- When it should be collected (reservation vs. later onboarding step)
+- How it should be stored (reservations table vs. separate governance table)
+- Whether it blocks reservation or only blocks benefit activation
 
 ---
