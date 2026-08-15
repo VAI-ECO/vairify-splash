@@ -91,15 +91,16 @@ export default function ReservationForm({ onSuccess }: ReservationFormProps) {
 
       if (error) throw error;
 
-      // RPC returns: out_cohort_key, out_cohort_label, out_spot_number, out_already_held
-      const { out_cohort_key, out_cohort_label, out_spot_number, out_already_held } = data;
-
-      // Case 1: All cohorts are full
-      if (!out_cohort_key) {
+      // Case 1: All cohorts are full (RPC returns empty array or null)
+      if (!data || data.length === 0) {
         setSubmitError('All cohorts are currently full. Please check back later or join the waitlist.');
         setIsSubmitting(false);
         return;
       }
+
+      // RPC returns array - extract first row
+      // Fields: out_cohort_key, out_cohort_label, out_spot_number, out_already_held
+      const { out_cohort_key, out_cohort_label, out_spot_number, out_already_held } = data[0];
 
       // Case 2: User already has a reservation (not an error)
       // Case 3: New reservation created
