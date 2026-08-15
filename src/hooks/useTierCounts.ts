@@ -78,13 +78,5 @@ export function useTierCounts() {
     return found?.reserved ?? 0;
   };
 
-  const decrementTier = (tier: Tier) => {
-    setCounts(prev => prev.map(c =>
-      c.tier === tier
-        ? { ...c, reserved: c.reserved + 1, remaining: c.remaining - 1 }
-        : c
-    ));
-  };
-
-  return { counts, loading, error, getRemaining, getReserved, decrementTier };
+  return { counts, loading, error, getRemaining, getReserved };
 }
