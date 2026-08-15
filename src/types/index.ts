@@ -20,7 +20,7 @@ export interface Reservation {
   email: string;
   cohort_key: string;
   cohort_label: string;
-  spot_number: number;
+  spot_number?: number;
   reserved_at: string;
   already_held?: boolean;
 }

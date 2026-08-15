@@ -13,7 +13,7 @@ interface ReservationFlowProps {
 export default function ReservationFlow({ onSuccess }: ReservationFlowProps) {
   const [step, setStep] = useState<FlowStep>('email_form'); // Start at email form
   const [, setSelectedTier] = useState<Tier | null>(null);
-  const [governanceAnswers, setGovernanceAnswers] = useState<GovernanceAnswers | null>(null);
+  const [, setGovernanceAnswers] = useState<GovernanceAnswers | null>(null);
 
   // Mock governance results - in production, fetch from Supabase
   const mockGovernanceResults: GovernanceResults = {
@@ -38,8 +38,8 @@ export default function ReservationFlow({ onSuccess }: ReservationFlowProps) {
   };
 
   const handleReservationSuccess = (res: Reservation) => {
-    // Pass governance results to parent if FC tier
-    const results = res.tier === 'founding_council' ? mockGovernanceResults : null;
+    // Pass governance results to parent if FC cohort
+    const results = res.cohort_key === 'founding_council' ? mockGovernanceResults : null;
     onSuccess(res, results);
   };
 
@@ -80,16 +80,6 @@ export default function ReservationFlow({ onSuccess }: ReservationFlowProps) {
 
       <ReservationForm
         onSuccess={handleReservationSuccess}
-        governanceAnswers={governanceAnswers}
-        onTierSelected={(tier: Tier) => {
-          setSelectedTier(tier);
-          // When tier is selected, determine if we need to show governance flow
-          if (tier === 'founding_council') {
-            setStep('governance_questions');
-          } else if (tier === 'first_mover' || tier === 'early_access') {
-            setStep('governance_preview');
-          }
-        }}
       />
     </>
   );

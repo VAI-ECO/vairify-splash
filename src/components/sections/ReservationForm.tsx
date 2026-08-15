@@ -77,9 +77,8 @@ export default function ReservationForm({ onSuccess }: ReservationFormProps) {
           email: formData.email,
           cohort_key: 'founding_council',
           cohort_label: 'Founding Council',
-          spot_number: 1,
           reserved_at: new Date().toISOString(),
-        } as Reservation;
+        };
 
         onSuccess(mockReservation);
         return;
