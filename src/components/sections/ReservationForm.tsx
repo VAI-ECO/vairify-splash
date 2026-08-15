@@ -1,46 +1,32 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { supabase, isMockMode } from '../../lib/supabase';
-import { generateCouponCode, generateReferralLink, extractReferralFromUrl } from '../../lib/coupon';
-import { useTierCounts } from '../../hooks/useTierCounts';
-import type { Tier, Reservation, GovernanceAnswers } from '../../types';
+import { extractReferralFromUrl } from '../../lib/coupon';
+import type { Reservation } from '../../types';
 import Button from '../ui/Button';
 import Input from '../ui/Input';
 import Checkbox from '../ui/Checkbox';
-import { RadioGroup } from '../ui/Radio';
 
 interface FormData {
   email: string;
-  phone: string;
-  tier: Tier | '';
-  votingCommitment: boolean;
   terms: boolean;
   referral: string;
 }
 
 interface FormErrors {
   email?: string;
-  tier?: string;
-  votingCommitment?: string;
   terms?: string;
 }
 
 interface ReservationFormProps {
   onSuccess: (reservation: Reservation) => void;
-  governanceAnswers?: GovernanceAnswers | null;
-  onTierSelected?: (tier: Tier) => void;
-  preselectedTier?: Tier | null;
 }
 
-export default function ReservationForm({ onSuccess, governanceAnswers }: ReservationFormProps) {
+export default function ReservationForm({ onSuccess }: ReservationFormProps) {
   const { t } = useTranslation();
-  const { getRemaining, decrementTier } = useTierCounts();
-  
+
   const [formData, setFormData] = useState<FormData>({
     email: '',
-    phone: '',
-    tier: '',
-    votingCommitment: false,
     terms: false,
     referral: '',
   });
@@ -56,27 +42,6 @@ export default function ReservationForm({ onSuccess, governanceAnswers }: Reserv
     }
   }, []);
 
-  const fcRemaining = getRemaining('founding_council');
-  const tierOptions = [
-    {
-      value: 'founding_council',
-      label: `${t('form.fields.tier.options.fc')} (${fcRemaining <= 0 ? 'FULL' : 'Closing Soon'})`,
-      disabled: fcRemaining <= 0,
-    },
-    {
-      value: 'first_mover',
-      label: `${t('form.fields.tier.options.fm')} (${getRemaining('first_mover')} ${t('form.fields.tier.remaining')})`,
-      disabled: getRemaining('first_mover') <= 0,
-    },
-    {
-      value: 'early_access',
-      label: `${t('form.fields.tier.options.ea')} (${getRemaining('early_access')} ${t('form.fields.tier.remaining')})`,
-      disabled: getRemaining('early_access') <= 0,
-    },
-  ];
-
-  const needsVotingCommitment = formData.tier === 'founding_council' || formData.tier === 'first_mover';
-
   const validate = (): boolean => {
     const newErrors: FormErrors = {};
 
@@ -84,14 +49,6 @@ export default function ReservationForm({ onSuccess, governanceAnswers }: Reserv
       newErrors.email = t('form.fields.email.required');
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = t('form.fields.email.invalid');
-    }
-
-    if (!formData.tier) {
-      newErrors.tier = t('form.fields.tier.required');
-    }
-
-    if (needsVotingCommitment && !formData.votingCommitment) {
-      newErrors.votingCommitment = t('form.fields.votingCommitment.required');
     }
 
     if (!formData.terms) {
@@ -111,76 +68,58 @@ export default function ReservationForm({ onSuccess, governanceAnswers }: Reserv
     setIsSubmitting(true);
 
     try {
-      const couponCode = generateCouponCode(formData.tier as Tier);
-      const referralLink = generateReferralLink(couponCode);
-
-      // Generate spot number based on tier (in production, get from database counter)
-      const spotNumber = Math.floor(Math.random() * 100) + 1; // Mock - should be actual count from DB
-
-      const reservationData = {
-        email: formData.email,
-        phone: formData.phone || null,
-        tier: formData.tier,
-        coupon_code: couponCode,
-        spot_number: spotNumber,
-        referral_code_used: formData.referral || null,
-        referral_link: referralLink,
-        voting_commitment: formData.votingCommitment,
-        terms_accepted: formData.terms,
-        governance_answers: governanceAnswers || null,
-        status: 'reserved',
-      };
-
       if (isMockMode) {
+        // Mock mode for development without database
         const mockReservation: Reservation = {
           id: 'mock-' + Date.now(),
-          ...reservationData,
+          email: formData.email,
+          cohort_key: 'founding_council',
+          cohort_label: 'Founding Council',
+          spot_number: Math.floor(Math.random() * 100) + 1,
           reserved_at: new Date().toISOString(),
-          converted_at: null,
         } as Reservation;
-        
-        decrementTier(formData.tier as Tier);
+
         onSuccess(mockReservation);
         return;
       }
 
-      const { data: existing } = await supabase!
-        .from('reservations')
-        .select('coupon_code')
-        .eq('email', formData.email)
-        .single();
+      const { data, error } = await supabase!.rpc('reserve_spot', {
+        p_email: formData.email,
+        p_referral_code: formData.referral || null
+      });
 
-      if (existing) {
-        setSubmitError(t('form.errors.duplicate', { code: existing.coupon_code }));
+      if (error) throw error;
+
+      // RPC returns: out_cohort_key, out_cohort_label, out_spot_number, out_already_held
+      const { out_cohort_key, out_cohort_label, out_spot_number, out_already_held } = data;
+
+      // Case 1: All cohorts are full
+      if (!out_cohort_key) {
+        setSubmitError('All cohorts are currently full. Please check back later or join the waitlist.');
         setIsSubmitting(false);
         return;
       }
 
-      const { data, error } = await supabase!
-        .from('reservations')
-        .insert([reservationData])
-        .select()
-        .single();
+      // Case 2: User already has a reservation (not an error)
+      // Case 3: New reservation created
+      // Both cases: show them their cohort and spot
+      const reservation: Reservation = {
+        id: formData.email, // Using email as ID for now
+        email: formData.email,
+        cohort_key: out_cohort_key,
+        cohort_label: out_cohort_label,
+        spot_number: out_spot_number,
+        reserved_at: new Date().toISOString(),
+        already_held: out_already_held,
+      } as Reservation;
 
-      if (error) throw error;
-
-      decrementTier(formData.tier as Tier);
-      onSuccess(data);
+      onSuccess(reservation);
     } catch (err) {
       console.error('Reservation error:', err);
-      setSubmitError(t('form.errors.failed'));
+      setSubmitError('Unable to complete your reservation. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
-  };
-
-  const switchToEarlyAccess = () => {
-    setFormData(prev => ({
-      ...prev,
-      tier: 'early_access',
-      votingCommitment: false,
-    }));
-    setErrors(prev => ({ ...prev, votingCommitment: undefined }));
   };
 
   return (
@@ -206,61 +145,17 @@ export default function ReservationForm({ onSuccess, governanceAnswers }: Reserv
           />
 
           <Input
-            label={t('form.fields.phone.label')}
-            type="tel"
-            placeholder={t('form.fields.phone.placeholder')}
-            value={formData.phone}
-            onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
+            label={t('form.fields.referral.label')}
+            placeholder={t('form.fields.referral.placeholder')}
+            value={formData.referral}
+            onChange={(e) => setFormData(prev => ({ ...prev, referral: e.target.value }))}
           />
-
-          <div>
-            <label className="block text-sm font-medium text-[var(--vai-text-primary)] mb-3">
-              {t('form.fields.tier.label')} *
-            </label>
-            <RadioGroup
-              name="tier"
-              options={tierOptions}
-              value={formData.tier}
-              onChange={(value) => setFormData(prev => ({ ...prev, tier: value as Tier }))}
-              error={errors.tier}
-            />
-          </div>
-
-          {needsVotingCommitment && (
-            <div className="p-4 bg-white dark:bg-[#1a1a2e] border border-gray-200 dark:border-[#2a2a4e] rounded-lg">
-              <Checkbox
-                label={t('form.fields.votingCommitment.label')}
-                checked={formData.votingCommitment}
-                onChange={(e) => setFormData(prev => ({ ...prev, votingCommitment: e.target.checked }))}
-                error={errors.votingCommitment}
-              />
-              <div className="mt-3 text-sm">
-                <span className="text-gray-500 dark:text-gray-400">
-                  {t('form.switchTier.prompt')}{' '}
-                </span>
-                <button
-                  type="button"
-                  onClick={switchToEarlyAccess}
-                  className="text-[#4F7DF3] hover:underline font-medium"
-                >
-                  {t('form.switchTier.link')}
-                </button>
-              </div>
-            </div>
-          )}
 
           <Checkbox
             label={t('form.fields.terms.label')}
             checked={formData.terms}
             onChange={(e) => setFormData(prev => ({ ...prev, terms: e.target.checked }))}
             error={errors.terms}
-          />
-
-          <Input
-            label={t('form.fields.referral.label')}
-            placeholder={t('form.fields.referral.placeholder')}
-            value={formData.referral}
-            onChange={(e) => setFormData(prev => ({ ...prev, referral: e.target.value }))}
           />
 
           {submitError && (
