@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Story Behind VAIRIFY</title>
+  <meta name="description" content="A four-part founder series about the origin, safety, convenience, and future of VAIRIFY." />
+  <meta property="og:title" content="The Story Behind VAIRIFY" />
+  <meta property="og:description" content="Four chapters. One story. Discover why VAIRIFY was built and who will shape what comes next." />
+  <meta property="og:image" content="https://vairify.io/blog/four-part-series-artwork.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vairify.io/blog/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="/icons/va-fa-01/favicon.ico" />
+  <style>
+    :root {
+      --ink: #080b13;
+      --panel: #0d1321;
+      --paper: #f7f7f3;
+      --muted: #9da8bb;
+      --line: rgba(181, 198, 230, .18);
+      --violet: #8657ff;
+      --violet-soft: #bca8ff;
+      --blue: #77a9ff;
+      --edge: clamp(20px, 5vw, 76px);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--ink);
+      color: var(--paper);
+      font-family: Inter, Archivo, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    :focus-visible { outline: 2px solid var(--violet-soft); outline-offset: 4px; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 16px var(--edge);
+      border-bottom: 1px solid var(--line);
+      background: rgba(8, 11, 19, .82);
+      backdrop-filter: blur(18px) saturate(150%);
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      margin-right: auto;
+      font-weight: 800;
+      letter-spacing: .16em;
+    }
+    .mark {
+      width: 30px;
+      height: 30px;
+      transform: rotate(45deg);
+      border-radius: 7px;
+      background: linear-gradient(135deg, #a271ff 0 46%, #fff 47% 67%, #5e2be6 68%);
+      box-shadow: 0 0 28px rgba(134, 87, 255, .55);
+    }
+    .nav-back { color: #cad2df; font-size: 13px; letter-spacing: .04em; }
+    .nav-back:hover { color: #fff; }
+    .nav-current {
+      padding: 10px 15px;
+      border: 1px solid rgba(188, 168, 255, .45);
+      color: #fff;
+      background: rgba(134, 87, 255, .16);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .16em;
+    }
+
+    .hero {
+      position: relative;
+      min-height: min(78vh, 860px);
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("/blog/four-part-series-artwork.png") center / cover no-repeat;
+      opacity: .33;
+      filter: saturate(.8) contrast(1.06);
+      transform: scale(1.015);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 68% 20%, rgba(98, 62, 225, .18), transparent 36%),
+        linear-gradient(90deg, rgba(8,11,19,.96) 0%, rgba(8,11,19,.78) 48%, rgba(8,11,19,.36) 100%),
+        linear-gradient(0deg, var(--ink) 0%, transparent 45%);
+    }
+    .hero-copy {
+      position: relative;
+      z-index: 2;
+      max-width: 1060px;
+      padding: clamp(92px, 13vw, 180px) var(--edge) clamp(70px, 9vw, 124px);
+    }
+    .eyebrow {
+      margin: 0 0 20px;
+      color: var(--violet-soft);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 9ch;
+      margin: 0;
+      font-size: clamp(54px, 9.2vw, 132px);
+      line-height: .88;
+      letter-spacing: -.065em;
+      text-transform: uppercase;
+    }
+    .hero-copy > p:last-child {
+      max-width: 650px;
+      margin: 30px 0 0;
+      color: #c9d0dc;
+      font-size: clamp(18px, 2vw, 25px);
+      line-height: 1.45;
+    }
+
+    .series {
+      max-width: 1500px;
+      margin: 0 auto;
+      padding: clamp(70px, 9vw, 130px) var(--edge) clamp(90px, 12vw, 170px);
+    }
+    .series-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(270px, 420px);
+      gap: 40px;
+      align-items: end;
+      margin-bottom: clamp(42px, 6vw, 78px);
+    }
+    .series-head h2 {
+      margin: 0;
+      font-size: clamp(35px, 5.6vw, 76px);
+      line-height: .98;
+      letter-spacing: -.045em;
+    }
+    .series-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.55;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(18px, 2.4vw, 34px);
+    }
+    .card {
+      position: relative;
+      min-height: clamp(380px, 46vw, 650px);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      isolation: isolate;
+    }
+    .art {
+      position: absolute;
+      inset: 0;
+      background-image: url("/blog/four-part-series-artwork.png");
+      background-repeat: no-repeat;
+      background-size: 200% 200%;
+      transition: transform 700ms cubic-bezier(.2,.7,.2,1), filter 700ms ease;
+    }
+    .one .art { background-position: 0 0; }
+    .two .art { background-position: 100% 0; }
+    .three .art { background-position: 0 100%; }
+    .four .art { background-position: 100% 100%; }
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(180deg, transparent 30%, rgba(5,8,15,.12) 62%, rgba(5,8,15,.88) 100%);
+    }
+    .card:hover .art { transform: scale(1.025); filter: brightness(1.08); }
+    .card-copy {
+      position: absolute;
+      z-index: 2;
+      left: clamp(22px, 3vw, 42px);
+      right: clamp(22px, 3vw, 42px);
+      bottom: clamp(22px, 3vw, 38px);
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 22px;
+    }
+    .part {
+      margin: 0 0 8px;
+      color: #d7caff;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+    }
+    .card h3 {
+      max-width: 15ch;
+      margin: 0;
+      font-size: clamp(24px, 3vw, 42px);
+      line-height: 1;
+      letter-spacing: -.035em;
+    }
+    .status {
+      flex: 0 0 auto;
+      padding: 9px 11px;
+      border: 1px solid rgba(255,255,255,.32);
+      color: #fff;
+      background: rgba(5,8,15,.5);
+      backdrop-filter: blur(8px);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .closing {
+      display: grid;
+      grid-template-columns: 1px minmax(0, 820px);
+      gap: 34px;
+      margin-top: clamp(76px, 10vw, 140px);
+    }
+    .closing::before { content: ""; background: linear-gradient(var(--violet), var(--blue)); }
+    .closing blockquote {
+      margin: 0;
+      font-size: clamp(31px, 5vw, 72px);
+      font-weight: 750;
+      line-height: 1.04;
+      letter-spacing: -.045em;
+    }
+    .closing span { color: var(--violet-soft); }
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 30px var(--edge);
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .08em;
+    }
+
+    @media (max-width: 760px) {
+      .nav { gap: 12px; }
+      .brand { font-size: 13px; }
+      .nav-back { display: none; }
+      .hero { min-height: 66vh; }
+      .hero::before { background-position: 30% center; }
+      .series-head { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr; }
+      .card { min-height: min(74vw, 520px); }
+      .card-copy { align-items: start; flex-direction: column; gap: 14px; }
+      footer { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .art { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Primary navigation">
+    <a class="brand" href="/splash" aria-label="VAIRIFY home"><span class="mark" aria-hidden="true"></span><span>VAIRIFY</span></a>
+    <a class="nav-back" href="/splash">Return to the platform</a>
+    <span class="nav-current" aria-current="page">BLOG</span>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">The founder series · Four parts</p>
+        <h1>The Story Behind VAIRIFY</h1>
+        <p>How one question about anonymity and accountability became a platform built around safety, everyday control, and a community that determines what comes next.</p>
+      </div>
+    </header>
+
+    <section class="series" aria-labelledby="series-heading">
+      <div class="series-head">
+        <h2 id="series-heading">Four chapters.<br />One story.</h2>
+        <p>From the origin of the V.A.I. to the choices that made safety free, the tools built for everyday life, and the people who will shape the future.</p>
+      </div>
+
+      <div class="grid">
+        <article class="card one" id="part-one">
+          <div class="art" role="img" aria-label="Brian Anthony, founder of VAIRIFY, with the Verified Anonymous Identity concept"></div>
+          <div class="card-copy"><div><p class="part">Part one of four</p><h3>The Origin of VAIRIFY</h3></div><span class="status">Article coming next</span></div>
+        </article>
+        <article class="card two" id="part-two">
+          <div class="art" role="img" aria-label="VAIRIFY safety systems protecting a verified member"></div>
+          <div class="card-copy"><div><p class="part">Part two of four</p><h3>Safety Had to Be Free</h3></div><span class="status">Article coming next</span></div>
+        </article>
+        <article class="card three" id="part-three">
+          <div class="art" role="img" aria-label="The VAIRIFY app surrounded by calendar, payment, chat, discovery, touring, and Social Hub tools"></div>
+          <div class="card-copy"><div><p class="part">Part three of four</p><h3>Convenience Had to Be Worth It</h3></div><span class="status">Article coming next</span></div>
+        </article>
+        <article class="card four" id="part-four">
+          <div class="art" role="img" aria-label="The VAIRIFY community gathered beneath a shared network of ideas and decisions"></div>
+          <div class="card-copy"><div><p class="part">Part four of four</p><h3>You Will Decide Where It Goes Next</h3></div><span class="status">Article coming next</span></div>
+        </article>
+      </div>
+
+      <div class="closing">
+        <blockquote>We built the platform.<br /><span>You will decide where it goes next.</span></blockquote>
+      </div>
+    </section>
+  </main>
+
+  <footer><span>VAIRIFY · PEOPLE VERIFY BELONG</span><a href="/splash">Explore the platform →</a></footer>
+</body>
+</html>
