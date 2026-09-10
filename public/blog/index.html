@@ -11,7 +11,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://vairify.io/blog/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" href="/icons/va-fa-01/favicon.ico" />
+  <link rel="icon" type="image/png" href="/blog/vairify-icon.png" />
   <style>
     :root {
       --ink: #080b13;
@@ -51,20 +51,16 @@
       backdrop-filter: blur(18px) saturate(150%);
     }
     .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 11px;
+      display: block;
+      width: clamp(136px, 16vw, 188px);
+      height: 42px;
       margin-right: auto;
-      font-weight: 800;
-      letter-spacing: .16em;
     }
-    .mark {
-      width: 30px;
-      height: 30px;
-      transform: rotate(45deg);
-      border-radius: 7px;
-      background: linear-gradient(135deg, #a271ff 0 46%, #fff 47% 67%, #5e2be6 68%);
-      box-shadow: 0 0 28px rgba(134, 87, 255, .55);
+    .brand-logo {
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: url("/blog/vairify-logo.png") center / 100% auto no-repeat;
     }
     .nav-back { color: #cad2df; font-size: 13px; letter-spacing: .04em; }
     .nav-back:hover { color: #fff; }
@@ -165,7 +161,7 @@
     }
     .card {
       position: relative;
-      min-height: clamp(380px, 46vw, 650px);
+      aspect-ratio: 3 / 2;
       overflow: hidden;
       border: 1px solid var(--line);
       background: var(--panel);
@@ -174,60 +170,26 @@
     .art {
       position: absolute;
       inset: 0;
-      background-image: url("/blog/four-part-series-artwork.png");
       background-repeat: no-repeat;
-      background-size: 200% 200%;
+      background-position: center;
+      background-size: cover;
       transition: transform 700ms cubic-bezier(.2,.7,.2,1), filter 700ms ease;
     }
-    .one .art { background-position: 0 0; }
-    .two .art { background-position: 100% 0; }
-    .three .art { background-position: 0 100%; }
-    .four .art { background-position: 100% 100%; }
-    .card::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background: linear-gradient(180deg, transparent 30%, rgba(5,8,15,.12) 62%, rgba(5,8,15,.88) 100%);
-    }
+    .one .art { background-image: url("/blog/part-1-origin.png"); }
+    .two .art { background-image: url("/blog/part-2-safety.png"); }
+    .three .art { background-image: url("/blog/part-3-convenience.png"); }
+    .four .art { background-image: url("/blog/part-4-future.png"); }
     .card:hover .art { transform: scale(1.025); filter: brightness(1.08); }
-    .card-copy {
+    .sr-only {
       position: absolute;
-      z-index: 2;
-      left: clamp(22px, 3vw, 42px);
-      right: clamp(22px, 3vw, 42px);
-      bottom: clamp(22px, 3vw, 38px);
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 22px;
-    }
-    .part {
-      margin: 0 0 8px;
-      color: #d7caff;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: .24em;
-      text-transform: uppercase;
-    }
-    .card h3 {
-      max-width: 15ch;
-      margin: 0;
-      font-size: clamp(24px, 3vw, 42px);
-      line-height: 1;
-      letter-spacing: -.035em;
-    }
-    .status {
-      flex: 0 0 auto;
-      padding: 9px 11px;
-      border: 1px solid rgba(255,255,255,.32);
-      color: #fff;
-      background: rgba(5,8,15,.5);
-      backdrop-filter: blur(8px);
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: .13em;
-      text-transform: uppercase;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
     .closing {
       display: grid;
@@ -263,8 +225,6 @@
       .hero::before { background-position: 30% center; }
       .series-head { grid-template-columns: 1fr; }
       .grid { grid-template-columns: 1fr; }
-      .card { min-height: min(74vw, 520px); }
-      .card-copy { align-items: start; flex-direction: column; gap: 14px; }
       footer { flex-direction: column; }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -275,7 +235,7 @@
 </head>
 <body>
   <nav class="nav" aria-label="Primary navigation">
-    <a class="brand" href="/splash" aria-label="VAIRIFY home"><span class="mark" aria-hidden="true"></span><span>VAIRIFY</span></a>
+    <a class="brand" href="/splash" aria-label="VAIRIFY home"><span class="brand-logo" aria-hidden="true"></span></a>
     <a class="nav-back" href="/splash">Return to the platform</a>
     <span class="nav-current" aria-current="page">BLOG</span>
   </nav>
@@ -298,19 +258,19 @@
       <div class="grid">
         <article class="card one" id="part-one">
           <div class="art" role="img" aria-label="Brian Anthony, founder of VAIRIFY, with the Verified Anonymous Identity concept"></div>
-          <div class="card-copy"><div><p class="part">Part one of four</p><h3>The Origin of VAIRIFY</h3></div><span class="status">Article coming next</span></div>
+          <h3 class="sr-only">Part One: The Origin of VAIRIFY</h3>
         </article>
         <article class="card two" id="part-two">
           <div class="art" role="img" aria-label="VAIRIFY safety systems protecting a verified member"></div>
-          <div class="card-copy"><div><p class="part">Part two of four</p><h3>Safety Had to Be Free</h3></div><span class="status">Article coming next</span></div>
+          <h3 class="sr-only">Part Two: Safety Had to Be Free</h3>
         </article>
         <article class="card three" id="part-three">
           <div class="art" role="img" aria-label="The VAIRIFY app surrounded by calendar, payment, chat, discovery, touring, and Social Hub tools"></div>
-          <div class="card-copy"><div><p class="part">Part three of four</p><h3>Convenience Had to Be Worth It</h3></div><span class="status">Article coming next</span></div>
+          <h3 class="sr-only">Part Three: Convenience Had to Be Worth It</h3>
         </article>
         <article class="card four" id="part-four">
           <div class="art" role="img" aria-label="The VAIRIFY community gathered beneath a shared network of ideas and decisions"></div>
-          <div class="card-copy"><div><p class="part">Part four of four</p><h3>You Will Decide Where It Goes Next</h3></div><span class="status">Article coming next</span></div>
+          <h3 class="sr-only">Part Four: You Will Decide Where It Goes Next</h3>
         </article>
       </div>
 
