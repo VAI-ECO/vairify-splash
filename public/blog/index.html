@@ -160,6 +160,7 @@
       gap: clamp(18px, 2.4vw, 34px);
     }
     .card {
+      display: block;
       position: relative;
       aspect-ratio: 3 / 2;
       overflow: hidden;
@@ -167,6 +168,26 @@
       background: var(--panel);
       isolation: isolate;
     }
+    .card::after {
+      content: "Read the story \2192";
+      position: absolute;
+      right: 18px;
+      bottom: 18px;
+      z-index: 2;
+      padding: 10px 14px;
+      border: 1px solid rgba(255, 255, 255, .35);
+      background: rgba(8, 11, 19, .78);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 220ms ease, transform 220ms ease;
+    }
+    .card[href]:hover::after,
+    .card[href]:focus-visible::after { opacity: 1; transform: translateY(0); }
     .art {
       position: absolute;
       inset: 0;
@@ -259,10 +280,10 @@
       </div>
 
       <div class="grid">
-        <article class="card one" id="part-one">
+        <a class="card one" id="part-one" href="/blog/origin-of-vairify/" aria-label="Read Part One: The Origin of VAIRIFY">
           <div class="art" role="img" aria-label="Brian Anthony, founder of VAIRIFY, with the Verified Anonymous Identity concept"></div>
           <h3 class="sr-only">Part One: The Origin of VAIRIFY</h3>
-        </article>
+        </a>
         <article class="card two" id="part-two">
           <div class="art" role="img" aria-label="VAIRIFY safety systems protecting a verified member"></div>
           <h3 class="sr-only">Part Two: Safety Had to Be Free</h3>
