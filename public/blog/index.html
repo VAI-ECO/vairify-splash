@@ -176,7 +176,10 @@
       transition: transform 700ms cubic-bezier(.2,.7,.2,1), filter 700ms ease;
     }
     .one .art { background-image: url("/blog/part-1-origin.png"); }
-    .two .art { background-image: url("/blog/part-2-safety.png"); }
+    .two .art {
+      background-image: url("/blog/part-2-safety.png");
+      background-size: contain;
+    }
     .three .art { background-image: url("/blog/part-3-convenience.png"); }
     .four .art { background-image: url("/blog/part-4-future.png"); }
     .card:hover .art { transform: scale(1.025); filter: brightness(1.08); }
