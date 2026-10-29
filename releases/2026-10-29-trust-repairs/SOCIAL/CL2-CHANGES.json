@@ -1,0 +1,27 @@
+{
+  "fields": [
+    "post ID",
+    "day",
+    "platform",
+    "caption",
+    "asset file",
+    "first-reply link (X)",
+    "workflow",
+    "status"
+  ],
+  "changed": [
+    {
+      "id": "CL2",
+      "platform": "X",
+      "column": "caption",
+      "after": "They had his address, his wife's name, his kids' names. All from a phone number. Inside VAIRIFY: a seven-character number."
+    },
+    {
+      "id": "CL2",
+      "platform": "Reddit",
+      "column": "caption",
+      "after": "They had his address, his wife's name, his kids' names. All from a phone number. Inside VAIRIFY: a seven-character number."
+    }
+  ],
+  "other_hits": []
+}

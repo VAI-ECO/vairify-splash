@@ -1,0 +1,32 @@
+[
+  {
+    "site": "vairify",
+    "path": "index.html",
+    "before": "aff9ae1b3060e0e544324c569021625f84912ec8cdb5c652e23a80fe6009630a",
+    "after": "7423b6fb2683191781a58217c7e91e2ab6f6d52e61ddb87475c6afc59284f0b5"
+  },
+  {
+    "site": "vairify",
+    "path": "splash/index.html",
+    "before": "aff9ae1b3060e0e544324c569021625f84912ec8cdb5c652e23a80fe6009630a",
+    "after": "7423b6fb2683191781a58217c7e91e2ab6f6d52e61ddb87475c6afc59284f0b5"
+  },
+  {
+    "site": "vairify",
+    "path": "splash/faq.html",
+    "before": "05b75215a5a1382abe5678aae3873dc7bf05b5ac8fcb804dc6d792e320c42f51",
+    "after": "699f2c81e5aae7c8bc1d3f8a3f8a3c33661a86d5e52c5b6d72f4e0350fe6dfa2"
+  },
+  {
+    "site": "vairify",
+    "path": "splash/community-preview.html",
+    "before": "72a05381cadd40db8527ce4694b774dca6f4a40d34f07e045e219e04f5f2044a",
+    "after": "e49a6fee8c513aa9b1e85740abe21ef10376ad93d3089b91e2777a1372f94c7e"
+  },
+  {
+    "site": "vairify",
+    "path": "splash/preregister.html",
+    "before": "5d4aecf12252250dc3b495ba3496cf8bc76afec78aaf3a5e239bbd538e84b0a1",
+    "after": "7f46571d914fca2143ba0c2ebda871af5b52d73466bf8cce05d7eef7246c07f3"
+  }
+]
