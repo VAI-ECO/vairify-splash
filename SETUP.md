@@ -295,35 +295,9 @@ To change, update in:
 **24-hour window**: Hardcoded in SQL trigger (can adjust)
 **Carousel auto-advance**: Disabled by default (user controls)
 
-## Deployment to Vercel
+## Deployment
 
-### Option 1: GitHub Integration (Recommended)
-
-1. Push code to GitHub:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git branch -M main
-   git remote add origin https://github.com/Brians-dev/vairify-splash.git
-   git push -u origin main
-   ```
-
-2. Go to [vercel.com](https://vercel.com)
-3. Import your GitHub repo
-4. Add environment variables:
-   - `VITE_SUPABASE_URL`
-   - `VITE_SUPABASE_ANON_KEY`
-5. Deploy!
-
-### Option 2: Vercel CLI
-
-```bash
-npm install -g vercel
-vercel
-```
-
-Follow prompts, add env vars when asked.
+See [DEPLOY.md](DEPLOY.md) for the existing Hetzner workflow and build-time environment requirements.
 
 ## Testing Checklist
 
@@ -367,8 +341,8 @@ Before deploying:
 2. **Test registration flow** end-to-end
 3. **Set up email notifications** (for new reservations)
 4. **Create admin dashboard** (to view reservations)
-5. **Add analytics** (Vercel Analytics, Google Analytics, etc.)
-6. **Configure custom domain** in Vercel
+5. **Add analytics** (Google Analytics, etc.)
+6. **Verify custom domain** routing in the existing hosting configuration
 7. **Set up monitoring** (Sentry, LogRocket, etc.)
 
 ## Production Checklist

@@ -109,14 +109,10 @@ ipconfig
 
 ## 🚀 Deploy
 
-### Vercel (Easiest)
+### Hetzner deployment
 
-```bash
-npm install -g vercel
-vercel
-```
-
-Add your environment variables in the Vercel dashboard.
+See [DEPLOY.md](DEPLOY.md) for the existing Hetzner deployment workflow.
+Local development and production builds require only the project npm dependencies; no hosting CLI is required.
 
 ### Netlify
 

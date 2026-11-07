@@ -1,228 +1,78 @@
 # Deployment Instructions
 
-Your Vairify splash page is ready to deploy! Here are your options:
+Date: 8 November 2026
+Replaces: previous instructions in this same file; no separate document added.
+Superseded by: nothing.
 
-## ✅ What's Ready
+## Existing hosting workflow
 
-- ✅ All code built and tested
-- ✅ Git repository initialized
-- ✅ Initial commit created
-- ✅ Development server tested successfully
-- ✅ All 11 sections working
-- ✅ Supabase integration configured
+This project uses the existing Hetzner host at `2.28.18.138`, with nginx behind
+Coolify/Traefik for `vairify.io` and `www.vairify.io`.
 
-## Option 1: Deploy with Vercel CLI (Fastest)
+`deploy-vairify.sh` is the combined deployment script: the React application at
+`/`, a selected static release at `/splash`, and its FAQ at `/faq`. Its header
+supersedes `deploy-splash.sh` and `deploy-landing.sh`; those remain for rollback.
+Only one container should own these domains at a time.
 
-From the project directory:
+The hosting scripts described here are maintained in the existing local operations
+checkout and are not tracked in this repository. A fresh clone does not contain
+them; use the maintained operations checkout rather than inventing a replacement.
 
-```bash
-cd /Users/bmac/vairify-splash
-vercel
-```
+This guide reflects local script inspection on 7 November 2026. It is not proof
+of a new deployment or the current live release. Check the maintained
+operations live-state record before publishing. Review the release directory
+explicitly instead of assuming a script's older default is the desired release.
 
-Follow the prompts:
-1. Set up and deploy? **Y**
-2. Which scope? Select your account
-3. Link to existing project? **N**
-4. What's your project name? `vairify-splash` (or press Enter)
-5. In which directory is your code? `.` (press Enter)
-6. Want to override settings? **N**
-
-Then add environment variables:
-```bash
-vercel env add VITE_SUPABASE_URL
-vercel env add VITE_SUPABASE_ANON_KEY
-```
-
-Finally, deploy to production:
-```bash
-vercel --prod
-```
-
-Your site will be live at: `https://vairify-splash.vercel.app`
-
-## Option 2: Deploy via GitHub + Vercel Dashboard
-
-### Step 1: Push to GitHub
-
-If you want to use the existing repo at `github.com/Brians-dev/vairify-splash`:
+## Local install and validation
 
 ```bash
-git remote add origin https://github.com/Brians-dev/vairify-splash.git
-git branch -M main
-git push -u origin main --force
+npm ci
+npm run build
+npm run preview
 ```
 
-> **Note**: Using `--force` will overwrite the existing repo. Remove it if you want to merge instead.
+No hosting CLI or hosting dashboard connection is required to install or build.
+The React build requires the intended `VITE_SUPABASE_URL` and
+`VITE_SUPABASE_ANON_KEY` values in the local `.env`. These are browser-visible
+build-time settings; never put a service-role key or other server secret in
+`VITE_*` variables. Do not commit `.env` or print its values.
 
-Or create a new repo:
+## Publishing an approved release
+
+Publishing changes the live site. Run the existing script only when authorized
+and after confirming the release, host, SSH access, environment, and rollback.
+The script requires the configured SSH key, `ssh`, `rsync`, and `python3` locally,
+plus the existing Node, Docker, Coolify network, and Traefik setup on the host.
 
 ```bash
-gh repo create vairify-splash-new --public --source=. --remote=origin
-git push -u origin main
+./deploy-vairify.sh releases/<approved-release-directory>
 ```
 
-### Step 2: Import to Vercel
+The script validates the static release, checks domain ownership, builds the
+application on the host, checks that the Supabase URL reached the build, and
+checks the published routes over HTTPS. Review all output. A successful build
+alone does not establish that reservation capture or other application flows work.
 
-1. Go to [vercel.com/new](https://vercel.com/new)
-2. Select "Import Git Repository"
-3. Find `vairify-splash` in your GitHub repos
-4. Click "Import"
-5. Configure:
-   - Framework Preset: **Vite**
-   - Root Directory: `./`
-   - Build Command: `npm run build`
-   - Output Directory: `dist`
-6. Add Environment Variables:
-   - `VITE_SUPABASE_URL` = your Supabase URL
-   - `VITE_SUPABASE_ANON_KEY` = your Supabase anon key
-7. Click "Deploy"
+## Verification and rollback
 
-## Before Deploying - Supabase Setup
+- Verify `/`, `/splash`, `/splash/`, and `/faq` load over HTTPS.
+- Check the intended content and assets on desktop and mobile.
+- Test reservation capture and confirm the corresponding backend record.
+- Review browser errors and Supabase access policies.
+- Do not change DNS, routing, or other services as part of routine source cleanup.
 
-Make sure your Supabase project is ready:
+When an authorized deployment needs rollback and the previous image exists:
 
-### 1. Create Tables
-
-Run the SQL from `SETUP.md` in your Supabase SQL Editor:
-- `reservations` table
-- `decisions` table
-- `votes` table
-- Auto-assignment trigger
-
-### 2. Enable Row Level Security
-
-The SQL in SETUP.md includes basic RLS policies. For production:
-
-```sql
--- Tighten security
--- Only allow reads for public, require auth for writes
--- Adjust based on your security requirements
+```bash
+./deploy-vairify.sh --back
 ```
-
-### 3. Get Your Credentials
-
-From Supabase Project Settings > API:
-- Copy **Project URL** (e.g., `https://abc123.supabase.co`)
-- Copy **anon/public** key (long string starting with `eyJ...`)
-
-## After Deployment
-
-### 1. Test the Live Site
-
-- [ ] Visit your deployment URL
-- [ ] Scroll through all 11 sections
-- [ ] Click carousel navigation
-- [ ] Submit test email in registration form
-- [ ] Verify spot counter updates
-- [ ] Check countdown timer works
-- [ ] Test on mobile device
-
-### 2. Verify Supabase Connection
-
-- [ ] Open Supabase dashboard
-- [ ] Go to Table Editor > `reservations`
-- [ ] Check for your test registration
-- [ ] Verify position auto-assigned
-- [ ] Check referral code generated
-
-### 3. Configure Custom Domain (Optional)
-
-In Vercel project settings:
-1. Domains > Add Domain
-2. Enter your domain (e.g., `vairify.com`)
-3. Follow DNS configuration instructions
-
-### 4. Set Up Monitoring (Recommended)
-
-- **Vercel Analytics**: Enable in project settings (free)
-- **Sentry**: For error tracking
-- **Google Analytics**: Add to `index.html`
 
 ## Troubleshooting
 
-### Build Fails on Vercel
-
-**Error**: "Cannot find module '@supabase/supabase-js'"
-- **Fix**: Ensure `package.json` includes all dependencies
-- Run `npm install` locally first
-- Push updated `package-lock.json`
-
-**Error**: "Environment variable not set"
-- **Fix**: Add env vars in Vercel dashboard
-- Redeploy after adding them
-
-### Site Loads But Supabase Doesn't Work
-
-- Check browser console for errors
-- Verify env vars are set correctly (no quotes, no spaces)
-- Ensure Supabase tables exist
-- Check RLS policies allow public access
-
-### Countdown Timer Shows NaN
-
-- This is expected without a real reservation
-- Submit test email to create reservation
-- Timer will display properly after submission
-
-## Production Checklist
-
-Before announcing to users:
-
-- [ ] All sections reviewed for typos
-- [ ] Real videos uploaded (currently showing placeholders)
-- [ ] Supabase security policies reviewed
-- [ ] Email validation added
-- [ ] Rate limiting configured
-- [ ] Error handling tested
-- [ ] Loading states added
-- [ ] SEO meta tags optimized
-- [ ] Favicon replaced
-- [ ] Privacy policy linked
-- [ ] Terms of service linked
-- [ ] Performance tested (Lighthouse score > 90)
-- [ ] Cross-browser tested (Chrome, Safari, Firefox)
-- [ ] Mobile tested (iOS, Android)
-
-## Quick Reference
-
-**Project Location**: `/Users/bmac/vairify-splash`
-
-**Key Commands**:
-```bash
-npm run dev          # Start dev server
-npm run build        # Build for production
-npm run preview      # Preview production build
-vercel               # Deploy to Vercel
-vercel --prod        # Deploy to production
-```
-
-**Environment Variables**:
-```
-VITE_SUPABASE_URL=https://your-project.supabase.co
-VITE_SUPABASE_ANON_KEY=your_anon_key_here
-```
-
-**Documentation**:
-- `README.md` - Overview
-- `SETUP.md` - Detailed setup guide
-- `DEPLOY.md` - This file
-
----
-
-## Ready to Deploy?
-
-Choose your method:
-
-**Quick Deploy**: `vercel --prod` (after `vercel` first time)
-
-**GitHub Deploy**: Push to GitHub → Import to Vercel → Configure → Deploy
-
-**Need Help?**
-- Check SETUP.md for troubleshooting
-- Review Vercel docs: [vercel.com/docs](https://vercel.com/docs)
-- Check Supabase docs: [supabase.com/docs](https://supabase.com/docs)
-
----
-
-🚀 **Your splash page is ready to launch!**
+- Missing dependencies: run `npm ci` and verify the lockfile matches `package.json`.
+- Missing build settings: verify `.env` contains the intended public Supabase
+  settings, then rebuild. Never expose secrets in logs.
+- Domain ownership preflight failure: investigate the existing router; do not
+  launch a competing container or remove another service without authorization.
+- Supabase failures: inspect browser errors, schema, and RLS policies; do not
+  loosen production access policies merely to make a test pass.

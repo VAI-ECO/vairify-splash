@@ -126,17 +126,10 @@ npm run build
 npm run preview
 ```
 
-### Deploy to Vercel
-```bash
-# Install Vercel CLI (if needed)
-npm i -g vercel
+### Hetzner deployment
 
-# Deploy
-vercel
-
-# Production
-vercel --prod
-```
+See [DEPLOY.md](DEPLOY.md) for the existing Hetzner deployment workflow.
+Local development and production builds require only the project npm dependencies; no hosting CLI is required.
 
 ---
 

@@ -99,16 +99,10 @@ Run the SQL from `supabase-schema.sql` in your Supabase SQL editor to create:
 ### 5. Deploy to Production
 When ready to deploy:
 
-#### Option A: Vercel (Recommended for staging)
-```bash
-# Install Vercel CLI
-npm i -g vercel
+#### Option A: Hetzner deployment
 
-# Deploy
-vercel
-
-# Add environment variables in Vercel dashboard
-```
+See [DEPLOY.md](DEPLOY.md) for the existing Hetzner deployment workflow.
+Local development and production builds require only the project npm dependencies; no hosting CLI is required.
 
 #### Option B: Azure Static Web Apps (For production)
 1. Push code to GitHub

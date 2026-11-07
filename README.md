@@ -151,14 +151,10 @@ UPDATE tier_counts SET max_count = 10000 WHERE tier = 'early_access';
 
 ## Deployment
 
-### Vercel (Recommended)
+### Hetzner deployment
 
-```bash
-npm install -g vercel
-vercel
-```
-
-Add environment variables in Vercel dashboard.
+See [DEPLOY.md](DEPLOY.md) for the existing Hetzner deployment workflow.
+Local development and production builds require only the project npm dependencies; no hosting CLI is required.
 
 ### Netlify
 
